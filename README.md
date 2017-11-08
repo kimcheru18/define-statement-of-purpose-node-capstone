@@ -6,9 +6,13 @@ Link to live application: https://webdev-toolkit.netlify.com/
 
 # Goal & Use Case
 
-The goal of the application was (outside of learning) to simply bring a collection of frequently used tools for a web developer, such as lorem ipsum generation, cheat sheets and popular/common fonts for the web. I wanted to combine these "functions" into one single application that would be easily accessible on the web and easily used.
+This app should do three things, help one develop a Statement of Purpose, define personal values and beliefs and set goals that will help maintain my focus in daily life and relationships.
 
-Currently, the main functionalities of the site is for example the lorem ipsum generator, which uses a 3rd party API to generate a string or a paragraph given a set amount of settings. Initially I tasked myself to create my own custom generator that would have a database filled with strings that would in turn generate a proper sentence (that would actually make sense), but being that I had a set deadline for this project I decided to descope it down further and use a common API for it instead in the form of an NPM package.
+The Statement of Purpose is to help you focus on who you are as a person. It should be short, no longer than 3 or 4 sentences. This is not a statement to lay out a plan or set goals for business or even goals for personal growth. It is really just looking inside and discovering who you are at the core and who you want to be. Writing this statement is an assignment to create a verbal representation of “you” and who you hope to become. It is an idea to aspire to,  it is a direction to go. It is not concrete and unmoveable, it is fluid, it is malleable.  
+
+Defining your values and beliefs will help you create this statement and then you may want to set goals that are in line with your statement. For example, you may say “I will be more aware of my families needs and encourage them often.” In your goals, you can outline what that might look like. 
+ 
+
 
 # Screenshots
 ![image1](https://i.gyazo.com/d25de5a06546f4518a3ebfdd07314075.png)
