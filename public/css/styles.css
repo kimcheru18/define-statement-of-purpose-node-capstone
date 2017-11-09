@@ -3,17 +3,17 @@
 }
 
 body {
-	text-align: center;
-	display: block;
-	width: 35%;
-	margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 45%;
+    margin: 0 auto;
 
 }
 
 header {
-	text-align: center;
+    text-align: center;
 }
 
 ul {
-	list-style: none;
+    list-style: none;
 }

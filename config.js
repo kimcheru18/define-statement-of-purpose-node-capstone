@@ -1,2 +1,7 @@
-exports.PORT = process.env.PORT || 3000;
-exports.DATABASE = process.env.DATABASE || "mongodb://tobnys:asd123@ds117935.mlab.com:17935/webdev-toolkit-test";
+exports.DATABASE_URL = process.env.DATABASE_URL ||
+    global.DATABASE_URL ||
+    'mongodb://admin:admin@ds153015.mlab.com:53015/define-statement-of-purpose-node-capstone';
+exports.TEST_DATABASE_URL = (
+    process.env.TEST_DATABASE_URL ||
+    'mongodb://admin:admin@ds153015.mlab.com:53015/define-statement-of-purpose-node-capstone');
+exports.PORT = process.env.PORT || 8080;

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tobnys/webdev-toolkit-final-capstone.svg?branch=master)](https://travis-ci.org/tobnys/webdev-toolkit-final-capstone)
 
-Link to live application: insert URL here
+Link to live application: https://define-statement-of-purpose.herokuapp.com/
 
 # Goal & Use Case
 
@@ -25,11 +25,6 @@ Defining your values and beliefs will help you create this statement and then yo
 
 **Landing Page**
 Initial landing page is an explanation of what the app is for, user will swipe through information and instructions to get to the "Answer Questions" page
-
-![image1]
-
-**Login/Signup Page**
-Not sure if I will have a login page or not??? Do I need one?
 
 ![image1]
 
