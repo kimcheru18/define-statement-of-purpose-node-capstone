@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Statement of Purpose</title>
-        <link rel="stylesheet" type="text/css" href="public/css/styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>Statement of Purpose</h1>
-        </header>
-        <!--first screen-->
+
+<head>
+    <title>Statement of Purpose</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Statement of Purpose</h1>
+    </header>
+    <!--first screen-->
+    <main class="welcome-page">
         <h3>This app is designed to</h3>
         <ul>
             <li>Guide you in creating a Statement of Purpose.</li>
@@ -16,31 +19,30 @@
             <li>Inspire you to set goals that are in line with your statement.</li>
         </ul>
 
-        <!--   second screen-->
-        <div>
+        <p>
+            This is an assignment to create a brief verbal representation of “you” and who you hope to become. It should only be 3-4 sentences long.
+        </p>
 
-            <p>
-                This is an assignment to create a brief verbal representation of “you” and who you hope to become. It should only be 3-4 sentences long.
-            </p>
+        <p>
+            It is an idea to aspire to, it is a direction to go. It is not concrete and unmoveable, it is fluid, it is malleable.
+        </p>
+        <p>
+            This Statement is not about creating a business plan or a list of things to complete. It is introspective, a way to see who you are at your core.
+        </p>
+        <p>
+            Defining your values and beliefs will help you create this statement and then you can set goals that are in line with your statement.
+        </p>
 
-            <p>
-                It is an idea to aspire to,  it is a direction to go. It is not concrete and unmoveable, it is fluid, it is malleable.
-            </p>
-            <p>
-                This Statement is not about creating a business plan or a list of things to complete. It is introspective, a way to see who you are at your core.
-            </p>
-            <p>
-                Defining your values and beliefs will help you create this statement and then you can set goals that are in line with your statement.
-            </p>
+    </main>
 
-            <!--        third screen-->
-            <h3>Let's get started</h3>
-            <p>
-                To begin, you will answer several questions to get you thinking about who you are and what direction you want to go, then you can create a statement in your own words or use a customizable template.
-            </p>
-        </div>
+    <main class="get-started-page">
+        <h3>Let's get started</h3>
+        <p>
+            To begin, you will answer several questions to get you thinking about who you are and what direction you want to go, then you can create a statement in your own words or use a customizable template.
+        </p>
+    </main>
 
-        <!--    information page???-->
+    <main class="information-page">
         <h3>Creating a Statement of Purpose helps me to...</h3>
         <ul>
             <li>find focus in my life.</li>
@@ -51,13 +53,78 @@
             <li>refocus when I get off track.</li>
             <li>to see myself as I am and develop who I want to become.</li>
         </ul>
+    </main>
 
+    <main class="questions">
+        <h3 class="question">What brings me true happiness in life?</h3>
+        <input type="text" name="text" required>
+    </main>
 
+    <main class="question-values-beliefs">
+        <h3 class="values-beliefs">What are my core values?</h3>
+        <input type="text" name="text" required>
+    </main>
 
+    <main class="completed-questions">
+        <ul>
+            <li>What brings me true happiness in life?</li>
+            <li>What are my main character traits?</li>
+            <li>Who do I respect and what and what qualities do I see in them that I would like to emulate?</li>
+            <li>What strengths do I posses?</li>
+            <li>What are my weaknesses?</li>
+            <li>What are my core values?</li>
+            <li>What are my beliefs?</li>
+            <li>If I could do anything with my time and money wasn’t an object, what would that look like?</li>
+            <li>What do I want to have accomplished by the end of my life?</li>
+            <li>What will I regret not doing?</li>
+        </ul>
+    </main>
 
+    <main class="create-sop">
+        <p>Create your Statement of Purpose</p>
+        <input type="text" name="text" required>
 
+    </main>
 
+    <main class="template-sop">
+        <p>I will live <input type="text" name="text" required>and practice<input type="text" name="text" required></p>
+    </main>
 
+    <main class="completed-sop">
+        <h2>Statement of Purpose</h2>
+        <p>I will live with integrity and encourage those around me.</p>
+    </main>
 
-    </body>
+    <main class="value-list">
+        <h2>My Values</h2>
+        <ul>
+            <li>Treating others with kindness</li>
+            <li>Taking care of my health</li>
+            <li>Helping those in need</li>
+            <li>Staying connected to friends</li>
+            <li>Maintaining my individuality</li>
+        </ul>
+    </main>
+
+    <main class="belief-list">
+        <h2>My Beliefs</h2>
+        <ul>
+            <li>I believe I can do anything I set my mind to</li>
+            <li>I believe I can have differing views from others but remain connected to them</li>
+            <li>I believe treating others well will make me a more fulfilled person</li>
+        </ul>
+    </main>
+
+    <main class="goal-list">
+        <h2>My Goals</h2>
+
+    </main>
+
+    <footer>
+        Copyright, Social media links...
+    </footer>
+    <script src="//code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
 </html>
