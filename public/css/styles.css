@@ -61,19 +61,57 @@ General styles (General Module, wrapping around the modules below)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {
-    text-align: center;
-    padding: 2rem;
+body {}
+
+h3 {
+    margin: 1rem 0;
 }
 
+ul {
+    list-style: none;
+}
 
 /* -------------------------------------
 Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
 
-h1 {
+header,
+.welcome-page {
+    color: rgb(205, 215, 222);
+}
+
+header {
+    border: 1px solid black;
+    width: 100%;
+    padding: 3rem;
+    background-color: rgb(42, 87, 113);
+
+    font-size: 2rem;
+}
+
+nav {
     text-align: center;
+    margin: 0 auto;
+    color: rgb(132, 166, 56);
+}
+
+nav ul li {
+    display: inline-block;
+    width: 20%;
+    list-style: none;
+    margin-top: .5rem;
+    border-bottom: 1px solid black;
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(132, 166, 56);
+}
+
+a:hover {
+    color: rgb(42, 87, 113);
 }
 
 /* -------------------------------------
@@ -81,20 +119,41 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-/*
 main {
-    border: 1px solid pink;
-    width: 35%;
-    margin: 5px auto;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.welcome-page,
+.get-started-page {
+    display: inline-block;
+    width: 32%;
+    height: 400px;
     padding: 2rem;
     border-radius: 5px;
-    background-color: rgb(255, 176, 103);
-    list-style: none;
-}*/
-
-li {
-    list-style: none:
 }
+
+.welcome-page {
+    height: 350px;
+    margin-left: 3rem;
+    background-color: rgb(14, 136, 136);
+}
+
+
+
+
+.get-started-page ul {
+    /*    border: 1px solid black;*/
+}
+
+.get-started-page {
+    height: 400px;
+    background-color: rgb(132, 166, 56);
+    padding: 2rem;
+    margin-left: 10rem;
+}
+
+
 
 /* -------------------------------------
 Footer styles (Main Module)
