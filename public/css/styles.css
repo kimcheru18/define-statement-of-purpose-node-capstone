@@ -63,8 +63,10 @@ General styles (General Module, wrapping around the modules below)
 
 body {}
 
-h3 {
+h2 {
     margin: 1rem 0;
+    text-align: center;
+    font-size: 1.25rem;
 }
 
 ul {
@@ -78,16 +80,17 @@ Header styles (Main Module)
 
 header,
 .welcome-page {
-    color: rgb(205, 215, 222);
+    /*    color: rgb(205, 215, 222);*/
 }
 
 header {
+    font-family: 'Cormorant Garamond', serif;
     border: 1px solid black;
     width: 100%;
     padding: 3rem;
     background-color: rgb(42, 87, 113);
-
     font-size: 2rem;
+    color: rgb(241, 241, 241);
 }
 
 nav {
@@ -105,12 +108,12 @@ nav ul li {
     font-size: 1.25rem;
 }
 
-a {
+nav a {
     text-decoration: none;
-    color: rgb(132, 166, 56);
+    color: rgb(86, 139, 86);
 }
 
-a:hover {
+nav a:hover {
     color: rgb(42, 87, 113);
 }
 
@@ -120,45 +123,94 @@ Content styles (Main Module)
 */
 
 main {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.welcome-page,
-.get-started-page {
     display: inline-block;
-    width: 32%;
-    height: 400px;
+    width: 25%;
     padding: 2rem;
     border-radius: 5px;
+    text-align: center;
+    margin-top: 2rem;
+    border: 1px solid black;
+    margin: 3rem;
+    color: rgb(241, 241, 241);
+    font-family: 'Poiret One', cursive;
 }
 
-.welcome-page {
-    height: 350px;
-    margin-left: 3rem;
+
+.welcome-page,
+.why-sop,
+.questions,
+.question-values,
+.completed-questions,
+.create-sop,
+.template-sop {
     background-color: rgb(14, 136, 136);
 }
 
 
-
-
-.get-started-page ul {
-    /*    border: 1px solid black;*/
-}
-
-.get-started-page {
-    height: 400px;
-    background-color: rgb(132, 166, 56);
-    padding: 2rem;
+.get-started-page,
+.completed-sop,
+.value-list,
+.belief-list,
+.goal-list {
+    background-color: rgb(86, 139, 86);
     margin-left: 10rem;
 }
 
+.completed-questions {
+    text-align: left;
+}
 
+.completed-questions .with-bulletts {
+    list-style: circle;
+}
+
+/*.start-button .questions .questions-values .completed-questions .create-sop .template-sop .completed-sop .value-list .belief-list .goal-list*/
+
+main a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 1rem;
+}
+
+main a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: rgb(241, 241, 241);
+    color: black;
+}
+
+.next {
+    background-color: rgb(14, 136, 136);
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
 
 /* -------------------------------------
 Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
+
+footer {
+    text-align: center;
+    margin-top: 75px;
+    padding-bottom: 30px;
+}
+
+footer p {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+}
 
 /* -------------------------------------
 place all the desktop styles above this line
@@ -166,3 +218,14 @@ Responsive styles
 (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
 place all the mobile tables styles below this line
 */
+
+@media only sreen and (max-width: 640px) {
+    #sop-nav {
+        display: block;
+        width: 100%;
+    }
+    main {
+        display: block;
+        width: 100%;
+    }
+}
