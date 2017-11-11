@@ -61,17 +61,10 @@ General styles (General Module, wrapping around the modules below)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {}
-
-h2 {
-    margin: 1rem 0;
+body {
     text-align: center;
-    font-size: 1.25rem;
 }
 
-ul {
-    list-style: none;
-}
 
 /* -------------------------------------
 Header styles (Main Module)
@@ -96,7 +89,7 @@ header {
 nav {
     text-align: center;
     margin: 0 auto;
-    color: rgb(132, 166, 56);
+    color: rgb(122, 166, 122);
 }
 
 nav ul li {
@@ -115,6 +108,7 @@ nav a {
 
 nav a:hover {
     color: rgb(42, 87, 113);
+    font-weight: bold;
 }
 
 /* -------------------------------------
@@ -122,17 +116,46 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
+h2 {
+    font-size: 1.5rem;
+}
+
+h2,
+.question {
+    text-decoration: underline;
+    text-decoration-color: rgb(208, 177, 152);
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+ul {
+    list-style: none;
+}
+
+main,
+.start-button {
+
+    font-family: 'Cuprum', sans-serif;
+}
+
 main {
-    display: inline-block;
-    width: 25%;
+    /*
+    display: inline-block;width: 25%;
+*/
+    font-size: 1.10rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2rem;
     border-radius: 5px;
-    text-align: center;
+    /*    text-align: center;*/
     margin-top: 2rem;
     border: 1px solid black;
-    margin: 3rem;
+    /*    margin: 3rem;*/
     color: rgb(241, 241, 241);
-    font-family: 'Poiret One', cursive;
 }
 
 
@@ -153,18 +176,31 @@ main {
 .belief-list,
 .goal-list {
     background-color: rgb(86, 139, 86);
-    margin-left: 10rem;
+    /*    margin-left: 10rem;*/
 }
 
-.completed-questions {
-    text-align: left;
+.start-button {
+    padding: 2px 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    color: rgb(42, 87, 113);
+
 }
 
-.completed-questions .with-bulletts {
-    list-style: circle;
+.completed-questions .question .answer {
+    /*    text-align: left;*/
 }
 
-/*.start-button .questions .questions-values .completed-questions .create-sop .template-sop .completed-sop .value-list .belief-list .goal-list*/
+.completed-questions .answer-list {
+    /*    list-style: circle;*/
+    /*    text-align: left;*/
+}
+
+.answer {
+    font-family: 'Enriqueta', serif;
+}
+
+/*previous and next buttons*/
 
 main a {
     text-decoration: none;
@@ -206,10 +242,15 @@ footer {
 footer p {
     display: inline-block;
     font-size: 1rem;
+    color: rgb(114, 41, 41);
 }
 
 footer a {
-    text-decoration: none;
+    color: rgb(86, 139, 86)
+}
+
+footer a:hover {
+    color: rgb(42, 87, 113);
 }
 
 /* -------------------------------------
@@ -219,13 +260,17 @@ Responsive styles
 place all the mobile tables styles below this line
 */
 
-@media only sreen and (max-width: 640px) {
+@media only sreen and (min-width: 640px) {
     #sop-nav {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
     }
     main {
         display: block;
         width: 100%;
+        padding: 0;
+        margin: 0;
     }
 }
