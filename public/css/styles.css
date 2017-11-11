@@ -71,14 +71,9 @@ Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
 
-header,
-.welcome-page {
-    /*    color: rgb(205, 215, 222);*/
-}
-
 header {
     font-family: 'Cormorant Garamond', serif;
-    border: 1px solid black;
+    /*    border: 1px solid black;*/
     width: 100%;
     padding: 3rem;
     background-color: rgb(42, 87, 113);
@@ -136,25 +131,20 @@ ul {
 }
 
 main,
-.start-button {
-
+.start-button,
+.edit-button {
     font-family: 'Cuprum', sans-serif;
 }
 
 main {
-    /*
-    display: inline-block;width: 25%;
-*/
+    text-align: center;
     font-size: 1.10rem;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
     border-radius: 5px;
-    /*    text-align: center;*/
     margin-top: 2rem;
-    border: 1px solid black;
-    /*    margin: 3rem;*/
     color: rgb(241, 241, 241);
 }
 
@@ -163,6 +153,7 @@ main {
 .why-sop,
 .questions,
 .question-values,
+.list-answers,
 .completed-questions,
 .create-sop,
 .template-sop {
@@ -176,24 +167,21 @@ main {
 .belief-list,
 .goal-list {
     background-color: rgb(86, 139, 86);
-    /*    margin-left: 10rem;*/
 }
 
-.start-button {
+
+.start-button,
+.edit-button {
     padding: 2px 5px;
-    margin-top: 1rem;
     cursor: pointer;
     color: rgb(42, 87, 113);
-
+    margin-top: 1rem;
 }
 
-.completed-questions .question .answer {
-    /*    text-align: left;*/
-}
-
-.completed-questions .answer-list {
-    /*    list-style: circle;*/
-    /*    text-align: left;*/
+.edit-button {
+    font-size: .8rem;
+    display: block;
+    text-align: left;
 }
 
 .answer {
@@ -217,6 +205,11 @@ main a:hover {
 .previous {
     background-color: rgb(241, 241, 241);
     color: black;
+}
+
+.next-question {
+    background-color: rgb(86, 139, 86);
+    color: white;
 }
 
 .next {
@@ -264,13 +257,10 @@ place all the mobile tables styles below this line
     #sop-nav {
         display: block;
         max-width: 100%;
-        padding: 0;
-        margin: 0;
     }
+
     main {
         display: block;
         width: 100%;
-        padding: 0;
-        margin: 0;
     }
 }
