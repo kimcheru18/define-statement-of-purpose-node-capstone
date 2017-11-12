@@ -65,6 +65,24 @@ body {
     text-align: center;
 }
 
+h2 {
+    font-size: 1.5rem;
+}
+
+h2,
+.question {
+    text-decoration: underline;
+    text-decoration-color: rgb(208, 177, 152);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+ul {
+    list-style: none;
+}
 
 /* -------------------------------------
 Header styles (Main Module)
@@ -73,7 +91,6 @@ Header styles (Main Module)
 
 header {
     font-family: 'Cormorant Garamond', serif;
-    /*    border: 1px solid black;*/
     width: 100%;
     padding: 3rem;
     background-color: rgb(42, 87, 113);
@@ -89,7 +106,7 @@ nav {
 
 nav ul li {
     display: inline-block;
-    width: 20%;
+    width: 21.5%;
     list-style: none;
     margin-top: .5rem;
     border-bottom: 1px solid black;
@@ -111,23 +128,27 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-h2 {
-    font-size: 1.5rem;
+main {
+    width: 100%;
+    margin-top: 2rem;
 }
 
-h2,
-.question {
-    text-decoration: underline;
-    text-decoration-color: rgb(208, 177, 152);
-    margin: 1rem 0;
+section {
+    background-color: rgb(14, 136, 136);
+    color: rgb(241, 241, 241);
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+
 }
 
-h3 {
-    font-size: 1.25rem;
-}
-
-ul {
-    list-style: none;
+.get-started-page,
+.essay-questions,
+.questions-multiple-answers,
+.my-answers,
+.create-free-style,
+.template-sop {
+    width: 86.5%;
 }
 
 main,
@@ -136,39 +157,60 @@ main,
     font-family: 'Cuprum', sans-serif;
 }
 
-main {
-    text-align: center;
-    font-size: 1.10rem;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem;
-    border-radius: 5px;
-    margin-top: 2rem;
-    color: rgb(241, 241, 241);
-}
-
-
-.welcome-page,
+.description-info,
 .why-sop,
-.questions,
-.question-values,
-.list-answers,
-.completed-questions,
-.create-sop,
-.template-sop {
-    background-color: rgb(14, 136, 136);
-}
-
-
-.get-started-page,
+.create-free-style,
+.template-sop,
 .completed-sop,
 .value-list,
 .belief-list,
 .goal-list {
-    background-color: rgb(86, 139, 86);
+    display: inline-block;
 }
 
+.description-info,
+.why-sop,
+.create-free-style,
+.template-sop {
+    vertical-align: top;
+    width: 43%;
+}
+
+
+.description-info:hover,
+.why-sop:hover {
+    background: -webkit-linear-gradient(right, rgb(14, 136, 136), rgb(42, 87, 113));
+}
+
+
+.get-started-page,
+.question-multiple-answers,
+.completed-sop,
+.value-list,
+.belief-list,
+.goal-list {
+    vertical-align: top;
+    background-color: rgb(86, 139, 86);
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-sop,
+.template-sop,
+.value-list,
+.belief-list,
+.goal-list {
+    margin-left: .5rem;
+}
+
+.completed-sop,
+.value-list,
+.belief-list,
+.goal-list {
+    width: 21%;
+    height: 400px;
+}
 
 .start-button,
 .edit-button {
@@ -227,23 +269,29 @@ Footer styles (Main Module)
 */
 
 footer {
+    font-family: 'Cormorant Garamond', serif;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    background-color: rgb(42, 87, 113);
+    font-size: 2rem;
     text-align: center;
-    margin-top: 75px;
-    padding-bottom: 30px;
+    margin-top: 1rem;
 }
 
 footer p {
     display: inline-block;
     font-size: 1rem;
-    color: rgb(114, 41, 41);
+    color: rgb(241, 241, 241);
 }
 
 footer a {
-    color: rgb(86, 139, 86)
+    color: rgb(86, 139, 86);
+    text-decoration: none;
 }
 
 footer a:hover {
-    color: rgb(42, 87, 113);
+    color: rgb(208, 177, 152);
 }
 
 /* -------------------------------------
@@ -253,14 +301,16 @@ Responsive styles
 place all the mobile tables styles below this line
 */
 
-@media only sreen and (min-width: 640px) {
-    #sop-nav {
+@media only screen and (max-width: 640px) {
+    #sop-nav,
+    nav ul li {
         display: block;
         max-width: 100%;
+        text-align: center;
     }
 
-    main {
+    section {
         display: block;
-        width: 100%;
+        width: 95%;
     }
 }
