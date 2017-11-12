@@ -63,6 +63,7 @@ General styles (General Module, wrapping around the modules below)
 
 body {
     text-align: center;
+    font-size: 1.25rem;
 }
 
 h2 {
@@ -130,22 +131,34 @@ Content styles (Main Module)
 
 main {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 section {
     background-color: rgb(14, 136, 136);
     color: rgb(241, 241, 241);
     padding: 2rem;
-    margin: 1rem auto;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
+}
 
+.why-sop,
+.review-answers {
+    background-color: white;
+    color: rgb(42, 87, 113);
 }
 
 .get-started-page,
 .essay-questions,
 .questions-multiple-answers,
-.my-answers,
+.review-answers {
+    margin-top: 1rem;
+}
+
+.get-started-page,
+.essay-questions,
+.questions-multiple-answers,
 .create-free-style,
 .template-sop {
     width: 86.5%;
@@ -159,6 +172,8 @@ main,
 
 .description-info,
 .why-sop,
+.review-answers,
+.my-answers,
 .create-free-style,
 .template-sop,
 .completed-sop,
@@ -170,18 +185,13 @@ main,
 
 .description-info,
 .why-sop,
+.review-answers,
+.my-answers,
 .create-free-style,
 .template-sop {
     vertical-align: top;
-    width: 43%;
+    width: 42.8%;
 }
-
-
-.description-info:hover,
-.why-sop:hover {
-    background: -webkit-linear-gradient(right, rgb(14, 136, 136), rgb(42, 87, 113));
-}
-
 
 .get-started-page,
 .question-multiple-answers,
@@ -191,12 +201,12 @@ main,
 .goal-list {
     vertical-align: top;
     background-color: rgb(86, 139, 86);
-    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 .why-sop,
+.my-answers,
 .template-sop,
 .value-list,
 .belief-list,
@@ -208,8 +218,19 @@ main,
 .value-list,
 .belief-list,
 .goal-list {
-    width: 21%;
+    width: 21.1%;
     height: 400px;
+}
+
+.value-list li,
+.belief-list li,
+.goal-list li {
+    display: block;
+    margin: 0 auto;
+}
+
+strong {
+    font-size: 1.5rem;
 }
 
 .start-button,
@@ -302,15 +323,46 @@ place all the mobile tables styles below this line
 */
 
 @media only screen and (max-width: 640px) {
+    header {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        font-size: 0;
+
+    }
+
     #sop-nav,
     nav ul li {
         display: block;
-        max-width: 100%;
-        text-align: center;
+        width: 100%;
+        margin: .5rem auto;
     }
 
-    section {
+    .description-info,
+    .why-sop,
+    .create-free-style,
+    .template-sop,
+    .completed-sop,
+    .value-list,
+    .belief-list,
+    .goal-list {
         display: block;
         width: 95%;
+        margin: 1rem auto;
     }
+
+    .get-started-page,
+    .essay-questions,
+    .questions-multiple-answers,
+    .my-answers,
+    .create-free-style,
+    .template-sop {
+        width: 95%;
+    }
+    /*
+    .next {
+        vertical-align: middle;
+        text-align: right;
+    }
+*/
 }
