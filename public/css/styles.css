@@ -64,6 +64,8 @@ General styles (General Module, wrapping around the modules below)
 body {
     text-align: center;
     font-size: 1.25rem;
+    /*    background-color: rgb(226, 227, 227);*/
+    margin: 0 auto;
 }
 
 h2 {
@@ -93,10 +95,12 @@ Header styles (Main Module)
 header {
     font-family: 'Cormorant Garamond', serif;
     width: 100%;
-    padding: 3rem;
+    height: 75px;
+    padding: 1.25rem 0;
     background-color: rgb(42, 87, 113);
     font-size: 2rem;
     color: rgb(241, 241, 241);
+    /*    color: rgb(42, 87, 113);*/
 }
 
 nav {
@@ -107,7 +111,7 @@ nav {
 
 nav ul li {
     display: inline-block;
-    width: 21.5%;
+    width: 17%;
     list-style: none;
     margin-top: .5rem;
     border-bottom: 1px solid black;
@@ -143,19 +147,13 @@ section {
     border-radius: 5px;
 }
 
-.why-sop,
-.review-answers {
-    background-color: white;
-    color: rgb(42, 87, 113);
-}
-
 .get-started-page,
 .essay-questions,
-.questions-multiple-answers,
-.review-answers {
-    margin-top: 1rem;
+.questions-multiple-answers {
+    margin-top: .25rem;
 }
 
+.description-info,
 .get-started-page,
 .essay-questions,
 .questions-multiple-answers,
@@ -164,14 +162,11 @@ section {
     width: 86.5%;
 }
 
-main,
-.start-button,
-.edit-button {
-    font-family: 'Cuprum', sans-serif;
+.description-info {
+    padding: 2rem 0;
 }
 
-.description-info,
-.why-sop,
+div,
 .review-answers,
 .my-answers,
 .create-free-style,
@@ -183,14 +178,38 @@ main,
     display: inline-block;
 }
 
-.description-info,
-.why-sop,
+div {
+    vertical-align: middle;
+}
+
+.why-create-sop {
+    width: 40%;
+}
+
+.assignment {
+    margin: 0 3.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgb(42, 87, 113);
+}
+
+.assignment,
+.guided {
+    width: 20%;
+    /*    padding-left: 1rem;*/
+}
+
+main,
+.start-button,
+.edit-button {
+    font-family: 'Cuprum', sans-serif;
+}
+
 .review-answers,
 .my-answers,
 .create-free-style,
 .template-sop {
     vertical-align: top;
-    width: 42.8%;
+    width: 43%;
 }
 
 .get-started-page,
@@ -205,20 +224,20 @@ main,
     margin-right: auto;
 }
 
-.why-sop,
+
 .my-answers,
 .template-sop,
 .value-list,
 .belief-list,
 .goal-list {
-    margin-left: .5rem;
+    margin-left: .25rem;
 }
 
 .completed-sop,
 .value-list,
 .belief-list,
 .goal-list {
-    width: 21.1%;
+    width: 21.3%;
     height: 400px;
 }
 
@@ -257,7 +276,7 @@ main a {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    margin-top: 1rem;
+    margin-top: .25rem;
 }
 
 main a:hover {
