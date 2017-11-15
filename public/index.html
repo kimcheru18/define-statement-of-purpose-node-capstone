@@ -5,71 +5,62 @@
     <title>Statement of Purpose</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Cuprum|Enriqueta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <h1>Statement of Purpose</h1>
+
+        <nav id="sop-nav">
+            <ul class="nav-options">
+                <li><a href="#">Purpose</a></li>
+                <li><a href="#">Values</a></li>
+                <li><a href="#">Beliefs</a></li>
+                <li><a href="#">Goals</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav id="sop-nav">
-        <ul class="nav-options">
-            <li><a href="#">Statement of Purpose</a></li>
-            <li><a href="#">Values</a></li>
-            <li><a href="#">Beliefs</a></li>
-            <li><a href="#">Goals</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
 
 
     <!--   Describes what this app is about-->
     <main class="welcome-page">
-        <section class="description-info">
-            <div class="why-create-sop">
-                <h2>Why should I create a Statement of Purpose?</h2>
-                <h2> It helps me to...</h2>
-                <ul>
-                    <li>find focus in my life.</li>
-                    <li>dig deeper within myself to discover and define my values and beliefs.</li>
-                    <li>define my future and determine who I want to be in life.</li>
-                    <li>see who I am in relation to others.</li>
-                    <li>see who I am in relation to myself.</li>
-                    <li>refocus when I get off track.</li>
-                    <li>see myself as I am and develop who I want to become.</li>
-                </ul>
-            </div>
-
-            <div class="assignment">
-                <h2>Your assignment...</h2>
-                <p>
-                    Create a brief (3-4 sentence), verbal representation of “you” and who you hope to become.
-                </p>
-                <!--                <br>-->
-                <p>
-                    This is an idea to aspire to, it is a direction to go. It is not concrete and unmoveable, it is fluid, and malleable.
-                </p>
-                <br>
-                <p>
-                    This Statement is not about creating a business plan or a list of things to complete. It is introspective, a way to discover who you are at your core.
-                </p>
-            </div>
-
-            <div class="guided">
-                <h2>You will be guided through the following...</h2>
-                <ul>
-                    <li>defining your values and beliefs</li>
-                    <li>creating a Statement of Purpose</li>
-                    <li>setting goals that are in line with your statement</li>
-                </ul>
-            </div>
+        <section class="why-create-sop">
+            <h2>Why create a Statement of Purpose?</h2>
+            <h2> It helps to...</h2>
+            <ul>
+                <li>find focus in life</li>
+                <li>discover and define your values and beliefs</li>
+                <li>see who you are in relation to others</li>
+                <li>determine how you can use your strengths to serve others</li>
+            </ul>
         </section>
 
+        <section class="assignment">
+            <h2>Your assignment...</h2>
+            <p>
+                Create a brief, verbal representation of your purpose in life
+            </p>
+            <br>
+            <p>
+                This is an idea to aspire to, it is fluid, and malleable. You can revisit it often and revise it as your path evolves.
+            </p>
+        </section>
+
+        <section class="guided">
+            <h2>You will be guided through the following...</h2>
+            <ul>
+                <li>defining your values and beliefs</li>
+                <li>creating a Statement of Purpose</li>
+                <li>setting goals that are in line with your statement</li>
+            </ul>
+        </section>
 
         <!-- This is where the user enters the question section-->
         <section class="get-started-page">
             <h2>To begin...</h2>
             <p>
-                You will answer several questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.
+                You will answer a few questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.
             </p>
             <button class="start-button">Let's get started</button>
         </section>
@@ -78,20 +69,9 @@
     <!-- Here the user answers several questions to get them thinking about what they want to put in their Statement of Purpose-->
     <main class="questions">
         <section class="essay-questions">
-            <h2 class="question">What brings me true happiness in life?</h2>
-            <div>
-                <input type="text" name="text" required>
-            </div>
-            <br>
-            <a href="#" class="previous round">&#8249;</a>
-            <a href="#" class="next-question round">&#8250;</a>
-        </section>
+            <h2 class="question">What do you want to have accomplished in your lifetime for yourself and for others?</h2>
+            <h3 class="answer"><input type="text" name="text"></h3>
 
-
-        <!-- These are a couple more questions but user can list multiple answers here -->
-        <section class="questions-multiple-answers">
-            <h2 class="values-beliefs">What are my core values?</h2>
-            <input type="text" name="text" required>
             <br>
             <a href="#" class="previous round">&#8249;</a>
             <a href="#" class="next-question round">&#8250;</a>
@@ -103,25 +83,16 @@
     <main class="completed-questions">
         <section class="review-answers">
             <h2>Review Your Answers</h2>
-            <p>As you think about your answers, pick 3-4 main themes or ideas over all. Then begin to craft your statment of purpose. You can combine several ideas into one sentence but be sure to keep it relatively brief.</p>
+            <p>As you think about your answers, pick 3-4 main themes or ideas over all. Then begin to craft your statment of purpose. You can combine several ideas into one sentence if you would like.</p>
             <br>
             <p>Once you are finished, write or print it out and place it where you can see it everyday.</p>
         </section>
 
         <section class="my-answers">
             <h2>My Answers</h2>
-            <h2 class="question">What brings me true happiness in life?</h2>
+            <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
             <br>
-            <h3 class="answer">Singing and playing guitar</h3>
-            <br>
-            <h2 class="question">What are my core values?</h2>
-            <ul class="answer-list">
-                <li>Treating others with kindness</li>
-                <li>Taking care of my health</li>
-                <li>Helping those in need</li>
-                <li>Staying connected to friends</li>
-                <li>Maintaining my individuality</li>
-            </ul>
+            <h3 class="answer">answers</h3>
         </section>
     </main>
 
@@ -136,8 +107,16 @@
 
         <!-- Here are some Statement of Purpose examples users can alter to create their own-->
         <section class="template-sop">
-            <h2>Template 1</h2>
-            <p>I will live <input type="text" name="text" required> and practice <input type="text" name="text" required></p>
+            <h2>Template</h2>
+
+            <p>I desire to live a <input type="text" name="text"> and <input type="text" name="text"> life. There will be challenges but I will do my best to <input type="text" name="text">.</p>
+
+            <p>I know that I am not <input type="text" name="text"> but I will commit to <input type="text" name="text">.</p>
+
+            <p>
+                I want those closest to me to see me as <input type="text" name="text"> but realize that what is most important is that I accept myself as I am.
+            </p>
+
         </section>
     </main>
 
@@ -145,7 +124,7 @@
     <!-- Once completed, Statement of Purpose will display with values, beliefs and goals on a single page-->
     <main class="completed-sop-vbg">
         <section class="completed-sop">
-            <h2>Statement of Purpose</h2>
+            <h2>Purpose</h2>
             <p>I will live with integrity and encourage those around me.</p>
             <a href="#" class="next round">&#8250;</a>
             <br>
@@ -155,7 +134,7 @@
 
         <!-- User can also see and edit their value list if desired -->
         <section class="value-list">
-            <h2>My Values</h2>
+            <h2>Values</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
                 <li><strong>T</strong>aking care of my health</li>
@@ -172,7 +151,7 @@
 
         <!-- User can also see and edit their belief list if desired -->
         <section class="belief-list">
-            <h2>My Beliefs</h2>
+            <h2>Beliefs</h2>
             <ul>
                 <li><strong>I</strong> believe I can do anything I set my mind to</li>
                 <li><strong>I</strong> believe I can have differing views from others but remain connected to them</li>
@@ -187,7 +166,7 @@
 
         <!-- Here the user can create a list of goals that are in line with their Statement of Purpose -->
         <section class="goal-list">
-            <h2>My Goals</h2>
+            <h2>Goals</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
                 <li><strong>T</strong>aking care of my health</li>
