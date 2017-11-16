@@ -2,7 +2,7 @@ main {
     display: inline-flex;
 }
 
-.wrapper {
+main {
     justify-content: center;
     display: flex;
 }
@@ -35,7 +35,7 @@ main {
     width: 25%;
 }
 
-
+.questions-image,
 .review-answers,
 .my-answers,
 .create-sop,

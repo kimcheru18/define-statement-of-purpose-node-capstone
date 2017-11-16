@@ -1,3 +1,5 @@
+'use strict';
+
 //1. User selects 'Let's begin'
 //2. User enters answer in answer field
 //3. User clicks 'Next'
@@ -7,51 +9,25 @@
 var questionsArray = [
     //Question 1
         {
-            questionText: 'What brings me true happiness in life?',
+            questionText: 'What do I want to have accomplished for myself and for others by the end of my life?',
             questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 2
         {
-            questionText: 'What are my main personality traits?',
+            questionText: 'What strengths and talents do I posses?',
             questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 3
         {
-            questionText: 'Who do I respect and what and what qualities do I see in them that I would like to emulate?',
-            questionChoices: questionCorrectChoice: correctDetails:
-    },
-
-    //Question 4
-        {
-            questionText: 'What strengths do I posses?',
+            questionText: 'Who do I value?',
             questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 5
         {
-            questionText: 'What are my weaknesses?',
-            questionChoices: questionCorrectChoice: correctDetails:
-    },
-
-
-    //Question 6
-        {
-            questionText: 'If I could do anything with my time and money wasn’t an object, what would that look like?',
-            questionChoices: questionCorrectChoice: correctDetails:
-    },
-
-
-    //Question 7
-        {
-            questionText: 'What do I want to have accomplished by the end of my life?',
-            questionChoices: questionCorrectChoice: correctDetails:
-    },
-
-    //Question 8
-        {
-            questionText: 'What will I regret not doing?',
+            questionText: 'What are some ways I can enrich the lives of those that I love?',
             questionChoices: questionCorrectChoice: correctDetails:
     },
 
@@ -79,7 +55,15 @@ var questionsArray = [
     }
 
 
-    // display question text that requires single essay answer
+//    display main screen only (header, nav, why-sop, let's begin)
+
+
+// listen for when user clicks 'let's begin' button, then display questions
+
+
+
+
+    // display question text
     function displayQuestionSingle() {
             $('.question').text(questionsArray[currentQuestionNumber].questionText);
     }

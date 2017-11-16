@@ -63,6 +63,7 @@ General styles (General Module, wrapping around the modules below)
 
 body {
     text-align: center;
+    margin: .25%;
 }
 
 h1 {
@@ -155,7 +156,9 @@ strong {
 }
 
 .sop-description-image,
-.get-started-image {
+.get-started-image,
+.questions-image,
+.create-sop-image {
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -176,8 +179,15 @@ strong {
     margin-top: .25rem;
 }
 
-.create-sop-image {
+
+.questions-image {
     background-image: url("https://c1.staticflickr.com/3/2724/5709282796_9292d519c1_b.jpg");
+}
+
+.create-sop-image {
+    background-image: url("https://static.pexels.com/photos/355302/pexels-photo-355302.jpeg");
+    border-right: .25rem solid white;
+
 }
 
 .review-answers,
@@ -200,7 +210,17 @@ strong {
 .start-button {
     padding: .25rem .5rem;
     margin-top: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
 }
+
+/**************JavaScript CSS*************/
+
+.hidden {
+    /*    display: none;*/
+}
+
+
+
 
 /* -------------------------------------
 Footer styles (Main Module)
@@ -259,7 +279,10 @@ place all the mobile tables styles below this line
     }
 
     .image {
-        margin: 0;
+        /*
+        margin-top: 0;margin-left: 0;
+margin-right: 0;
+*/
         border-right: 0;
     }
 
