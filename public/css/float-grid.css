@@ -1,0 +1,74 @@
+main {
+    display: inline-flex;
+}
+
+.wrapper {
+    justify-content: center;
+    display: flex;
+}
+
+.header,
+.get-started-page,
+.questions {
+    width: 100%;
+}
+
+.sop-description-image {
+    width: 20%;
+}
+
+.why-sop,
+.assignment,
+.guided,
+.get-started-image {
+    width: 30%;
+}
+
+.create-sop-image {
+    width: 40%;
+}
+
+.purpose,
+.values,
+.beliefs,
+.goals {
+    width: 25%;
+}
+
+
+.review-answers,
+.my-answers,
+.create-sop,
+.template-sop {
+    width: 50%;
+}
+
+/*************media queries below*************/
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: block;
+    }
+
+    .wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .why-sop,
+    .assignment,
+    .guided,
+    .get-started-image,
+    .create-sop-image,
+    .review-answers,
+    .my-answers,
+    .create-sop,
+    .template-sop,
+    .image,
+    .purpose,
+    .values,
+    .beliefs,
+    .goals {
+        width: 100%;
+    }
+}

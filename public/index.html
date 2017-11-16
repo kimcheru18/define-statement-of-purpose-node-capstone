@@ -4,37 +4,42 @@
 <head>
     <title>Statement of Purpose</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Cuprum|Enriqueta" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="/css/float-grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Open+Sans" rel="stylesheet">
+
+
 </head>
 
 <body>
-    <header>
-        <h1>Statement of Purpose</h1>
 
-        <nav id="sop-nav">
-            <ul class="nav-options">
-                <li><a href="#">Purpose</a></li>
-                <li><a href="#">Values</a></li>
-                <li><a href="#">Beliefs</a></li>
-                <li><a href="#">Goals</a></li>
-            </ul>
-        </nav>
-    </header>
+    <main>
+        <header>
+            <h1>Statement of Purpose</h1>
+            <nav>
+                <ul class="nav-options">
+                    <li><a href="#">Purpose</a></li>
+                    <li><a href="#">Values</a></li>
+                    <li><a href="#">Beliefs</a></li>
+                    <li><a href="#">Goals</a></li>
+                </ul>
+            </nav>
+        </header>
+    </main>
 
-
-    <!--   Describes what this app is about-->
-    <main class="welcome-page">
-        <section class="why-create-sop">
+    <main role="main" class="sop-description-info">
+        <section class="image sop-description-image">
+            <div></div>
+        </section>
+        <section class="why-sop">
             <h2>Why create a Statement of Purpose?</h2>
             <h2> It helps to...</h2>
-            <ul>
-                <li>find focus in life</li>
-                <li>discover and define your values and beliefs</li>
-                <li>see who you are in relation to others</li>
-                <li>determine how you can use your strengths to serve others</li>
-            </ul>
+            <br>
+            <p><strong>F</strong>ind focus in life</p>
+            <p><strong>D</strong>iscover and define your values and beliefs</p>
+            <p><strong>S</strong>ee who you are in relation to others</p>
+            <p><strong>D</strong>etermine how you can use your strengths to serve others</p>
         </section>
+
 
         <section class="assignment">
             <h2>Your assignment...</h2>
@@ -47,40 +52,40 @@
             </p>
         </section>
 
+
         <section class="guided">
             <h2>You will be guided through the following...</h2>
-            <ul>
-                <li>defining your values and beliefs</li>
-                <li>creating a Statement of Purpose</li>
-                <li>setting goals that are in line with your statement</li>
-            </ul>
+            <br>
+            <p><strong>D</strong>efining your values and beliefs</p>
+            <p><strong>C</strong>reating a Statement of Purpose</p>
+            <p><strong>S</strong>etting goals that are in line with your statement</p>
         </section>
+    </main>
 
-        <!-- This is where the user enters the question section-->
+
+    <main>
         <section class="get-started-page">
             <h2>To begin...</h2>
             <p>
                 You will answer a few questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.
             </p>
             <button class="start-button">Let's get started</button>
+
+        </section>
+        <section class="image get-started-image">
         </section>
     </main>
 
-    <!-- Here the user answers several questions to get them thinking about what they want to put in their Statement of Purpose-->
-    <main class="questions">
-        <section class="essay-questions">
-            <h2 class="question">What do you want to have accomplished in your lifetime for yourself and for others?</h2>
+
+    <main class="wrapper">
+        <section class="questions">
+            <h2>What do you want to have accomplished in your lifetime for yourself and for others?</h2>
             <h3 class="answer"><input type="text" name="text"></h3>
-
-            <br>
-            <a href="#" class="previous round">&#8249;</a>
-            <a href="#" class="next-question round">&#8250;</a>
         </section>
     </main>
 
 
-    <!-- Here the user can see all the questions with their answers so they can easily read through them as they create their Statement of Purpose -->
-    <main class="completed-questions">
+    <main class="wrapper review">
         <section class="review-answers">
             <h2>Review Your Answers</h2>
             <p>As you think about your answers, pick 3-4 main themes or ideas over all. Then begin to craft your statment of purpose. You can combine several ideas into one sentence if you would like.</p>
@@ -97,15 +102,13 @@
     </main>
 
 
-    <!-- User creates their Statement of Purpose -->
-    <main class="create-sop">
-        <section class="create-free-style">
+    <main class="wrapper create">
+        <section class="image create-sop-image"></section>
+        <section class="create-sop">
             <h2>Create your Statement of Purpose</h2>
             <input type="text" name="text" required>
         </section>
 
-
-        <!-- Here are some Statement of Purpose examples users can alter to create their own-->
         <section class="template-sop">
             <h2>Template</h2>
 
@@ -116,24 +119,20 @@
             <p>
                 I want those closest to me to see me as <input type="text" name="text"> but realize that what is most important is that I accept myself as I am.
             </p>
-
         </section>
     </main>
 
 
-    <!-- Once completed, Statement of Purpose will display with values, beliefs and goals on a single page-->
-    <main class="completed-sop-vbg">
-        <section class="completed-sop">
-            <h2>Purpose</h2>
-            <p>I will live with integrity and encourage those around me.</p>
-            <a href="#" class="next round">&#8250;</a>
-            <br>
-            <button class="edit-button">Edit</button>
+    <main class="wrapper completed-sop">
+        <section class="purpose">
+            <section class="completed-sop">
+                <h2>Purpose</h2>
+                <p>I will live with integrity and encourage those around me.</p>
+            </section>
         </section>
 
 
-        <!-- User can also see and edit their value list if desired -->
-        <section class="value-list">
+        <section class="values">
             <h2>Values</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
@@ -142,30 +141,19 @@
                 <li><strong>S</strong>taying connected to friends</li>
                 <li><strong>M</strong>aintaining my individuality</li>
             </ul>
-            <a href="#" class="previous round">&#8249;</a>
-            <a href="#" class="next round">&#8250;</a>
-            <br>
-            <button class="edit-button">Edit</button>
         </section>
 
 
-        <!-- User can also see and edit their belief list if desired -->
-        <section class="belief-list">
+        <section class="beliefs">
             <h2>Beliefs</h2>
             <ul>
                 <li><strong>I</strong> believe I can do anything I set my mind to</li>
                 <li><strong>I</strong> believe I can have differing views from others but remain connected to them</li>
                 <li><strong>I</strong> believe treating others well will make me a more fulfilled person</li>
             </ul>
-            <a href="#" class="previous round">&#8249;</a>
-            <a href="#" class="next round">&#8250;</a>
-            <br>
-            <button class="edit-button">Edit</button>
         </section>
 
-
-        <!-- Here the user can create a list of goals that are in line with their Statement of Purpose -->
-        <section class="goal-list">
+        <section class="goals">
             <h2>Goals</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
@@ -174,9 +162,6 @@
                 <li><strong>S</strong>taying connected to friends</li>
                 <li><strong>M</strong>aintaining my individuality</li>
             </ul>
-            <a href="#" class="previous round">&#8249;</a>
-            <br>
-            <button class="edit-button">Edit</button>
         </section>
     </main>
 
@@ -189,6 +174,7 @@
     </footer>
     <script src="//code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>

@@ -65,20 +65,24 @@ body {
     text-align: center;
 }
 
-h2 {
-    font-size: 1.25rem;
+h1 {
+    font-size: 2.5rem;
+    padding: 2rem 0;
 }
 
-h2,
-.question {
-    margin-bottom: 1rem;
+h2 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
 }
+
 
 h3 {
     font-size: 1.25rem;
     text-align: left;
     /*    padding: 0 6rem;*/
 }
+
+
 
 /* -------------------------------------
 Header styles (Main Module)
@@ -88,19 +92,21 @@ Header styles (Main Module)
 header {
     font-family: 'Cormorant Garamond', serif;
     width: 100%;
-    height: 156px;
-    padding: 1.25rem 5rem 0;
-    /*    background-color: rgb(42, 87, 113);*/
+    padding: 2rem 5rem 0;
     font-size: 3rem;
     color: rgb(241, 241, 241);
+    padding-bottom: 1rem;
+}
+
+header {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAWNBibXRfC-Y7kLBuT7UqH-uXkbRkGYkoFA7pc9W70MgQpLgsjg");
 }
 
 nav ul li {
     display: inline-block;
     width: 15%;
-    list-style: none;
-    margin-top: .5rem;
     font-size: 1.5rem;
+    padding-top: 1.5rem
 }
 
 nav a {
@@ -119,237 +125,81 @@ Content styles (Main Module)
 */
 
 main {
-    font-family: 'Open Sans', sans-serif;
-}
-
-main,
-.get-started-page,
-.essay-questions {
-    margin-top: .1rem;
+    width: 100%;
 }
 
 section {
-    background-color: rgb(14, 136, 136);
-    border: 2px solid grey;
-    color: rgb(241, 241, 241);
-    padding: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    vertical-align: top;
-}
-
-.why-create-sop:hover,
-.assignment:hover {
-    background-color: rgb(11, 121, 121);
-}
-
-.get-started-page,
-.essay-questions,
-.create-free-style {
-    width: 86.5%;
-}
-
-.review-answers,
-.my-answers {
-    height: 400px;
-}
-
-
-.review-answers {
-    width: 35.5%;
-}
-
-.my-answers {
-    width: 50.5%;
-}
-
-.why-create-sop,
-.assignment,
-.guided,
-.review-answers,
-.my-answers,
-.create-free-style,
-.template-sop,
-.completed-sop,
-.value-list,
-.belief-list,
-.goal-list {
-    display: inline-block;
-}
-
-.why-create-sop,
-.assignment,
-.guided,
-.create-free-style,
-.template-sop {
-    height: 300px;
-}
-
-.why-create-sop {
-    width: 39.8%;
-    padding: 2rem;
-}
-
-.assignment,
-.guided {
-    width: 23%;
-}
-
-main .guided {
-    /*    text-align: left;*/
-}
-
-
-
-.get-started-page p {
-    padding: 0 20rem;
-}
-
-.create-free-style,
-.template-sop {
-    vertical-align: top;
-    width: 43%;
-    margin: 0 auto;
-}
-
-.get-started-page,
-.completed-sop,
-.value-list,
-.belief-list,
-.goal-list {
-    vertical-align: top;
-    background-color: rgb(86, 139, 86);
-}
-
-
-.my-answers,
-.template-sop,
-.value-list,
-.belief-list,
-.goal-list {
-    margin-left: .25rem;
-}
-
-.essay-questions ul,
-.review-answers p,
-.my-answers h3,
-.completed-sop-vbg p,
-.value-list ul,
-.belief-list ul,
-.goal-list ul {
-    text-align: left;
-}
-
-.completed-sop-vbg p,
-.value-list ul,
-.belief-list ul,
-.goal-list ul {
-    height: 240px;
-}
-
-.completed-sop,
-.value-list,
-.belief-list,
-.goal-list {
-    width: 21.3%;
-    height: 400px;
-}
-
-header,
-.guided,
-.get-started-page,
-.completed-sop {
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-header {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAWNBibXRfC-Y7kLBuT7UqH-uXkbRkGYkoFA7pc9W70MgQpLgsjg");
-}
-
-.guided {
-    /*    background-image: url("http://www.publicdomainpictures.net/pictures/210000/velka/yellow-wood-grain-background-1488838160NcP.jpg");*/
-    background-image: url("http://www.pptback.com/backgrounds/blurry-dots-golden-backgrounds-powerpoint.jpg");
-    color: white;
-    text-shadow: 2px 2px grey;
+    padding: 2.5rem;
     font-size: 1.25rem;
-}
-
-.get-started-page {
-    background-image: url("https://static.pexels.com/photos/132201/pexels-photo-132201.jpeg");
-}
-
-.completed-sop {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfOPpHgPgPiXHTV2XWh14rXUGIyZ65Fv5ozzIu7MvlS_KEmEFJ");
-    background-repeat: no-repeat;
-}
-
-input {
-    width: 80%;
-    padding: 0 2rem;
-}
-
-.value-list li,
-.belief-list li,
-.goal-list li {
-    display: block;
-    margin: 0 auto;
-}
-
-strong {
-    font-size: 1.5rem;
-}
-
-.start-button,
-.edit-button {
-    padding: 2px 5px;
-    cursor: pointer;
-    color: rgb(42, 87, 113);
-    margin-top: .5rem;
-}
-
-.edit-button {
-    font-size: .8rem;
-    display: block;
+    color: rgb(241, 241, 241);
     text-align: left;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.answer {
-    font-family: 'Enriqueta', serif;
+.why-sop,
+.assignment {
+    border-right: .25rem solid white;
 }
 
-/*previous and next buttons*/
-
-main a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
+.sop-description-info,
+.questions,
+.review,
+.my-answers,
+.create {
+    background-color: rgb(14, 136, 136);
     margin-top: .25rem;
 }
 
-main a:hover {
-    background-color: #ddd;
-    color: black;
+strong {
+    font-size: 2rem;
 }
 
-.previous {
-    background-color: rgb(241, 241, 241);
-    color: black;
+.sop-description-image,
+.get-started-image {
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.next-question {
+.get-started-page,
+.completed-sop {
     background-color: rgb(86, 139, 86);
-    color: white;
 }
 
-.next {
-    background-color: rgb(14, 136, 136);
-    color: white;
+.sop-description-image {
+    background-image: url("http://www.pptback.com/backgrounds/blurry-dots-golden-backgrounds-powerpoint.jpg");
+    border-right: .25rem solid white;
 }
 
-.round {
-    border-radius: 50%;
+.get-started-image {
+    background-image: url("https://static.pexels.com/photos/132201/pexels-photo-132201.jpeg");
+    margin-left: .25rem;
+    margin-top: .25rem;
+}
+
+.create-sop-image {
+    background-image: url("https://c1.staticflickr.com/3/2724/5709282796_9292d519c1_b.jpg");
+}
+
+.review-answers,
+.create-sop,
+.purpose,
+.values,
+.beliefs {
+    border-right: .25rem solid white;
+}
+
+.get-started-page,
+.purpose,
+.values,
+.beliefs,
+.goals {
+    border-top: .25rem solid white;
+
+}
+
+.start-button {
+    padding: .25rem .5rem;
+    margin-top: 1.5rem;
 }
 
 /* -------------------------------------
@@ -391,12 +241,14 @@ place all the mobile tables styles below this line
 */
 
 @media only screen and (max-width: 640px) {
-    header {
-        margin: 0;
-        border: 0;
-        padding: 0;
+    h1 {
         font-size: 0;
+        margin: 0;
+        padding: 0;
+    }
 
+    nav {
+        padding-bottom: 1rem;
     }
 
     #sop-nav,
@@ -406,31 +258,19 @@ place all the mobile tables styles below this line
         margin: .5rem auto;
     }
 
-    .description-info,
-    .why-sop,
-    .create-free-style,
-    .template-sop,
-    .completed-sop,
-    .value-list,
-    .belief-list,
-    .goal-list {
-        display: block;
-        width: 95%;
-        margin: 1rem auto;
+    .image {
+        margin: 0;
+        border-right: 0;
     }
 
-    .get-started-page,
-    .essay-questions,
-    .questions-multiple-answers,
-    .my-answers,
-    .create-free-style,
-    .template-sop {
-        width: 95%;
+    .why-sop,
+    .assignment,
+    .guided,
+    .review-answers,
+    .create-sop,
+    .purpose,
+    .values,
+    .beliefs {
+        border-right: 0;
     }
-    /*
-    .next {
-        vertical-align: middle;
-        text-align: right;
-    }
-*/
 }
