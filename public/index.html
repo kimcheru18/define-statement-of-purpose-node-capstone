@@ -22,14 +22,22 @@
                     <li><a href="#">Beliefs</a></li>
                     <li><a href="#">Goals</a></li>
                 </ul>
+
             </nav>
         </header>
     </main>
 
+    <main class="sign-in-sop">
+        <h5>Sign-in:</h5>
+        <label class="sign-in" for="sign-in">username: <input type="text" name="text"></label>
+        <label class="sign-in" for="sign-in">password: <input type="text" name="text"></label>
+    </main>
+
+
     <main role="main" class="sop-description-info">
         <section class="image sop-description-image">
         </section>
-        <section class="why-sop">
+        <section class="media why-sop">
             <h2>Why create a Statement of Purpose?</h2>
             <h2> It helps to...</h2>
             <br>
@@ -40,7 +48,7 @@
         </section>
 
 
-        <section class="assignment">
+        <section class="media assignment">
             <h2>Your assignment...</h2>
             <p>
                 Create a brief, verbal representation of your purpose in life
@@ -52,7 +60,7 @@
         </section>
 
 
-        <section class="guided">
+        <section class="media guided">
             <h2>You will be guided through the following...</h2>
             <br>
             <p><strong>D</strong>efining your values and beliefs</p>
@@ -77,40 +85,90 @@
 
 
     <main class="questions">
-        <section class="questions">
-            <h2>What do you want to have accomplished in your lifetime for yourself and for others?</h2>
-            <h3 class="answer"><input type="text" name="text"></h3>
-        </section>
         <section class="image questions-image">
         </section>
+        <section class="media questions-wrapper">
+            <div class="instructions">
+                <p>You can give several answers for each question. Separate each answer with a comma.</p>
+            </div>
+            <div class="questions">
+                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3 class="answer"><input type="text" name="text"></h3>
+            </div>
+
+            <!--        dummy questions**********-->
+            <div class="questions">
+                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3 class="answer"><input type="text" name="text"></h3>
+            </div>
+
+            <div class="questions">
+                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3 class="answer"><input type="text" name="text"></h3>
+            </div>
+
+            <div class="questions">
+                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3 class="answer"><input type="text" name="text"></h3>
+            </div>
+
+            <div class="questions">
+                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3 class="answer"><input type="text" name="text"></h3>
+            </div>
+        </section>
+        <!--       end dummy questions**********-->
+
+
     </main>
 
 
     <main class="review">
-        <section class="review-answers">
+        <section class="media review-answers">
             <h2>Review Your Answers</h2>
             <p>As you think about your answers, pick 3-4 main themes or ideas over all. Then begin to craft your statment of purpose. You can combine several ideas into one sentence if you would like.</p>
             <br>
             <p>Once you are finished, write or print it out and place it where you can see it everyday.</p>
         </section>
+    </main>
 
-        <section class="my-answers">
+
+    <main>
+        <section class="image answers-image"></section>
+
+        <section class="media my-answers">
             <h2>My Answers</h2>
-            <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
-            <br>
-            <h3 class="answer">answers</h3>
+            <div>
+                <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <br>
+                <h3 class="answer">answers</h3>
+            </div>
+
+            <div>
+                <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <br>
+                <h3 class="answer">answers</h3>
+            </div>
+
+            <div>
+                <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <br>
+                <h3 class="answer">answers</h3>
+            </div>
         </section>
+
+        <section class="image answers-two-image"></section>
     </main>
 
 
     <main class="hidden create">
         <section class="image create-sop-image"></section>
-        <section class="create-sop">
+        <section class="media create-sop">
             <h2>Create your Statement of Purpose</h2>
             <input type="text" name="text" required>
         </section>
 
-        <section class="template-sop">
+        <section class="media template-sop">
             <h2>Template</h2>
 
             <p>I desire to live a <input type="text" name="text"> and <input type="text" name="text"> life. There will be challenges but I will do my best to <input type="text" name="text">.</p>
@@ -125,15 +183,14 @@
 
 
     <main class="hidden completed-sop">
-        <section class="purpose">
-            <section class="completed-sop">
-                <h2>Purpose</h2>
-                <p>I will live with integrity and encourage those around me.</p>
-            </section>
+        <section class="media purpose">
+            <h2>Purpose</h2>
+            <p>I will live with integrity and encourage those around me.</p>
+            <h4>Created by <i>Kimberly Raelene Kearney</i></h4>
         </section>
 
 
-        <section class="values">
+        <section class="media values">
             <h2>Values</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
@@ -145,7 +202,7 @@
         </section>
 
 
-        <section class="beliefs">
+        <section class="media beliefs">
             <h2>Beliefs</h2>
             <ul>
                 <li><strong>I</strong> believe I can do anything I set my mind to</li>
@@ -154,7 +211,7 @@
             </ul>
         </section>
 
-        <section class="goals">
+        <section class="media goals">
             <h2>Goals</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
@@ -166,8 +223,24 @@
         </section>
     </main>
 
+    <main>
+        <section class="image save-sop-image"></section>
+        <section class="media save-sop">
+            <h2>Create an account to save your Statement of Purpose</h2>
+            <label for="name">Name:
+                <input type="text" name="text">
+            </label>
+            <br>
+            <label for="name">Create password:
+                <input type="text" name="text">
+            </label>
+            <br>
+            <button class="save-button">Save Statement of Purpose</button>
+        </section>
+    </main>
+
     <footer role="content-info">
-        <p>© Kimberly Rae</p>
+        <p>© Kimberly Kearney</p>
         <p>
             <a href="https://www.linkedin.com/in/kimberly-kearney" target="_blank">LinkedIn</a> |
             <a href="https://github.com/kimcheru18/world-religions-quiz" target="_blank">Github</a>

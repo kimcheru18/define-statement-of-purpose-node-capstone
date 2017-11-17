@@ -63,7 +63,7 @@ General styles (General Module, wrapping around the modules below)
 
 body {
     text-align: center;
-    margin: .25%;
+    font-size: 15px;
 }
 
 h1 {
@@ -80,10 +80,12 @@ h2 {
 h3 {
     font-size: 1.25rem;
     text-align: left;
-    /*    padding: 0 6rem;*/
 }
 
-
+h4 {
+    font-size: 1rem;
+    padding-top: 1rem;
+}
 
 /* -------------------------------------
 Header styles (Main Module)
@@ -100,7 +102,10 @@ header {
 }
 
 header {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAWNBibXRfC-Y7kLBuT7UqH-uXkbRkGYkoFA7pc9W70MgQpLgsjg");
+    background-image: url("/images/header.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
 
 nav ul li {
@@ -120,6 +125,36 @@ nav a:hover {
     font-weight: bold;
 }
 
+.sign-in-sop {
+    display: inline-block;
+    border-top: .25rem solid white;
+    padding-bottom: .25rem;
+    color: rgb(241, 241, 241);
+}
+
+h5 {
+    font-size: 1.5rem;
+    display: inline-block;
+    padding-right: 2rem;
+}
+
+.sign-in {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+input {
+    border-radius: 5px;
+    padding: .4rem 1rem;
+    margin: .25rem 0;
+    height: 20px;
+    width: 100%;
+}
+
+ul {
+    list-style-position: inside;
+}
+
 /* -------------------------------------
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
@@ -129,12 +164,21 @@ main {
     width: 100%;
 }
 
-section {
-    padding: 2.5rem;
-    font-size: 1.25rem;
+section,
+div {
     color: rgb(241, 241, 241);
     text-align: left;
     font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    font-size: 1.25rem;
+    padding: 2.5rem;
+}
+
+div {
+    font-size: 2rem;
+    padding: 1rem;
 }
 
 .why-sop,
@@ -146,7 +190,8 @@ section {
 .questions,
 .review,
 .my-answers,
-.create {
+.create,
+.save-sop {
     background-color: rgb(14, 136, 136);
     margin-top: .25rem;
 }
@@ -155,46 +200,62 @@ strong {
     font-size: 2rem;
 }
 
-.sop-description-image,
-.get-started-image,
-.questions-image,
-.create-sop-image {
+.image {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .get-started-page,
-.completed-sop {
+.completed-sop,
+.sign-in-sop {
     background-color: rgb(86, 139, 86);
 }
 
 .sop-description-image {
-    background-image: url("http://www.pptback.com/backgrounds/blurry-dots-golden-backgrounds-powerpoint.jpg");
-    border-right: .25rem solid white;
+    background-image: url("/images/description-info.jpg");
 }
 
 .get-started-image {
-    background-image: url("https://static.pexels.com/photos/132201/pexels-photo-132201.jpeg");
+    background-image: url("/images/get-started.jpeg");
     margin-left: .25rem;
     margin-top: .25rem;
 }
 
-
 .questions-image {
-    background-image: url("https://c1.staticflickr.com/3/2724/5709282796_9292d519c1_b.jpg");
+    background-image: url("/images/questions.jpg");
+    border-right: .25rem solid white;
+    border-bottom: .25rem solid white;
+}
+
+.answers-image {
+    background-image: url("/images/answers-image.jpg");
+    margin-top: .25rem;
+    margin-right: .25rem;
+}
+
+.answers-two-image {
+    background-image: url("/images/answers-two.jpeg");
+    margin-top: .25rem;
 }
 
 .create-sop-image {
-    background-image: url("https://static.pexels.com/photos/355302/pexels-photo-355302.jpeg");
-    border-right: .25rem solid white;
+    background-image: url("/images/create-sop.jpeg");
+    border-bottom: .25rem solid white;
 
 }
 
-.review-answers,
-.create-sop,
+.save-sop-image {
+    background-image: url("/images/save-sop-image.jpg");
+}
+
 .purpose,
 .values,
-.beliefs {
+.beliefs,
+.sop-description-image,
+.my-answers,
+.create-sop-image,
+.save-sop-image {
     border-right: .25rem solid white;
 }
 
@@ -202,15 +263,25 @@ strong {
 .purpose,
 .values,
 .beliefs,
-.goals {
+.goals,
+.save-sop-image {
     border-top: .25rem solid white;
-
 }
 
-.start-button {
+.start-button,
+.save-button {
     padding: .25rem .5rem;
     margin-top: 1.5rem;
     font-family: 'Open Sans', sans-serif;
+    text-shadow: .25px .25px grey;
+}
+
+.start-button {
+    color: rgb(14, 136, 136);
+}
+
+.save-button {
+    color: rgb(86, 139, 86);
 }
 
 /**************JavaScript CSS*************/
@@ -218,7 +289,6 @@ strong {
 .hidden {
     /*    display: none;*/
 }
-
 
 
 
@@ -261,10 +331,24 @@ place all the mobile tables styles below this line
 */
 
 @media only screen and (max-width: 640px) {
-    h1 {
-        font-size: 0;
-        margin: 0;
-        padding: 0;
+    body,
+    main,
+    section {
+        border-right: 0;
+    }
+
+    h2,
+    div {
+        font-size: 1.25rem;
+    }
+
+    body,
+    main,
+    section,
+    h3,
+    h4,
+    input {
+        font-size: 1rem;
     }
 
     nav {
@@ -279,18 +363,20 @@ place all the mobile tables styles below this line
     }
 
     .image {
-        /*
-        margin-top: 0;margin-left: 0;
-margin-right: 0;
-*/
-        border-right: 0;
+        border-right: 0
+    }
+
+    .sop-description-image {
+        border-bottom: .25rem solid white;
+    }
+
+    .get-started-image {
+        margin-left: 0;
     }
 
     .why-sop,
     .assignment,
-    .guided,
     .review-answers,
-    .create-sop,
     .purpose,
     .values,
     .beliefs {
