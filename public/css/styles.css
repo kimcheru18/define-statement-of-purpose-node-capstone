@@ -67,24 +67,37 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
     padding: 2rem 0;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+}
+
+h2 {
     padding-bottom: 1rem;
 }
 
+h3,
+h5 {
+    font-size: 1.25rem;
+}
 
 h3 {
-    font-size: 1.25rem;
     text-align: left;
 }
 
 h4 {
     font-size: 1rem;
     padding-top: 1rem;
+}
+
+h5 {
+    display: inline-block;
+    font-size: 1.25rem;
+    margin-top: .2rem;
+    margin-left: .5rem;
 }
 
 /* -------------------------------------
@@ -127,28 +140,39 @@ nav a:hover {
 
 .sign-in-sop {
     display: inline-block;
-    border-top: .25rem solid white;
     padding-bottom: .25rem;
     color: rgb(241, 241, 241);
 }
 
-h5 {
-    font-size: 1.5rem;
-    display: inline-block;
-    padding-right: 2rem;
+.create-account {
+    color: #9dcde8;
+    text-decoration: none;
+}
+
+.create-account:hover {
+    color: white;
 }
 
 .sign-in {
     display: inline-block;
     font-size: 1rem;
+    padding-left: 1rem;
 }
 
-input {
+input,
+textarea {
     border-radius: 5px;
-    padding: .4rem 1rem;
+    padding: 0 1rem;
     margin: .25rem 0;
-    height: 20px;
-    width: 100%;
+}
+
+textarea {
+    width: 70%;
+}
+
+.answer input {
+    width: 80%;
+    margin-bottom: 1rem;
 }
 
 ul {
@@ -162,13 +186,25 @@ Content styles (Main Module)
 
 main {
     width: 100%;
+    margin: .15rem 0;
 }
 
 section,
 div {
     color: rgb(241, 241, 241);
+}
+
+.sign-in input,
+section,
+div {
     text-align: left;
     font-family: 'Open Sans', sans-serif;
+}
+
+input,
+textarea {
+    font-family: 'Bad Script', cursive;
+    letter-spacing: 2px;
 }
 
 section {
@@ -176,28 +212,55 @@ section {
     padding: 2.5rem;
 }
 
-div {
-    font-size: 2rem;
-    padding: 1rem;
-}
-
-.why-sop,
-.assignment {
-    border-right: .25rem solid white;
-}
-
 .sop-description-info,
 .questions,
 .review,
 .my-answers,
 .create,
-.save-sop {
+.save-sop,
+.values-beliefs-goals {
     background-color: rgb(14, 136, 136);
-    margin-top: .25rem;
 }
 
 strong {
     font-size: 2rem;
+}
+
+.get-started-page,
+.purpose,
+.sign-in-sop {
+    background-color: rgb(86, 139, 86);
+}
+
+.start-button {
+    padding: .25rem .5rem;
+    margin-top: 1.5rem;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: .25px .25px grey;
+    color: rgb(14, 136, 136);
+}
+
+.create-sop {
+    text-align: center;
+}
+
+.textarea {
+    text-align: left;
+}
+
+.values-beliefs-goals h2 {
+    text-align: center;
+}
+
+.purpose,
+.values ul,
+.goals ul {
+    padding-left: 3rem;
+}
+
+.beliefs ul {
+    padding-left: 3rem;
+    padding-right: 2rem;
 }
 
 .image {
@@ -206,32 +269,20 @@ strong {
     background-position: center;
 }
 
-.get-started-page,
-.completed-sop,
-.sign-in-sop {
-    background-color: rgb(86, 139, 86);
-}
-
 .sop-description-image {
     background-image: url("/images/description-info.jpg");
 }
 
 .get-started-image {
     background-image: url("/images/get-started.jpeg");
-    margin-left: .25rem;
-    margin-top: .25rem;
 }
 
 .questions-image {
     background-image: url("/images/questions.jpg");
-    border-right: .25rem solid white;
-    border-bottom: .25rem solid white;
 }
 
 .answers-image {
     background-image: url("/images/answers-image.jpg");
-    margin-top: .25rem;
-    margin-right: .25rem;
 }
 
 .answers-two-image {
@@ -241,53 +292,11 @@ strong {
 
 .create-sop-image {
     background-image: url("/images/create-sop.jpeg");
-    border-bottom: .25rem solid white;
 
 }
 
-.save-sop-image {
-    background-image: url("/images/save-sop-image.jpg");
-}
-
-.purpose,
-.values,
-.beliefs,
-.sop-description-image,
-.my-answers,
-.create-sop-image,
-.save-sop-image {
-    border-right: .25rem solid white;
-}
-
-.get-started-page,
-.purpose,
-.values,
-.beliefs,
-.goals,
-.save-sop-image {
-    border-top: .25rem solid white;
-}
-
-.start-button,
-.save-button {
-    padding: .25rem .5rem;
-    margin-top: 1.5rem;
-    font-family: 'Open Sans', sans-serif;
-    text-shadow: .25px .25px grey;
-}
-
-.start-button {
-    color: rgb(14, 136, 136);
-}
-
-.save-button {
-    color: rgb(86, 139, 86);
-}
-
-/**************JavaScript CSS*************/
-
-.hidden {
-    /*    display: none;*/
+.completed-sop-image {
+    background-image: url("/images/completed-sop-image.jpg");
 }
 
 
@@ -305,7 +314,6 @@ footer {
     background-color: rgb(42, 87, 113);
     font-size: 2rem;
     text-align: center;
-    margin-top: .25rem;
 }
 
 footer p {
@@ -330,12 +338,7 @@ Responsive styles
 place all the mobile tables styles below this line
 */
 
-@media only screen and (max-width: 640px) {
-    body,
-    main,
-    section {
-        border-right: 0;
-    }
+@media only screen and (max-width: 800px) {
 
     h2,
     div {
@@ -355,31 +358,10 @@ place all the mobile tables styles below this line
         padding-bottom: 1rem;
     }
 
-    #sop-nav,
+    .sign-in-sop,
     nav ul li {
         display: block;
         width: 100%;
         margin: .5rem auto;
-    }
-
-    .image {
-        border-right: 0
-    }
-
-    .sop-description-image {
-        border-bottom: .25rem solid white;
-    }
-
-    .get-started-image {
-        margin-left: 0;
-    }
-
-    .why-sop,
-    .assignment,
-    .review-answers,
-    .purpose,
-    .values,
-    .beliefs {
-        border-right: 0;
     }
 }

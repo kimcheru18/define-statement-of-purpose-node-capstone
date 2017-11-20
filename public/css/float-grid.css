@@ -4,10 +4,6 @@ main {
     display: inline-flex;
 }
 
-main {
-    justify-content: center;
-    display: flex;
-}
 
 .header,
 .get-started-page,
@@ -38,18 +34,28 @@ main {
     width: 40%;
 }
 
-.answers-image,
-.purpose,
-.values,
-.beliefs,
-.goals {
+
+.answers-image {
     width: 25%;
 }
 
 
+.completed-sop-image {
+    width: 40%;
+}
+
+.values,
+.beliefs,
+.goals {
+    width: 33%;
+}
+
+
+/*
 .my-answers {
     width: 80%;
 }
+*/
 
 .create-sop,
 .template-sop {
@@ -60,8 +66,8 @@ main {
     width: 65%;
 }
 
-.questions-wrapper,
-.save-sop-image {
+.purpose,
+.questions-wrapper {
     width: 60%;
 }
 

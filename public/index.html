@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" href="/css/float-grid.css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
 
 
 </head>
@@ -31,6 +32,11 @@
         <h5>Sign-in:</h5>
         <label class="sign-in" for="sign-in">username: <input type="text" name="text"></label>
         <label class="sign-in" for="sign-in">password: <input type="text" name="text"></label>
+        <h5>
+            <a href="#" class="create-account">
+                <h5>Create Account</h5>
+            </a>
+        </h5>
     </main>
 
 
@@ -89,31 +95,31 @@
         </section>
         <section class="media questions-wrapper">
             <div class="instructions">
-                <p>You can give several answers for each question. Separate each answer with a comma.</p>
+                <h2>You can give several answers for each question. Separate each answer with a comma.</h2>
             </div>
             <div class="questions">
-                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer"><input type="text" name="text"></h3>
             </div>
 
             <!--        dummy questions**********-->
             <div class="questions">
-                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer"><input type="text" name="text"></h3>
             </div>
 
             <div class="questions">
-                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer"><input type="text" name="text"></h3>
             </div>
 
             <div class="questions">
-                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer"><input type="text" name="text"></h3>
             </div>
 
             <div class="questions">
-                <h2>What do I want to have accomplished in my lifetime for myself and for others?</h2>
+                <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer"><input type="text" name="text"></h3>
             </div>
         </section>
@@ -133,39 +139,41 @@
     </main>
 
 
-    <main>
-        <section class="image answers-image"></section>
+    <!--
+<main>
+    <section class="image answers-image"></section>
 
-        <section class="media my-answers">
-            <h2>My Answers</h2>
-            <div>
-                <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
-                <br>
-                <h3 class="answer">answers</h3>
-            </div>
+    <section class="media my-answers">
+        <h2>My Answers</h2>
+        <div>
+            <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
+            <br>
+            <h3 class="answer">answers</h3>
+        </div>
 
-            <div>
-                <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
-                <br>
-                <h3 class="answer">answers</h3>
-            </div>
+        <div>
+            <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
+            <br>
+            <h3 class="answer">answers</h3>
+        </div>
 
-            <div>
-                <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
-                <br>
-                <h3 class="answer">answers</h3>
-            </div>
-        </section>
+        <div>
+            <h2 class="question">What do I want to have accomplished in my lifetime for myself and for others?</h2>
+            <br>
+            <h3 class="answer">answers</h3>
+        </div>
+    </section>
 
-        <section class="image answers-two-image"></section>
-    </main>
+    <section class="image answers-two-image"></section>
+</main>
+-->
 
 
-    <main class="hidden create">
+    <main class="create">
         <section class="image create-sop-image"></section>
         <section class="media create-sop">
             <h2>Create your Statement of Purpose</h2>
-            <input type="text" name="text" required>
+            <textarea name="create-sop" id="" cols="30" rows="10"></textarea>
         </section>
 
         <section class="media template-sop">
@@ -182,14 +190,18 @@
     </main>
 
 
-    <main class="hidden completed-sop">
+    <main class="completed-sop">
         <section class="media purpose">
             <h2>Purpose</h2>
             <p>I will live with integrity and encourage those around me.</p>
             <h4>Created by <i>Kimberly Raelene Kearney</i></h4>
         </section>
 
+        <section class="image completed-sop-image"></section>
+    </main>
 
+
+    <main class="values-beliefs-goals">
         <section class="media values">
             <h2>Values</h2>
             <ul>
@@ -204,11 +216,13 @@
 
         <section class="media beliefs">
             <h2>Beliefs</h2>
-            <ul>
-                <li><strong>I</strong> believe I can do anything I set my mind to</li>
-                <li><strong>I</strong> believe I can have differing views from others but remain connected to them</li>
-                <li><strong>I</strong> believe treating others well will make me a more fulfilled person</li>
-            </ul>
+            <div class="vbg">
+                <ul>
+                    <li><strong>I</strong> believe I can do anything I set my mind to</li>
+                    <li><strong>I</strong> believe I can have differing views from others but remain connected to them</li>
+                    <li><strong>I</strong> believe treating others well will make me a more fulfilled person</li>
+                </ul>
+            </div>
         </section>
 
         <section class="media goals">
@@ -223,21 +237,6 @@
         </section>
     </main>
 
-    <main>
-        <section class="image save-sop-image"></section>
-        <section class="media save-sop">
-            <h2>Create an account to save your Statement of Purpose</h2>
-            <label for="name">Name:
-                <input type="text" name="text">
-            </label>
-            <br>
-            <label for="name">Create password:
-                <input type="text" name="text">
-            </label>
-            <br>
-            <button class="save-button">Save Statement of Purpose</button>
-        </section>
-    </main>
 
     <footer role="content-info">
         <p>© Kimberly Kearney</p>
