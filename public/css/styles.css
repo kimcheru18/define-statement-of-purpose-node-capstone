@@ -159,17 +159,6 @@ nav a:hover {
     padding-left: 1rem;
 }
 
-input,
-textarea {
-    border-radius: 5px;
-    padding: 0 1rem;
-    margin: .25rem 0;
-}
-
-textarea {
-    width: 70%;
-}
-
 .answer input {
     width: 80%;
     margin-bottom: 1rem;
@@ -205,6 +194,13 @@ input,
 textarea {
     font-family: 'Bad Script', cursive;
     letter-spacing: 2px;
+    border-radius: 5px;
+    padding: 0 1rem;
+    margin: .25rem 0;
+}
+
+textarea {
+    width: 80%;
 }
 
 section {
@@ -342,9 +338,10 @@ place all the mobile tables styles below this line
 
     h2,
     div {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
     }
 
+    .beliefs ul,
     body,
     main,
     section,
