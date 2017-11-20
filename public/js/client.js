@@ -1,16 +1,18 @@
-'use strict';
+// step 1. Defining global variables
 
-//1. User selects 'Let's begin'
-//2. User enters answer in answer field
-//3. User clicks 'Next'
-//4. From second question on, user has the option to click 'Back' or 'Next'
-//5.
+//1. User loads page
+//2. User has option to sign in, create new account or continue to create SOP
+//3. User selects 'Let's begin'
+//4. User enters answer in answer field
+//5. User clicks 'Next'???? Maybe have all qestions visible at same time
+//6. Once user has answered all questions, they have the option to create SOP free-style or use template
+//7. If using template, user can alter text when finished filling in blank fields
+//8.
 
 var questionsArray = [
     //Question 1
         {
-            questionText: 'What do I want to have accomplished for myself and for others by the end of my life?',
-            questionChoices: questionCorrectChoice: correctDetails:
+            questionText: 'What do I want to have accomplished for myself and for others by the end of my life?'
     },
 
     //Question 2
@@ -21,7 +23,7 @@ var questionsArray = [
 
     //Question 3
         {
-            questionText: 'Who do I value?',
+            questionText: 'Who are the people that I value most?',
             questionChoices: questionCorrectChoice: correctDetails:
     },
 
@@ -44,67 +46,17 @@ var questionsArray = [
     },
 
 
-    var currentQuestionNumber = 0;
-    var totalNumberOfQuestions = quesstionsArray.length;
-
-//    Step 2. defining functions
-
-//    display description info (Your assignment, why create a SOP) along with "Let's get started"
-    function displayDescription() {
-
-    }
 
 
-//    display main screen only (header, nav, why-sop, let's begin)
+    // step 2. dynamically created layout to display home screen
 
 
-// listen for when user clicks 'let's begin' button, then display questions
+    //step 3. dynamically created layout to display questions
+
+
+
+    //step 4. dynamically created layout to display SOP create options (free-style or template)
 
 
 
 
-    // display question text
-    function displayQuestionSingle() {
-            $('.question').text(questionsArray[currentQuestionNumber].questionText);
-    }
-    // 1. user types answer in input field
-    // 2. on 'click' user submits answer
-    // 3. next question appears (repeat 1 and 2)
-
-
-    // display question text that requires multiple answers
-    function displayQuestionMulti() {
-            $('.values-beliefs').text(questionsArray[currentQuestionNumber].questionText);
-    }
-
-    //display "Review Your Answers" text
-
-    //display questions with users answers
-
-    //display option to "Create SOP" free-style or use Template
-
-    //display SOP, My Values, My Beliefs, My Goals
-
-    //always display navigation bar
-
-    //clicking on links will display links to other web pages with more information
-
-// Step 3. Using functions
-$(document).ready(function () {
-
-            //on page load, hide questions, completed-questions, create-sop, completed-sop-vbg, keep intro section only
-            $('.questions').hide();
-            $('.completed-questions').hide();
-            $('.create-sop').hide();
-            $('.completed-sop-vbg').hide();
-            //start button trigger (onClick) in order to hide the intro container and display the question container
-            $('.start-button').click(function () {
-                $('.welcome-page').hide();
-                $('.description-info').hide();
-                $('.questions').show();
-                $('.completed-questions').hide();
-                $('.create-sop').hide();
-                $('.completed-sop-vbg').hide();
-                displayQuestionSingle();
-            });
-        });

@@ -95,7 +95,6 @@ h4 {
 
 h5 {
     display: inline-block;
-    font-size: 1.25rem;
     margin-top: .2rem;
     margin-left: .5rem;
 }
@@ -160,8 +159,10 @@ nav a:hover {
 }
 
 .answer input {
+    /*
     width: 80%;
     margin-bottom: 1rem;
+*/
 }
 
 ul {
@@ -183,6 +184,11 @@ div {
     color: rgb(241, 241, 241);
 }
 
+section {
+    font-size: 1.25rem;
+    padding: 2.5rem;
+}
+
 .sign-in input,
 section,
 div {
@@ -199,22 +205,21 @@ textarea {
     margin: .25rem 0;
 }
 
-textarea {
-    width: 80%;
+.vb-questions-margin {
+    margin-top: 1rem;
 }
 
-section {
-    font-size: 1.25rem;
-    padding: 2.5rem;
+.answer {
+    margin-bottom: 1rem;
 }
 
 .sop-description-info,
 .questions,
 .review,
-.my-answers,
 .create,
+.create-with-template,
 .save-sop,
-.values-beliefs-goals {
+.create-goals {
     background-color: rgb(14, 136, 136);
 }
 
@@ -224,11 +229,13 @@ strong {
 
 .get-started-page,
 .purpose,
-.sign-in-sop {
+.sign-in-sop,
+.values-beliefs-goals {
     background-color: rgb(86, 139, 86);
 }
 
-.start-button {
+.start-button,
+.save-button {
     padding: .25rem .5rem;
     margin-top: 1.5rem;
     font-family: 'Open Sans', sans-serif;
@@ -240,8 +247,19 @@ strong {
     text-align: center;
 }
 
-.textarea {
-    text-align: left;
+textarea {
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.14rem;
+}
+
+.answer-text {
+    height: 100px;
+}
+
+.save-button {
+    display: block;
+    text-align: center;
 }
 
 .values-beliefs-goals h2 {
@@ -295,6 +313,9 @@ strong {
     background-image: url("/images/completed-sop-image.jpg");
 }
 
+.create-goals-image {
+    background-image: url("/images/create-goals-image.jpg");
+}
 
 
 /* -------------------------------------
