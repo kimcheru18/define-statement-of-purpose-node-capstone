@@ -1,13 +1,18 @@
 // step 1. Defining global variables
 
 //1. User loads page
+//  a. nav options
+//        -Reflect takes user to existing SOP, Values, Beliefs and Goals
+//        -Create takes user to edit page for SOP
+//        -Review takes user to questions that they answered where they can edit answers including values and beliefs
 //2. User has option to sign in, create new account or continue to create SOP
-//3. User selects 'Let's begin'
-//4. User enters answer in answer field
-//5. User clicks 'Next'???? Maybe have all qestions visible at same time
+//3. User selects 'Let's get started'
+//4. User enters answer in answer fields
+//5. User clicks Save and Contiue.
 //6. Once user has answered all questions, they have the option to create SOP free-style or use template
 //7. If using template, user can alter text when finished filling in blank fields
-//8.
+//8. User clicks Save once finished writing SOP
+
 
 var questionsArray = [
     //Question 1
@@ -56,7 +61,3 @@ var questionsArray = [
 
 
     //step 4. dynamically created layout to display SOP create options (free-style or template)
-
-
-
-

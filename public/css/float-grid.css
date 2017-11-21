@@ -13,14 +13,16 @@ main {
     width: 100%;
 }
 
-.sop-description-image {
+.sop-description-image,
+.create-sop-image {
     width: 20%;
 }
 
 .why-sop,
 .assignment,
 .guided,
-.get-started-image {
+.get-started-image,
+.questions-review {
     width: 30%;
 }
 
@@ -30,8 +32,7 @@ main {
 }
 
 .questions-image,
-.save-sop,
-.create-sop-image {
+.save-sop {
     width: 40%;
 }
 
@@ -39,7 +40,6 @@ main {
 .answers-image {
     width: 25%;
 }
-
 
 .completed-sop-image {
     width: 40%;
@@ -78,7 +78,8 @@ main {
     .create,
     .create-sop-image,
     .create-sop,
-    .template-sop {
+    .template-sop,
+    .questions-review {
         display: block;
         width: 100%;
     }
@@ -117,5 +118,3 @@ main {
     }
 
 }
-
-
