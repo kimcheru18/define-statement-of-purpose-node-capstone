@@ -8,7 +8,8 @@ main {
 .header,
 .get-started-page,
 .review-answers,
-.save-sop {
+.save-sop,
+.create-goals {
     width: 100%;
 }
 
@@ -52,6 +53,7 @@ main {
 
 .create-sop,
 .template-sop,
+.list-goals,
 .create-goals-image {
     width: 50%;
 }
@@ -67,82 +69,53 @@ main {
 
 /*************media queries below*************/
 
-@media only screen and (max-width: 1500px) {
-/*
-    .create,.create-sop-image,
-.create-sop,
-.template-sop {
-    display: block;
-    width: 100%;
-*/
+@media only screen and (max-width: 1000px) {
+    .sop-description-info,
+    .sop-description-image,
+    .why-sop,
+    .assignment,
+    .guided,
+    .create,
+    .create-sop-image,
+    .create-sop,
+    .template-sop {
+        display: block;
+        width: 100%;
     }
 
-    @media only screen and (max-width: 1000px) {
-        .sop-description-info,
-        .sop-description-image,
-        .why-sop,
-        .assignment,
-        .guided,
-        .create,
-        .create-sop-image,
-        .create-sop,
-        .template-sop {
-            display: block;
-            width: 100%;
-        }
+    .values,
+    .beliefs {
+        padding-left: .25rem;
+    }
+    .beliefs {
+        padding-right: .25rem;
+    }
+    .goals {
+        padding-right: 1.5rem;
+    }
+}
 
-        .values,
-        .beliefs {
-            padding-left: .25rem;
-        }
-        .beliefs {
-            padding-right: .25rem;
-        }
-        .goals {
-            padding-right: 1.5rem;
-        }
+
+@media only screen and (max-width: 800px) {
+
+    body,
+    main,
+    section,
+    .questions-wrapper,
+    .image,
+    .purpose,
+    .list-goals,
+    .values,
+    .beliefs,
+    .goals {
+        display: block;
+        width: 100%;
     }
 
-
-    @media only screen and (max-width: 800px) {
-
-        body,
-        main,
-        .sop-description-image {
-            display: block;
-            width: 100%;
-        }
-
-        .wrapper {
-            display: block;
-        }
-
-        div {
-            padding: .75rem;
-        }
-
-        .media,
-        .image {
-            width: 100%;
-        }
-        .values,
-        .beliefs,
-        .goals {
-            padding: 1rem 7rem;
-        }
+    .wrapper {
+        display: block;
     }
 
-    @media only screen and (max-width: 600px) {
-        h1 {
-            font-size: 2rem;
-            padding: 1rem;
-        }
-        .sign-in {
-            padding-right: 2.1rem;
-        }
-        .values,
-        .beliefs,
-        .goals {
-            padding: 1rem 1rem;
-        }
-    }
+}
+
+

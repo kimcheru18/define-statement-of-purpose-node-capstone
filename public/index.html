@@ -3,46 +3,50 @@
 
 <head>
     <title>Statement of Purpose</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/float-grid.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="/css/float-grid.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 
 <body>
+
+
     <main>
         <header>
             <h1>Statement of Purpose</h1>
             <nav>
                 <ul class="nav-options">
-                    <li><a href="#">My SOP</a></li>
-                    <li><a href="#">Values, Beliefs, Goals</a></li>
-                    <li><a href="#">SOP Answers</a></li>
-                    <li><a href="#">Edit SOP</a></li>
+                    <li><a href="#">Reflect</a></li>
+                    <li><a href="#">Create</a></li>
+                    <li><a href="#">Review</a></li>
                 </ul>
 
             </nav>
         </header>
     </main>
 
+    <!--   user can sign-in or create a new account in order to save their SOP-->
     <main class="sign-in-sop">
-        <h5>Sign-in:</h5>
-        <label class="sign-in" for="sign-in">username: <input type="text" name="text"></label>
-        <label class="sign-in" for="sign-in">password: <input type="text" name="text"></label>
-        <h5>
-            <a href="#" class="create-account">
-                <h5>Create Account</h5>
-            </a>
-        </h5>
+        <section class="account-options">
+            <h5>Sign-in:</h5>
+            <label class="sign-in" for="sign-in"><h5>username:</h5> <input type="text" name="text"></label>
+            <label class="sign-in" for="sign-in"><h5>password:</h5> <input type="text" name="text"></label>
+            <h5>
+                <a href="#" class="create-account">
+                    <h5>Create Account</h5>
+                </a>
+            </h5>
+        </section>
     </main>
 
 
     <main role="main" class="sop-description-info">
         <section class="image sop-description-image">
         </section>
-        <section class="media why-sop">
+        <section class="why-sop">
             <h2>Why create a Statement of Purpose?</h2>
             <h2> It helps to...</h2>
             <p><strong>F</strong>ind your focus</p>
@@ -52,7 +56,7 @@
         </section>
 
 
-        <section class="media assignment">
+        <section class="assignment">
             <h2>Your assignment...</h2>
             <p>
                 Create a verbal representation of your purpose in life. It doesn't have to be lengthy. It will be something you want to review often.
@@ -64,37 +68,24 @@
         </section>
 
 
-        <section class="media guided">
+        <section class="guided">
             <h2>You will be guided through the following...</h2>
-            <p><strong>T</strong>hink through what is important to you</p>
-            <p><strong>D</strong>efining your values and beliefs</p>
-            <p><strong>C</strong>reating a Statement of Purpose</p>
-            <p><strong>S</strong>etting goals that are in line with your statement</p>
-        </section>
-    </main>
+            <p><strong>1 </strong>Think through what is important to you</p>
+            <p><strong>2 </strong>Define your values and beliefs</p>
+            <p><strong>3 </strong>Create a Statement of Purpose</p>
+            <p><strong>4 </strong>Set some goals that are in line with your statement</p>
 
-
-    <main class="get-started">
-        <section class="get-started-page">
-            <h2>To begin...</h2>
-            <p>
-                You will answer a few questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.
-            </p>
             <button class="start-button">Let's get started</button>
-
-        </section>
-        <section class="image get-started-image">
         </section>
     </main>
-
 
     <main class="questions">
         <section class="image questions-image">
         </section>
-        <section class="media questions-wrapper">
-            <div class="instructions">
-                <h2>You may have several answers for each question.</h2>
-            </div>
+        <section class="questions-wrapper">
+            <h2><strong>Step 1.</strong><br>Here are some questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.
+            </h2>
+
             <div class="questions">
                 <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <textarea name="create-sop" class="answer-text" cols="30" rows="10"></textarea>
@@ -115,7 +106,7 @@
                 <textarea name="create-sop" class="answer-text" cols="30" rows="10"></textarea>
             </div>
 
-            <h2 class="vb-questions-margin">Separate each value and belief with a comma to create a list.</h2>
+            <h2 class="vb-questions-margin"><strong>Step 2.</strong><br> Separate each value and belief with a comma to create a list.</h2>
 
             <div class="questions">
                 <h3>What are my core values?</h3>
@@ -125,16 +116,14 @@
                 <h3>What are my beliefs?</h3>
                 <textarea name="create-sop" class="answer-text" cols="30" rows="10"></textarea>
             </div>
+            <button class="save-sop-button">Save and continue</button>
         </section>
-        <!--       end dummy questions**********-->
-
-
     </main>
 
 
     <main class="review">
-        <section class="media review-answers">
-            <h2>Review Your Answers</h2>
+        <section class="review-answers">
+            <h2><strong>Step 3.</strong><br>Review Your Answers and create your Statement of Purpose</h2>
             <p>As you think about your answers, pick 3-4 main themes or ideas over all. Then begin to craft your Statment of Purpose. You can combine several ideas into one sentence if you would like.</p>
             <br>
             <p>
@@ -142,14 +131,18 @@
             </p>
             <br>
             <p>Once you are finished, write or print it out your Statement of Purpose and place it where you can see it everyday. Your values and beliefs will be listed below. If desired, you can make a list of goals that are in line with your SOP. It will also be displayed below.</p>
+            <button class="create-sop-button">Create free-style</button>
+            <button class="use-template-button">Create with template</button>
         </section>
+
     </main>
 
 
 
     <main class="create">
         <section class="image create-sop-image"></section>
-        <section>
+        <section class="questions-review">
+            <h2>My Answers</h2>
             <div class="questions">
                 <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer">Answer</h3>
@@ -180,7 +173,7 @@
             </div>
         </section>
 
-        <section class="media create-sop">
+        <section class="create-sop">
             <h2>Create your Statement of Purpose</h2>
             <textarea name="create-sop" class="create-text" cols="30" rows="10"></textarea>
             <button class="save-button">Save</button>
@@ -189,7 +182,8 @@
 
 
     <main class="create-with-template">
-        <section>
+        <section class="questions-review">
+            <h2>My Answers</h2>
             <div class="questions">
                 <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
                 <h3 class="answer">Answer</h3>
@@ -219,7 +213,7 @@
                 <h3 class="answer">Answer</h3>
             </div>
         </section>
-        <section class="media template-sop">
+        <section class="template-sop">
             <h2>Template</h2>
 
             <p>
@@ -243,9 +237,21 @@
     </main>
 
 
+    <main class="create-goals">
+        <section class="list-goals">
+            <h2><strong>Step 3.</strong><br>Set some goals</h2>
+            <p>What are some things I would like to accomplish that are in line with my SOP. Separate each goal with a comma to create a list.</p>
+            <textarea name="create-goals" class="my-goals" cols="30" rows="10"></textarea>
+        </section>
+        <section class="image create-goals-image"></section>
+    </main>
+
+
+
 
     <main class="completed-sop">
-        <section class="media purpose">
+        <section class="image completed-sop-image"></section>
+        <section class="purpose">
             <h2>Statement of Purpose</h2>
             <p>It is my purpose to help my friends and family by developing my talents and contributing to others in a kind manner.</p><br>
             <p>I will make my world a better place by becoming the best version of myself, using my talents and encouraging others to follow their dreams</p><br>
@@ -253,22 +259,18 @@
             <p>I want to bring joy into the lives of those that I love.</p>
             <h4>Created by <i>Kimberly Kearney</i></h4>
         </section>
-
-        <section class="image completed-sop-image"></section>
-    </main>
-
-    <main class="create-goals">
-        <section class="image create-goals-image"></section>
-        <section class="list-goals">
-            <h2>My Goals</h2>
-            <p>Write out some goals you would like to accomplish that are in line with your SOP. Separate each goal with a comma to create a list.</p>
-            <textarea name="create-goals" class="my-goals" cols="30" rows="10"></textarea>
-        </section>
     </main>
 
 
     <main class="values-beliefs-goals">
-        <section class="media values">
+        <section class="values">
+
+            <form class="edit-values-form">
+                <input type="hidden" class="edit-values-input" value="Statement of Purpose">
+                <button type="submit" class="edit-values-button" value="">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+            </form>
             <h2>Values</h2>
             <ul>
                 <li><strong>T</strong>reating others with kindness</li>
@@ -279,7 +281,13 @@
             </ul>
         </section>
 
-        <section class="media beliefs">
+        <section class="beliefs">
+            <form class="edit-beliefs-form">
+                <input type="hidden" class="edit-beliefs-input" value="Statement of Purpose">
+                <button type="submit" class="edit-beliefs-button" value="">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+            </form>
             <h2>Beliefs</h2>
             <div class="vbg">
                 <ul>
@@ -290,15 +298,23 @@
             </div>
         </section>
 
-        <section class="media goals">
+        <section class="goals">
+            <form class="edit-goals-form">
+                <input type="hidden" class="edit-goals-input" value="Statement of Purpose">
+                <button type="submit" class="edit-goals-button" value="">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+            </form>
             <h2>Goals</h2>
-            <ul>
-                <li><strong>T</strong>reating others with kindness</li>
-                <li><strong>T</strong>aking care of my health</li>
-                <li><strong>H</strong>elping those in need</li>
-                <li><strong>S</strong>taying connected to friends</li>
-                <li><strong>M</strong>aintaining my individuality</li>
-            </ul>
+            <div class="goals-ul">
+                <ul>
+                    <li><strong>T</strong>reating others with kindness</li>
+                    <li><strong>T</strong>aking care of my health</li>
+                    <li><strong>H</strong>elping those in need</li>
+                    <li><strong>S</strong>taying connected to friends</li>
+                    <li><strong>M</strong>aintaining my individuality</li>
+                </ul>
+            </div>
         </section>
     </main>
 

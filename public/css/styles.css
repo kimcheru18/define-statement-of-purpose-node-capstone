@@ -63,19 +63,24 @@ General styles (General Module, wrapping around the modules below)
 
 body {
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
+    color: rgb(241, 241, 241);
 }
 
-h1 {
-    padding: 2rem 0;
+h2,
+p,
+ul {
+    text-align: left;
 }
 
-h2 {
+h1,
+h2,
+.account-options {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75rem;
 }
 
 h2 {
+    font-size: 1.75rem;
     padding-bottom: 1rem;
 }
 
@@ -99,21 +104,26 @@ h5 {
     margin-left: .5rem;
 }
 
+p {
+    font-size: 1.25rem;
+}
+
+ul {
+    list-style-position: inside;
+}
+
 /* -------------------------------------
 Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
 
-header {
-    font-family: 'Cormorant Garamond', serif;
-    width: 100%;
-    padding: 2rem 5rem 0;
-    font-size: 3rem;
-    color: rgb(241, 241, 241);
-    padding-bottom: 1rem;
+h1 {
+    font-size: 2.5rem;
+    padding: 2rem 0;
 }
 
 header {
+    width: 100%;
     background-image: url("/images/header.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -123,8 +133,8 @@ header {
 nav ul li {
     display: inline-block;
     width: 15%;
-    font-size: 1.5rem;
-    padding-top: 1.5rem
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 nav a {
@@ -152,21 +162,10 @@ nav a:hover {
     color: white;
 }
 
-.sign-in {
+.account-options {
     display: inline-block;
     font-size: 1rem;
     padding-left: 1rem;
-}
-
-.answer input {
-    /*
-    width: 80%;
-    margin-bottom: 1rem;
-*/
-}
-
-ul {
-    list-style-position: inside;
 }
 
 /* -------------------------------------
@@ -179,20 +178,26 @@ main {
     margin: .15rem 0;
 }
 
-section,
-div {
-    color: rgb(241, 241, 241);
-}
-
-section {
-    font-size: 1.25rem;
-    padding: 2.5rem;
+.why-sop,
+.assignment,
+.guided,
+.questions-wrapper,
+.review-answers,
+.questions-review,
+.create-sop,
+.template-sop,
+.list-goals,
+.purpose,
+.values,
+.beliefs,
+.goals {
+    padding: 2rem;
 }
 
 .sign-in input,
 section,
 div {
-    text-align: left;
+    /*    text-align: left;*/
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -219,7 +224,7 @@ textarea {
 .create,
 .create-with-template,
 .save-sop,
-.create-goals {
+.purpose {
     background-color: rgb(14, 136, 136);
 }
 
@@ -228,19 +233,23 @@ strong {
 }
 
 .get-started-page,
-.purpose,
 .sign-in-sop,
-.values-beliefs-goals {
+.values-beliefs-goals,
+.create-goals {
     background-color: rgb(86, 139, 86);
 }
 
-.start-button,
-.save-button {
+button {
     padding: .25rem .5rem;
     margin-top: 1.5rem;
     font-family: 'Open Sans', sans-serif;
     text-shadow: .25px .25px grey;
     color: rgb(14, 136, 136);
+}
+
+.create-sop-button,
+.use-template-button {
+    width: 225px;
 }
 
 .create-sop {
@@ -269,13 +278,32 @@ textarea {
 .purpose,
 .values ul,
 .goals ul {
-    padding-left: 3rem;
+    /*    padding-left: 3rem;*/
 }
 
 .beliefs ul {
     padding-left: 3rem;
     padding-right: 2rem;
 }
+
+.values,
+.beliefs,
+.goals {
+    position: relative;
+}
+
+.edit-goals-form,
+.edit-beliefs-form,
+.edit-values-form {
+    position: absolute;
+    border: 1px solid gray;
+    float: right;
+    top: 15px;
+    right: 60px;
+}
+
+
+/*******************all image styles apart from header*********************/
 
 .image {
     background-repeat: no-repeat;
@@ -299,23 +327,19 @@ textarea {
     background-image: url("/images/answers-image.jpg");
 }
 
-.answers-two-image {
-    background-image: url("/images/answers-two.jpeg");
-    margin-top: .25rem;
-}
-
 .create-sop-image {
     background-image: url("/images/create-sop.jpeg");
 
+}
+
+.create-goals-image {
+    background-image: url("/images/create-goals-image.jpg");
 }
 
 .completed-sop-image {
     background-image: url("/images/completed-sop-image.jpg");
 }
 
-.create-goals-image {
-    background-image: url("/images/create-goals-image.jpg");
-}
 
 
 /* -------------------------------------
@@ -376,10 +400,40 @@ place all the mobile tables styles below this line
         padding-bottom: 1rem;
     }
 
-    .sign-in-sop,
+    h5 {
+        text-align: center;
+    }
+
+    h5,
     nav ul li {
         display: block;
         width: 100%;
         margin: .5rem auto;
+    }
+
+    div {
+        padding: .75rem;
+    }
+
+    .values,
+    .beliefs,
+    .goals {
+        padding: 1rem 7rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    .values,
+    .beliefs,
+    .goals {
+        padding: 1rem 1rem;
     }
 }
