@@ -152,8 +152,8 @@ nav a:hover {
     font-weight: bold;
 }
 
-.sign-in-sop,
-.register-new-sop {
+#sign-in-sop,
+#register-new-sop {
     display: inline-block;
     color: rgb(241, 241, 241);
 }
@@ -229,11 +229,11 @@ textarea {
     margin-bottom: 1rem;
 }
 
-.sop-description-info,
-.questions,
-.review,
-.create,
-.create-with-template,
+#sop-description-info,
+#questions,
+#review,
+#create,
+#create-with-template,
 .save-sop,
 .purpose {
     background-color: rgb(14, 136, 136);
@@ -252,10 +252,10 @@ strong {
 }
 
 .get-started-page,
-.sign-in-sop,
-.register-new-sop,
-.create-goals,
-.values-beliefs-goals {
+#sign-in-sop,
+#register-new-sop,
+#create-goals,
+#values-beliefs-goals {
     background-color: rgb(86, 139, 86);
 }
 
@@ -276,12 +276,13 @@ button,
     width: 225px;
 }
 
-.register-button,
-.login-button {
+.register-button {
     margin-top: 0;
     width: 150px;
     padding-left: 1rem;
 }
+
+.login-button {}
 
 .create-sop {
     text-align: center;
@@ -301,11 +302,11 @@ input {
     width: 500px;
 }
 
-.values-beliefs-goals h2 {
+#values-beliefs-goals h2 {
     text-align: center;
 }
 
-.values-beliefs-goals {
+#values-beliefs-goals {
     padding: 1rem 10rem;
 }
 

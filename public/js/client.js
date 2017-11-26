@@ -16,48 +16,70 @@
 
 var questionsArray = [
     //Question 1
-        {
-            questionText: 'What do I want to have accomplished for myself and for others by the end of my life?'
+    {
+        questionText: 'What do I want to have accomplished for myself and for others by the end of my life?'
     },
 
     //Question 2
-        {
-            questionText: 'What strengths and talents do I posses?',
-            questionChoices: questionCorrectChoice: correctDetails:
+    {
+        questionText: 'What strengths and talents do I posses?',
+        questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 3
-        {
-            questionText: 'Who are the people that I value most?',
-            questionChoices: questionCorrectChoice: correctDetails:
+    {
+        questionText: 'Who are the people that I value most?',
+        questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 5
-        {
-            questionText: 'What are some ways I can enrich the lives of those that I love?',
-            questionChoices: questionCorrectChoice: correctDetails:
+    {
+        questionText: 'What are some ways I can enrich the lives of those that I love?',
+        questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 9
-        {
-            questionText: 'What are my core values?',
-            questionChoices: questionCorrectChoice: correctDetails:
+    {
+        questionText: 'What are my core values?',
+        questionChoices: questionCorrectChoice: correctDetails:
     },
 
     //Question 10
-        {
-            questionText: 'What are my beliefs?',
-            questionChoices: questionCorrectChoice: correctDetails:
+    {
+        questionText: 'What are my beliefs?',
+        questionChoices: questionCorrectChoice: correctDetails:
     },
 
 
+    // step 2. Defining functions
+
+    // step 3. dynamically created layout to display home screen
+
+    function displayLoginPage() {
+        $('.sign-in-sop')
+    }
 
 
-    // step 2. dynamically created layout to display home screen
+    //on page load, hide everything except header, sign-in page and footer
+
+$(document).ready(function () {
+
+            $('.sign-in-sop').show();
+            $('.register-new-sop').hide();
+            $('.sop-description-info').hide();
+            $('.questions').hide();
+            $('.create').hide();
+            $('.create-with-template').hide();
+            $('.create-goals').hide();
+            $('.completed-sop').hide();
+            $('.values-beliefs-goals').hide();
+
+        }
+        });
 
 
-    //step 3. dynamically created layout to display questions
+    //step 4. dynamically created layout to display questions
 
 
 
-    //step 4. dynamically created layout to display SOP create options (free-style or template)
+    //step 5. dynamically created layout to display SOP create options (free-style or template)

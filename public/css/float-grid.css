@@ -9,7 +9,7 @@ main {
 .get-started-page,
 .review-answers,
 .save-sop,
-.create-goals {
+#create-goals {
     width: 100%;
 }
 
@@ -75,7 +75,7 @@ main {
     .why-sop,
     .assignment,
     .guided,
-    .create,
+    #create,
     .create-sop-image,
     .create-sop,
     .template-sop,
