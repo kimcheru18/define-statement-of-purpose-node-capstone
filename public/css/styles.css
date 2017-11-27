@@ -65,9 +65,9 @@ body {
     text-align: center;
     font-size: 13px;
     color: rgb(241, 241, 241);
+    background-color: #d5dada;
 }
 
-h2,
 p,
 ul {
     text-align: left;
@@ -82,7 +82,7 @@ h2,
 
 h2 {
     font-size: 1.75rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 h3,
@@ -131,6 +131,10 @@ header {
     background-position: bottom;
 }
 
+nav {
+    padding-bottom: 1rem;
+}
+
 .nav-options {
     text-align: center;
 }
@@ -152,18 +156,22 @@ nav a:hover {
     font-weight: bold;
 }
 
-#sign-in-sop,
+#login-sop,
 #register-new-sop {
     display: inline-block;
     color: rgb(241, 241, 241);
 }
 
-.create-account {
+.login-account,
+.go-register-account,
+.register-account {
     color: #9dcde8;
     text-decoration: none;
 }
 
-.create-account:hover {
+.login-account:hover,
+.go-register-account:hover,
+.register-account:hover {
     color: white;
 }
 
@@ -190,11 +198,21 @@ main {
 .questions-wrapper,
 .review-answers,
 .questions-review,
-.create-sop,
 .template-sop,
-.list-goals,
 .purpose {
     padding: 2rem;
+}
+
+.create-sop {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5rem;
+    padding-right: 3rem;
+}
+
+.list-goals {
+    padding: 2rem 5rem;
 }
 
 section,
@@ -205,28 +223,21 @@ div {
 input,
 textarea,
 .purpose {
-    font-family: 'Bad Script', cursive;
+    /*    font-family: 'Bad Script', cursive;*/
+    font-family: 'Julee', cursive;
 }
 
 input,
 textarea {
     letter-spacing: 2px;
     border-radius: 5px;
-    padding: 0 1rem;
+    padding: .5rem .5rem;
     margin: .25rem 0;
 }
 
-.sign-in input,
+.login input,
 .register input {
     width: 150px;
-}
-
-.vb-questions-margin {
-    margin-top: 1rem;
-}
-
-.answer {
-    margin-bottom: 1rem;
 }
 
 #sop-description-info,
@@ -237,6 +248,22 @@ textarea {
 .save-sop,
 .purpose {
     background-color: rgb(14, 136, 136);
+}
+
+.get-started-page,
+#login-sop,
+#register-new-sop,
+#create-goals,
+#values-beliefs-goals {
+    background-color: rgb(86, 139, 86);
+}
+
+.value-belief-questions-margin {
+    margin-top: 1rem;
+}
+
+.answer {
+    margin-bottom: 1rem;
 }
 
 .purpose h2 {
@@ -251,16 +278,7 @@ strong {
     font-size: 2rem;
 }
 
-.get-started-page,
-#sign-in-sop,
-#register-new-sop,
-#create-goals,
-#values-beliefs-goals {
-    background-color: rgb(86, 139, 86);
-}
-
-button,
-.register-button {
+button {
     padding: .25rem .5rem;
     margin-top: 1.5rem;
     font-size: 1rem;
@@ -269,23 +287,12 @@ button,
     color: rgb(14, 136, 136);
 }
 
-.register-button,
 .create-sop-button,
 .use-template-button,
-.save-button {
+.save-create-button,
+.save-create-template-button,
+.save-goals-button {
     width: 225px;
-}
-
-.register-button {
-    margin-top: 0;
-    width: 150px;
-    padding-left: 1rem;
-}
-
-.login-button {}
-
-.create-sop {
-    text-align: center;
 }
 
 textarea {
@@ -298,7 +305,7 @@ textarea {
     height: 100px;
 }
 
-input {
+.input-sop {
     width: 500px;
 }
 
@@ -357,7 +364,7 @@ input {
 }
 
 .completed-sop-image {
-    background-image: url("/images/completed-sop-image.jpg");
+    background-image: url("/images/completed-sop-image.jpeg");
 }
 
 
@@ -400,6 +407,7 @@ place all the mobile tables styles below this line
 */
 
 @media only screen and (max-width: 1450px) {
+    .create-sop,
     .values-beliefs-goals {
         padding: 1rem 2rem;
     }
@@ -428,10 +436,6 @@ place all the mobile tables styles below this line
     h4,
     input {
         font-size: 1rem;
-    }
-
-    nav {
-        padding-bottom: 1rem;
     }
 
     h5 {
