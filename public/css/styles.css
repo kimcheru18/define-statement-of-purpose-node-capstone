@@ -289,8 +289,8 @@ button {
 
 .create-sop-button,
 .use-template-button,
-.save-create-button,
-.save-create-template-button,
+.save-completed-button,
+.save-completed-template-button,
 .save-goals-button {
     width: 225px;
 }
@@ -327,6 +327,17 @@ textarea {
 .beliefs {
     margin: 0 8rem;
 }
+
+.set-goals {
+    color: rgb(204, 197, 197);
+    text-decoration: none;
+}
+
+.set-goals:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 
 .edit-goals-form,
 .edit-beliefs-form,

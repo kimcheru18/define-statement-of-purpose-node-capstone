@@ -32,43 +32,49 @@
     <!--   user can sign-in or create a new account in order to save their SOP-->
     <!--    This is the sign-in/register page-->
     <main class="hide-everything" id="login-sop">
-        <!--        <section class="account-options">-->
         <form action="login" class="account-options">
-            <!--            <h5>Sign-in:</h5>-->
-            <label class="login" for="login"><h5>username:</h5> <input type="text" name="text"></label>
-            <label class="login" for="login"><h5>password:</h5> <input type="text" name="text"></label>
-            <!--            <button class="login-button">Login</button>-->
+            <label class="login" for="login">
+                <h5>username:</h5>
+                <input class="signin-username" type="text" name="text" required>
+            </label>
+            <label class="login" for="login">
+                <h5>password:</h5>
+                <input class="signin-password" type="text" name="text" required>
+            </label>
             <a href="#" class="login-account">
                 <h5>Login</h5>
             </a>
 
-            <h5>
-                <a href="#" class="go-register-account">
-                    <h5>Register</h5>
-                </a>
-            </h5>
+            <a href="#" class="go-register-account">
+                <h5>Register</h5>
+            </a>
         </form>
-        <!--        </section>-->
     </main>
 
 
-    <!--   new user can register here-->
+    <!--  ----------------new user can register here-----------------  -->
     <main class="hide-everything" id="register-new-sop">
-        <!--        <section class="register-sop">-->
-        <!--            <h5>Register:</h5>-->
         <form action="register" class="register-sop">
-            <label class="register" for="register"><h5>create username:</h5> <input type="text" name="text"></label>
-            <label class="register" for="register"><h5>create password:</h5> <input type="text" name="text"></label>
-            <label class="register" for="register"><h5>re-enter password:</h5> <input type="text" name="text"></label>
+            <label class="register" for="register">
+                <h5>create username:</h5>
+                <input class="register-username" type="text" name="text" required>
+            </label>
+            <label class="register" for="register">
+                <h5>create password:</h5>
+                <input class="register-password" type="text" name="text" required>
+            </label>
+            <label class="register" for="register">
+                <h5>re-enter password:</h5>
+                <input class="register-confirm-password" type="text" name="text" required>
+            </label>
             <a href="#" class="register-account">
                 <h5>Register</h5>
             </a>
         </form>
-        <!--        </section>-->
     </main>
 
 
-    <!--   This section explains what this site is about and gives brief instructions-->
+    <!--   ------------------------This section explains what this site is about and gives brief instructions------------------------  -->
     <main role="main" class="hide-everything" id="sop-description-info">
         <section class="image sop-description-image">
         </section>
@@ -167,7 +173,7 @@
     </main>
 
 
-    <!--User creates SOP using their own words-->
+    <!--  ------------------------User creates SOP using their own words------------------------  -->
     <main class="hide-everything" id="create">
         <section class="image create-sop-image"></section>
         <section class="questions-review">
@@ -205,11 +211,11 @@
         <section class="create-sop">
             <h2>Create your Statement of Purpose</h2>
             <textarea name="create-sop" class="create-text" cols="30" rows="10"></textarea>
-            <button class="save-create-button">Save</button>
+            <button class="save-completed-button">Save</button>
         </section>
     </main>
 
-    <!--User creates SOP using customizable template-->
+    <!--  ------------------------User creates SOP using customizable template------------------------  -->
     <main class="hide-everything" id="create-with-template">
         <section class="image create-sop-image"></section>
         <section class="questions-review">
@@ -259,15 +265,15 @@
 
             <p>I want to <input class="input-sop" type="text" name="text" placeholder="bring joy into the lives of those that I love">.
             </p>
-            <button class="save-create-template-button">Save</button>
+            <button class="save-completed-template-button">Save</button>
         </section>
     </main>
 
 
-    <!--   User creates goals that align with their SOP-->
+    <!-- ------------------------User creates goals that align with their SOP------------------------  -->
     <main class="hide-everything" id="create-goals">
         <section class="list-goals">
-            <h2><strong>Step 3.</strong><br>Set some goals</h2>
+            <h2><strong>Step 3.</strong><br>Set goals</h2>
             <p>What are some things I would like to accomplish that are in line with my SOP. Separate each goal with a comma to create a list.</p>
             <textarea name="create-goals" class="my-goals" cols="30" rows="10"></textarea>
             <button class="save-goals-button">Save</button>
@@ -276,7 +282,7 @@
     </main>
 
 
-    <!--Completed-sop is displayed for user to see-->
+    <!--  ------------------------Completed-sop is displayed for user to see------------------------  -->
     <main class="hide-everything" id="completed-sop">
         <section class="image completed-sop-image"></section>
         <section class="purpose">
@@ -295,7 +301,7 @@
         </section>
     </main>
 
-    <!--Values, beliefs and goals are displayed for user to see (values and beliefs are answered in the question section)-->
+    <!--Values, beliefs and goals are displayed for user to see (values and beliefs are listed in the question section)-->
     <main class="hide-everything" id="values-beliefs-goals">
         <section class="values">
 
@@ -339,7 +345,9 @@
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </button>
             </form>
-            <h2>Goals</h2>
+            <a href="#" class="set-goals">
+                <h2>Goals</h2>
+            </a>
             <div class="goals-ul">
                 <ul>
                     <li><strong>T</strong>reating others with kindness</li>

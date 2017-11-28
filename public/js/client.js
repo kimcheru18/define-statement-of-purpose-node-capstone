@@ -78,26 +78,55 @@ $(document).ready(function () {
         $('.hide-everything').hide();
         $('#completed-sop').show();
         $('#values-beliefs-goals').show();
-        //        $('.result-section').hide();
     });
 
     $('.nav-create').click(function () {
         $('.hide-everything').hide();
         $('#review').show();
-        //        $('.result-section').hide();
     });
 
     $('.nav-review').click(function () {
         $('.hide-everything').hide();
         $('#questions').show();
-        //        $('.result-section').hide();
     });
 
     $('.login-account').click(function () {
-        $('.hide-everything').hide();
-        //        $('#login-sop').show();
-        $('#sop-description-info').show();
-        //        $('.result-section').hide();
+
+        const inputUname = $('.signin-username').val();
+        const inputPw = $('.signin-password').val();
+
+        if ((!inputUname) || (inputUname.length < 1) || (inputUname.indexOf(' ') > 0)) {
+            alert('Please enter a valid username');
+        } else if ((!inputPw) || (inputPw.length < 1) || (inputPw.indexOf(' ') > 0)) {
+            alert('Invalid password');
+        } else {
+            const unamePwObject = {
+                username: inputUname,
+                password: inputPw
+            };
+            user = inputUname;
+            $.ajax({
+                    type: "POST",
+                    url: "/users/signin",
+                    dataType: 'json',
+                    data: JSON.stringify(unamePwObject),
+                    contentType: 'application/json'
+                })
+                .done(function (result) {
+                    // show the signout link in header as soon as user is signed in
+                    $('.hide-everything').hide();
+                    $('#sop-description-info').show();
+                })
+                .fail(function (jqXHR, error, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(error);
+                    console.log(errorThrown);
+                    alert('Invalid username and password combination. Pleae check your username and password and try again.');
+                });
+        };
+
+
+
 
     });
 
@@ -105,65 +134,101 @@ $(document).ready(function () {
         $('.hide-everything').hide();
         $('#register-new-sop').show();
         $('#sop-description-info').show();
-        //        $('.result-section').hide();
 
     });
 
     $('.register-account').click(function () {
-        $('.hide-everything').hide();
-        $('#sop-description-info').show();
-        //        $('.result-section').hide();
+
+
+        const uname = $('.register-username').val();
+        const pw = $('.register-password').val();
+        const confirmPw = $('.register-confirm-password').val();
+        if (uname == "") {
+            event.preventDefault();
+            alert('Please specify username');
+        } else if ((pw !== confirmPw) || (pw == "")) {
+            event.preventDefault();
+            alert('Passwords must match and not be empty!');
+        } else {
+            event.preventDefault();
+            const newUserObject = {
+                username: uname,
+                password: pw
+            };
+            // will assign a value to variable 'user' in signin step below
+            // AJAX call to send form data up to server/DB and create new user
+            $.ajax({
+                    type: 'POST',
+                    url: '/users/create',
+                    dataType: 'json',
+                    data: JSON.stringify(newUserObject),
+                    contentType: 'application/json'
+                })
+                .done(function (result) {
+                    event.preventDefault();
+                    //                    newUserToggle = true;
+                    alert('Thanks for signing up! You may now sign in with your username and password.');
+
+                    $('.hide-everything').hide();
+                    $('#sop-description-info').show();
+                    //                    showSignInPage();
+                })
+                .fail(function (jqXHR, error, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(error);
+                    console.log(errorThrown);
+                });
+        };
 
     });
 
     $('.start-button').click(function () {
         $('.hide-everything').hide();
         $('#questions').show();
-        //        $('.result-section').hide();
 
     });
+
+
 
     $('.save-answers-button').click(function () {
         $('.hide-everything').hide();
         $('#review').show();
-        //        $('.result-section').hide();
-
     });
 
     $('.create-sop-button').click(function () {
         $('.hide-everything').hide();
         $('#create').show();
-        //        $('.result-section').hide();
 
     });
 
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
         $('#create-with-template').show();
-        //        $('.result-section').hide();
 
     });
 
-    $('.save-create-button').click(function () {
+    $('.save-completed-button').click(function () {
         $('.hide-everything').hide();
-        $('#create-goals').show();
-        //        $('.result-section').hide();
+        $('#completed-sop').show();
+        $('#values-beliefs-goals').show();
 
     });
 
-    $('.save-create-template-button').click(function () {
+    $('.save-completed-template-button').click(function () {
+        $('.hide-everything').hide();
+        $('#completed-sop').show();
+        $('#values-beliefs-goals').show();
+    });
+
+    $('.set-goals').click(function () {
         $('.hide-everything').hide();
         $('#create-goals').show();
-        //        $('.result-section').hide();
-
     });
 
     $('.save-goals-button').click(function () {
         $('.hide-everything').hide();
         $('#completed-sop').show();
         $('#values-beliefs-goals').show();
-        //        $('.result-section').hide();
-
     });
 });
 //});
