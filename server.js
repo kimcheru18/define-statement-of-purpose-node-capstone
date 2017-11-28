@@ -1,6 +1,7 @@
 'use strict';
 
 const User = require('./models/user');
+const Statement = require('./models/statement');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -125,27 +126,36 @@ app.post('/users/signin', function (req, res) {
                     } else {
                         var logInTime = new Date();
                         console.log("User logged in: " + req.body.username + ' at ' + logInTime);
-                        return res.json(items);
+                        return res.json(req.body.username);
                     }
                 });
             };
         });
 });
 
+
+// -------------STATEMENT ENDPOINTS------------------------------------------------
+//*********************POST*************************
 app.post('/statement/create', (req, res) => {
-    let statement = req.body.statement;
-    statement = statement.trim();
+
     let user = req.body.user;
+    let body = req.body.body;
+    let values = req.body.values;
+    let beliefs = req.body.beliefs;
+    let goals = req.body.goals;
 
     Statement.create({
         user,
-        statement
+        body,
+        values,
+        beliefs,
+        goals
     }, (err, item) => {
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
             });
-            if(item) {
+            if (item) {
                 console.log(`Statement \`${statement}\` added.`);
                 return res.json(item);
             }
@@ -153,6 +163,59 @@ app.post('/statement/create', (req, res) => {
     });
 });
 
+
+//*********************PUT*************************
+app.put('/statement/:id', function (req, res) {
+    let updateSop = {};
+    let updateableFields = 'statement';
+    updateableFields.forEach(function (field) {
+        if (field in req.body) {
+            updateSop[field] = req.body[field];
+        }
+    });
+    Statement
+        .findByIdAndUpdate(req.params.id, {
+            $set: updateSop
+        }).exec().then(function (statement) {
+            return res.status(204).end();
+        }).catch(function (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+        });
+});
+
+//*********************GET*************************
+app.get('/statements/:id', function (req, res) {
+    Statement
+        .findById(req.params.id).exec().then(function (statement) {
+            return res.json(statement);
+        })
+        .catch(function (statements) {
+            console.error(err);
+            res.status(500).json({
+                message: 'Internal server error'
+            });
+        });
+});
+
+//*********************DELETE*************************
+app.delete('/statements/:id', function (req, res) {
+    Statement.findByIdAndRemove(req.params.id).exec().then(function (statement) {
+        return res.status(204).end();
+    }).catch(function (err) {
+        return res.status(500).json({
+            message: 'Internal Server Error'
+        });
+    });
+});
+
+//*********************MISC*************************
+app.use('*', (req, res) => {
+    res.status(404).json({
+        message: 'Not Found'
+    });
+});
 
 exports.app = app;
 exports.runServer = runServer;

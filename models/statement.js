@@ -4,10 +4,26 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const statementSchema = new mongoose.Schema({
-    statement: {
+    user: {
         type: String,
         required: false
     },
+    body: {
+        type: String,
+        required: false
+    },
+    values: {
+        type: String,
+        required: false
+    },
+    beliefs: {
+        type: String,
+        required: false
+    },
+    goals: {
+        type: String,
+        required: false
+    }
 });
 
 

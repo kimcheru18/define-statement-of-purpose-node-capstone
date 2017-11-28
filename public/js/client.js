@@ -12,49 +12,47 @@
 //6. Once user has answered all questions, they have the option to create SOP free-style or use template
 //7. If using template, user can alter text when finished filling in blank fields
 //8. User clicks Save once finished writing SOP
+var loggedInUser = "";
+var usersAnswers = [];
 
+var questionsArray = [
+    //Question 1
+    {
+        questionText: 'What do I want to have accomplished for myself and for others by the end of my life?',
+        Answer: ""
+    },
 
-//var questionsArray = [
-//    //Question 1
-//    {
-//        questionText: 'What do I want to have accomplished for myself and for others by the end of my life?'
-//    },
-//
-//    //Question 2
-//    {
-//        questionText: 'What strengths and talents do I posses?',
-//        Answer: ""
-//    },
-//
-//    //Question 3
-//    {
-//        questionText: 'Who are the people that I value most?',
-//        questionChoices: questionCorrectChoice: correctDetails:
-//    },
-//
-//    //Question 5
-//    {
-//        questionText: 'What are some ways I can enrich the lives of those that I love?',
-//        questionChoices: questionCorrectChoice: correctDetails:
-//    },
-//
-//    //Question 9
-//    {
-//        questionText: 'What are my core values?',
-//        questionChoices: questionCorrectChoice: correctDetails:
-//    },
-//
-//    //Question 10
-//    {
-//        questionText: 'What are my beliefs?',
-//        questionChoices: questionCorrectChoice: correctDetails:
-//    },
-//];
+    //Question 2
+    {
+        questionText: 'What strengths and talents do I posses?',
+        Answer: ""
+    },
 
-var userName = "";
-var userPassword = "";
-var userAnswer = "";
-var userGoals = "";
+    //Question 3
+    {
+        questionText: 'Who are the people that I value most?',
+        Answer: ""
+    },
+
+    //Question 5
+    {
+        questionText: 'What are some ways I can enrich the lives of those that I love?',
+        Answer: ""
+    },
+
+    //Question 9
+    {
+        questionText: 'What are my core values?',
+        Answer: ""
+    },
+
+    //Question 10
+    {
+        questionText: 'What are my beliefs?',
+        Answer: ""
+    },
+];
+
 
 
 
@@ -64,7 +62,6 @@ var userGoals = "";
 // step 3. dynamically created layout to display home screen
 
 
-//on page load, hide everything except header, sign-in page and footer
 
 
 
@@ -113,6 +110,8 @@ $(document).ready(function () {
                     contentType: 'application/json'
                 })
                 .done(function (result) {
+                    console.log(result);
+                    loggedInUser = result;
                     // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
@@ -183,23 +182,44 @@ $(document).ready(function () {
     });
 
     $('.start-button').click(function () {
+        console.log(loggedInUser);
+        $('.logged-in-username').val(loggedInUser);
         $('.hide-everything').hide();
         $('#questions').show();
-
     });
 
 
 
     $('.save-answers-button').click(function () {
-        $('.hide-everything').hide();
-        $('#review').show();
+        event.preventDefault();
+        let answer1 = $('.js-answer1').val();
+        let answer2 = $('.js-answer2').val();
+        let answer3 = $('.js-answer3').val();
+        let answer4 = $('.js-answer4').val();
+        let answer5 = $('.js-answer5').val();
+        let answer6 = $('.js-answer6').val();
+        let sopLoggedInUser = $('.logged-in-username').val();
+//        console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
+        if ((answer1 === "") && (answer2 === "") && (answer3 === "") && (answer4 === "") && (answer5 === "") && (answer6 === "")) {
+            alert("Please create your Statement of Purpose");
+            return;
+        } else {
+            usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
+            console.log(usersAnswers);
+
+            $('.hide-everything').hide();
+            $('#review').show();
+        }
+
     });
 
     $('.create-sop-button').click(function () {
         $('.hide-everything').hide();
         $('#create').show();
-
     });
+
+
+
 
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
@@ -207,7 +227,9 @@ $(document).ready(function () {
 
     });
 
+
     $('.save-completed-button').click(function () {
+
         $('.hide-everything').hide();
         $('#completed-sop').show();
         $('#values-beliefs-goals').show();
