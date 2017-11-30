@@ -92,6 +92,7 @@ h5 {
 
 h3 {
     text-align: left;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
@@ -203,6 +204,16 @@ main {
     padding: 2rem;
 }
 
+.get-started-instructions {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid white;
+    margin-bottom: 1rem;
+}
+
+.review-section {
+    text-indent: 3mm;
+}
+
 .create-sop {
     text-align: center;
     padding-top: 2rem;
@@ -222,8 +233,8 @@ div {
 
 input,
 textarea,
+.review-section,
 .purpose {
-    /*    font-family: 'Bad Script', cursive;*/
     font-family: 'Julee', cursive;
 }
 
@@ -299,6 +310,7 @@ textarea {
     width: 100%;
     padding: .5rem 1rem;
     font-size: 1.14rem;
+    margin-bottom: 1rem;
 }
 
 .answer-text {

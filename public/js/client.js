@@ -14,6 +14,7 @@
 //8. User clicks Save once finished writing SOP
 var loggedInUser = "";
 var usersAnswers = [];
+var usersSavedAnswers = [];
 
 var questionsArray = [
     //Question 1
@@ -188,8 +189,6 @@ $(document).ready(function () {
         $('#questions').show();
     });
 
-
-
     $('.save-answers-button').click(function () {
         event.preventDefault();
         let answer1 = $('.js-answer1').val();
@@ -199,7 +198,7 @@ $(document).ready(function () {
         let answer5 = $('.js-answer5').val();
         let answer6 = $('.js-answer6').val();
         let sopLoggedInUser = $('.logged-in-username').val();
-//        console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
+        //        console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
         if ((answer1 === "") && (answer2 === "") && (answer3 === "") && (answer4 === "") && (answer5 === "") && (answer6 === "")) {
             alert("Please create your Statement of Purpose");
             return;
@@ -207,26 +206,29 @@ $(document).ready(function () {
             usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             console.log(usersAnswers);
 
+            for (i = 0; i < usersAnswers.length; i++) {
+                $('.js-connect-answer' + (i + 1)).text(usersAnswers[i])
+            };
+
             $('.hide-everything').hide();
             $('#review').show();
         }
 
+
     });
+    //});
+
 
     $('.create-sop-button').click(function () {
         $('.hide-everything').hide();
         $('#create').show();
     });
 
-
-
-
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
         $('#create-with-template').show();
 
     });
-
 
     $('.save-completed-button').click(function () {
 
@@ -253,10 +255,8 @@ $(document).ready(function () {
         $('#values-beliefs-goals').show();
     });
 });
-//});
 
 
-//step 4. dynamically created layout to display questions
 
 
 

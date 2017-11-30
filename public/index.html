@@ -116,32 +116,42 @@
     <main class="hide-everything" id="questions">
         <section class="image questions-image">
         </section>
-        <section class="questions-wrapper">
-            <h2><strong>Step 1.</strong><br>Here are some questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.
-            </h2>
-
+        <form class="questions-wrapper">
+            <section class="get-started-instructions">
+                <h2>
+                    <strong>Step 1</strong>
+                </h2>
+                <h3>Here are some questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a customizable template.</h3>
+                <br>
+                <h3>Instructions: Read the question and then complete the sentence.</h3>
+            </section>
             <div class="questions">
                 <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
+                <h3>It is my purpose to...</h3>
                 <textarea name="create-sop" class="answer-text js-answer1" cols="30" rows="10"></textarea>
                 <input type="hidden" class="logged-in-username" value="">
             </div>
 
             <div class="questions">
                 <h3>What strengths and talents do I posses?</h3>
+                <h3>I will grow and develop my...</h3>
                 <textarea name="create-sop" class="answer-text js-answer2" cols="30" rows="10"></textarea>
             </div>
 
             <div class="questions">
                 <h3>Who are the people that I value most?</h3>
+                <h3>The people that are most important to me are...</h3>
                 <textarea name="create-sop" class="answer-text js-answer3" cols="30" rows="10"></textarea>
             </div>
 
             <div class="questions">
-                <h3>What are some ways I can enrich the lives of those that I love?</h3>
+                <h3>What are some ways I can enrich my life and the lives of those that I love?</h3>
+                <h3>I will strive to...</h3>
                 <textarea name="create-sop" class="answer-text  js-answer4" cols="30" rows="10"></textarea>
             </div>
 
-            <h2 class="value-belief-questions-margin"><strong>Step 2.</strong><br> Separate each value and belief with a comma to create a list.</h2>
+            <h2 class="value-belief-questions-margin"><strong>Step 2.</strong></h2>
+            <h3>Separate each value and belief with a comma to create a list.</h3>
 
             <div class="questions">
                 <h3>What are my core values?</h3>
@@ -152,7 +162,7 @@
                 <textarea name="create-sop" class="answer-text js-answer6" cols="30" rows="10"></textarea>
             </div>
             <button class="save-answers-button">Save and continue</button>
-        </section>
+        </form>
     </main>
 
 
@@ -181,31 +191,31 @@
             <h2>My Answers</h2>
             <div class="questions">
                 <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer1">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>What strengths and talents do I posses?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer2">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>Who are the people that I value most?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer3">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>What are some ways I can enrich the lives of those that I love?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer4">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>What are my core values?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="js-connect-answer5">Answer</h3>
             </div>
             <div class="questions">
                 <h3>What are my beliefs?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="js-connect-answer6">Answer</h3>
             </div>
         </section>
 
@@ -253,18 +263,23 @@
         <section class="template-sop">
             <h2>Template</h2>
 
-            <p>It is my purpose <input class="input-sop" type="text" name="text" placeholder="to grow in relationship with friends and family">. Develop my <input class="input-sop" type="text" name="text" placeholder="talents and abilities"> and <input class="input-sop" type="text" name="text" placeholder="encourage others to follow their dreams">.
+            <p>It is my purpose to <input class="input-sop js-completed-sop1" type="text" name="text" placeholder=" grow in relationship with friends and family">. I will grow and develop my<input class="input-sop js-completed-sop2" type="text" name="text" placeholder="talents and abilities">.
+                <!--            and <input class="input-sop" type="text" name="text" placeholder="encourage others to follow their dreams">.-->
             </p>
             <br>
-            <p>I will make my world a better place by<input class="input-sop" type="text" name="text" placeholder="showing kindness and helping others as I can">.
-            </p>
-            <br>
-
-            <p>I want those closest to me to <input class="input-sop" type="text" name="text" placeholder="see me as fun, loving and kind">. Someone <input class="input-sop" type="text" name="text" placeholder="who does not judge"> and <input class="input-sop" type="text" name="text" placeholder="will be there when they need me">.
+            <p>The people that are most important to me are<input class="input-sop js-completed-sop3" type="text" name="text" placeholder="my mom, Arlene, Rochelle, Addy and Jim">.
             </p>
             <br>
 
-            <p>I want to <input class="input-sop" type="text" name="text" placeholder="bring joy into the lives of those that I love">.
+            <p>I will strive to <input class="input-sop js-completed-sop4" type="text" name="text" placeholder="be fun, loving and kind">.</p>
+
+            <!--
+            <p>Someone <input class="input-sop" type="text" name="text" placeholder="who does not judge"> and <input class="input-sop" type="text" name="text" placeholder="will be there when they need me">.
+</p>
+-->
+            <br>
+
+            <!--            <p>I want to <input class="input-sop" type="text" name="text" placeholder="bring joy into the lives of those that I love">.-->
             </p>
             <button class="save-completed-template-button">Save</button>
         </section>
