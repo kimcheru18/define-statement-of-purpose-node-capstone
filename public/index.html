@@ -155,10 +155,12 @@
 
             <div class="questions">
                 <h3>What are my core values?</h3>
+                <h4>Values: a person's principles or standards of behavior; one's judgment of what is important in life.</h4>
                 <textarea name="create-sop" class="answer-text js-answer5" cols="30" rows="10"></textarea>
             </div>
             <div class="questions">
                 <h3>What are my beliefs?</h3>
+                <h4>Belief: trust, faith, or confidence in someone or something.</h4>
                 <textarea name="create-sop" class="answer-text js-answer6" cols="30" rows="10"></textarea>
             </div>
             <button class="save-answers-button">Save and continue</button>
@@ -233,33 +235,34 @@
             <h2>My Answers</h2>
             <div class="questions">
                 <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer1">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>What strengths and talents do I posses?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer2">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>Who are the people that I value most?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer3">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>What are some ways I can enrich the lives of those that I love?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="review-section js-connect-answer4">Answer</h3>
             </div>
 
             <div class="questions">
                 <h3>What are my core values?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="js-connect-answer5">Answer</h3>
             </div>
             <div class="questions">
                 <h3>What are my beliefs?</h3>
-                <h3 class="answer">Answer</h3>
+                <h3 class="js-connect-answer6">Answer</h3>
             </div>
         </section>
+
         <section class="template-sop">
             <h2>Template</h2>
 
@@ -267,34 +270,24 @@
                 <!--            and <input class="input-sop" type="text" name="text" placeholder="encourage others to follow their dreams">.-->
             </p>
             <br>
-            <p>The people that are most important to me are<input class="input-sop js-completed-sop3" type="text" name="text" placeholder="my mom, Arlene, Rochelle, Addy and Jim">.
+            <p>
+                The people that are most important to me are<input class="input-sop js-completed-sop3" type="text" name="text" placeholder="my mom, Arlene, Rochelle, Addy and Jim">.
             </p>
             <br>
 
             <p>I will strive to <input class="input-sop js-completed-sop4" type="text" name="text" placeholder="be fun, loving and kind">.</p>
 
-            <!--
-            <p>Someone <input class="input-sop" type="text" name="text" placeholder="who does not judge"> and <input class="input-sop" type="text" name="text" placeholder="will be there when they need me">.
-</p>
--->
+
+            <p>
+                Someone <input class="input-sop" type="text" name="text" placeholder="who does not judge"> and <input class="input-sop" type="text" name="text" placeholder="will be there when they need me">.
+            </p>
             <br>
 
-            <!--            <p>I want to <input class="input-sop" type="text" name="text" placeholder="bring joy into the lives of those that I love">.-->
+            <p>
+                I want to <input class="input-sop" type="text" name="text" placeholder="bring joy into the lives of those that I love">.
             </p>
             <button class="save-completed-template-button">Save</button>
         </section>
-    </main>
-
-
-    <!-- ------------------------User creates goals that align with their SOP------------------------  -->
-    <main class="hide-everything" id="create-goals">
-        <section class="list-goals">
-            <h2><strong>Step 3.</strong><br>Set goals</h2>
-            <p>What are some things I would like to accomplish that are in line with my SOP. Separate each goal with a comma to create a list.</p>
-            <textarea name="create-goals" class="my-goals" cols="30" rows="10"></textarea>
-            <button class="save-goals-button">Save</button>
-        </section>
-        <section class="image create-goals-image"></section>
     </main>
 
 
@@ -315,6 +308,18 @@
             <p>I want to bring joy into the lives of those that I love.
             </p>
         </section>
+    </main>
+
+
+    <!-- ------------------------User creates goals that align with their SOP------------------------  -->
+    <main class="hide-everything" id="create-goals">
+        <section class="list-goals">
+            <h2><strong>Step 3.</strong><br>Set goals</h2>
+            <p>What are some things I would like to accomplish that are in line with my SOP. Separate each goal with a comma to create a list.</p>
+            <textarea name="create-goals" class="my-goals" cols="30" rows="10"></textarea>
+            <button class="save-goals-button">Save</button>
+        </section>
+        <section class="image create-goals-image"></section>
     </main>
 
     <!--Values, beliefs and goals are displayed for user to see (values and beliefs are listed in the question section)-->

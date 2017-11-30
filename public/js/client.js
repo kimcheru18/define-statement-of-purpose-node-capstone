@@ -206,9 +206,27 @@ $(document).ready(function () {
             usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             console.log(usersAnswers);
 
-            for (i = 0; i < usersAnswers.length; i++) {
-                $('.js-connect-answer' + (i + 1)).text(usersAnswers[i])
+            for (let i = 0; i < usersAnswers.length; i++) {
+                $('.js-connect-answer' + (i + 1)).text(usersAnswers[i]);
+                $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
             };
+
+            $('#values-beliefs-goals .values ul').html("");
+
+            let valuesArray = answer5.split(",");
+            for (let j = 0; j < valuesArray.length; j++) {
+                $('#values-beliefs-goals .values ul').append("<li>" + valuesArray[j] + "</li>");
+            };
+
+
+
+            $('#values-beliefs-goals .beliefs ul').html("");
+
+            let beliefsArray = answer6.split(",");
+            for (let h = 0; h < beliefsArray.length; h++) {
+                $('#values-beliefs-goals .beliefs ul').append("<li>" + beliefsArray[h] + "</li>");
+            };
+
 
             $('.hide-everything').hide();
             $('#review').show();
@@ -234,25 +252,37 @@ $(document).ready(function () {
 
         $('.hide-everything').hide();
         $('#completed-sop').show();
-        $('#values-beliefs-goals').show();
+        $('#create-goals').show();
 
     });
 
     $('.save-completed-template-button').click(function () {
         $('.hide-everything').hide();
         $('#completed-sop').show();
-        $('#values-beliefs-goals').show();
-    });
-
-    $('.set-goals').click(function () {
-        $('.hide-everything').hide();
         $('#create-goals').show();
     });
 
+    //    $('.set-goals').click(function () {
+    //        $('.hide-everything').hide();//
+    //    });
+
     $('.save-goals-button').click(function () {
-        $('.hide-everything').hide();
-        $('#completed-sop').show();
-        $('#values-beliefs-goals').show();
+        let goals = $('.my-goals').val();
+
+        if (goals === "") {
+            alert("Please create goals");
+            return;
+        } else {
+            console.log(goals);
+            $('#values-beliefs-goals .goals ul').html("");
+            let goalsArray = goals.split(",");
+            for (let k = 0; k < goalsArray.length; k++) {
+                $('#values-beliefs-goals .goals ul').append("<li>" + goalsArray[k] + "</li>");
+            };
+            $('.hide-everything').hide();
+            $('#completed-sop').show();
+            $('#values-beliefs-goals').show();
+        }
     });
 });
 
