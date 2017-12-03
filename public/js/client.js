@@ -14,7 +14,6 @@
 //8. User clicks Save once finished writing SOP
 var loggedInUser = "";
 var usersAnswers = [];
-var usersSavedAnswers = [];
 
 var questionsArray = [
     //Question 1
@@ -131,10 +130,10 @@ $(document).ready(function () {
     });
 
     $('.go-register-account').click(function () {
-        $('.hide-everything').hide();
-        $('#register-new-sop').show();
-        $('#sop-description-info').show();
 
+        $('.hide-everything').hide();
+        $('#register-new-user').show();
+        $('#sop-description-info').show()
     });
 
     $('.register-account').click(function () {
@@ -143,6 +142,7 @@ $(document).ready(function () {
         const uname = $('.register-username').val();
         const pw = $('.register-password').val();
         const confirmPw = $('.register-confirm-password').val();
+
         if (uname == "") {
             event.preventDefault();
             alert('Please specify username');
@@ -171,6 +171,8 @@ $(document).ready(function () {
 
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
+                    $('#login-sop').show();
+
                     //                    showSignInPage();
                 })
                 .fail(function (jqXHR, error, errorThrown) {
@@ -184,9 +186,13 @@ $(document).ready(function () {
 
     $('.start-button').click(function () {
         console.log(loggedInUser);
-        $('.logged-in-username').val(loggedInUser);
-        $('.hide-everything').hide();
-        $('#questions').show();
+        if (!(loggedInUser)) {
+            alert('Please login or register');
+        } else {
+            $('.logged-in-username').val(loggedInUser);
+            $('.hide-everything').hide();
+            $('#questions').show();
+        };
     });
 
     $('.save-answers-button').click(function () {
@@ -199,48 +205,64 @@ $(document).ready(function () {
         let answer6 = $('.js-answer6').val();
         let sopLoggedInUser = $('.logged-in-username').val();
         //        console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
-        if ((answer1 === "") && (answer2 === "") && (answer3 === "") && (answer4 === "") && (answer5 === "") && (answer6 === "")) {
-            alert("Please create your Statement of Purpose");
+        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "")) {
+            alert("Please enter at least one answer in provided fields");
             return;
         } else {
+
+            $('.js-completed-sop1').val(answer1);
+            $('.js-completed-sop2').val(answer2);
+            $('.js-completed-sop3').val(answer3);
+            $('.js-completed-sop4').val(answer4);
+
+
             usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             console.log(usersAnswers);
 
-            for (let i = 0; i < usersAnswers.length; i++) {
+            for (let i = 0; i < usersAnswers[3]; i++) {
                 $('.js-connect-answer' + (i + 1)).text(usersAnswers[i]);
                 $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
             };
 
+            $('.js-connect-answer5').html("");
             $('#values-beliefs-goals .values ul').html("");
 
             let valuesArray = answer5.split(",");
             for (let j = 0; j < valuesArray.length; j++) {
                 $('#values-beliefs-goals .values ul').append("<li>" + valuesArray[j] + "</li>");
+                $('.js-connect-answer5').append("<li>" + valuesArray[j] + "</li>");
             };
 
 
-
+            //come back and make beliefs bullet point list-reference previous function
+            $('.js-connect-answer6').html("");
             $('#values-beliefs-goals .beliefs ul').html("");
 
             let beliefsArray = answer6.split(",");
             for (let h = 0; h < beliefsArray.length; h++) {
                 $('#values-beliefs-goals .beliefs ul').append("<li>" + beliefsArray[h] + "</li>");
+                $('.js-connect-answer6').append("<li>" + beliefsArray[h] + "</li>");
             };
+        };
 
-
-            $('.hide-everything').hide();
-            $('#review').show();
-        }
-
-
+        $('.hide-everything').hide();
+        $('#review').show();
     });
-    //});
+
+
+
 
 
     $('.create-sop-button').click(function () {
+
+
         $('.hide-everything').hide();
         $('#create').show();
     });
+
+
+
+
 
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
@@ -248,19 +270,62 @@ $(document).ready(function () {
 
     });
 
+
+
+    //**********QUESTION**************WORKS but how do I make it accept each paragraph individually and what if user wants to have breaks between paragraphs?
     $('.save-completed-button').click(function () {
 
-        $('.hide-everything').hide();
-        $('#completed-sop').show();
-        $('#create-goals').show();
+        event.preventDefault();
+        let createSopFreeStyle = $('.create-text').val();
+        if (createSopFreeStyle === "") {
+            alert("Please create Statement of Purpose");
+            return;
+        } else {
 
+            //            ***********QUESTIONS***********Do I continue inserting sopLoggedInUer??
+            usersCompletedSop.push(createSopFreeStyle);
+            console.log(usersCompletedSop);
+
+            $('#completed-sop .purpose p').html(createSopFreeStyle);
+
+            $('.hide-everything').hide();
+            $('#completed-sop').show();
+            $('#create-goals').show();
+
+        }
     });
+
+
+
 
     $('.save-completed-template-button').click(function () {
+
+        event.preventDefault();
+        let createSopSentence1 = $('.js-completed-sop1').val();
+        let createSopSentence2 = $('.js-completed-sop2').val();
+        let createSopSentence3 = $('.js-completed-sop3').val();
+        let createSopSentence4 = $('.js-completed-sop4').val();
+        if ((createSopSentence1 == "") || (createSopSentence2 == "") || (createSopSentence3 == "") || (createSopSentence4 == "")) {
+            alert("Please create Statement of Purpose");
+            return;
+        } else {
+            let createSopTemplate = "It is my purpose to " + createSopSentence1 + ". I will grow and develop my " + createSopSentence2 + ". The people that are most important to me are " + createSopSentence3 + ". I will strive to " + createSopSentence4 + ".";
+
+
+            $('#completed-sop .purpose p').html("");
+            $('#completed-sop .purpose p').append("<p>" + createSopTemplate + "</p>");
+
+        }
+
         $('.hide-everything').hide();
         $('#completed-sop').show();
         $('#create-goals').show();
     });
+
+
+
+
+
 
     //    $('.set-goals').click(function () {
     //        $('.hide-everything').hide();//

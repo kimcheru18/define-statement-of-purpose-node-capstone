@@ -76,7 +76,7 @@ ul {
 h1,
 h2,
 .account-options,
-.register-sop {
+.register-user {
     font-family: 'Cormorant Garamond', serif;
 }
 
@@ -158,7 +158,7 @@ nav a:hover {
 }
 
 #login-sop,
-#register-new-sop {
+#register-new-user {
     display: inline-block;
     color: rgb(241, 241, 241);
 }
@@ -177,7 +177,7 @@ nav a:hover {
 }
 
 .account-options,
-.register-sop {
+.register-user {
     display: inline-block;
     font-size: 1rem;
     padding-left: 1rem;
@@ -212,6 +212,7 @@ main {
 
 .review-section {
     text-indent: 3mm;
+    margin: .5rem 0;
 }
 
 .create-sop {
@@ -263,10 +264,14 @@ textarea {
 
 .get-started-page,
 #login-sop,
-#register-new-sop,
+#register-new-user,
 #create-goals,
 #values-beliefs-goals {
     background-color: rgb(86, 139, 86);
+}
+
+#questions h3 {
+    margin-bottom: .5rem;
 }
 
 .value-belief-questions-margin {
