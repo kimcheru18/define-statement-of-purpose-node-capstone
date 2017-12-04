@@ -2,6 +2,7 @@
 
 const User = require('./models/user');
 const Statement = require('./models/statement');
+const Answer = require('./models/answer');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -162,6 +163,44 @@ app.post('/statement/create', (req, res) => {
         }
     });
 });
+
+
+
+
+app.post('/answers/create', (req, res) => {
+
+    let user = req.body.user;
+    let answer1 = req.body.answer1;
+    let answer2 = req.body.answer2;
+    let answer3 = req.body.answer3;
+    let answer4 = req.body.answer4;
+    let answer5 = req.body.answer5;
+    let answer6 = req.body.answer6;
+
+    Answer.create({
+        user,
+        answer1,
+        answer2,
+        answer3,
+        answer4,
+        answer5,
+        answer6,
+    }, (err, item) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+            if (item) {
+                console.log(`Answer ${item} added.`);
+                return res.json(item);
+            }
+        }
+    });
+});
+
+
+
+
 
 
 //*********************PUT*************************

@@ -62,9 +62,6 @@ var questionsArray = [
 // step 3. dynamically created layout to display home screen
 
 
-
-
-
 $(document).ready(function () {
 
     $('.hide-everything').hide();
@@ -86,6 +83,9 @@ $(document).ready(function () {
         $('.hide-everything').hide();
         $('#questions').show();
     });
+
+
+
 
     $('.login-account').click(function () {
 
@@ -129,12 +129,16 @@ $(document).ready(function () {
 
     });
 
+
+
     $('.go-register-account').click(function () {
 
         $('.hide-everything').hide();
         $('#register-new-user').show();
         $('#sop-description-info').show()
     });
+
+
 
     $('.register-account').click(function () {
 
@@ -184,6 +188,9 @@ $(document).ready(function () {
 
     });
 
+
+
+
     $('.start-button').click(function () {
         console.log(loggedInUser);
         if (!(loggedInUser)) {
@@ -194,6 +201,9 @@ $(document).ready(function () {
             $('#questions').show();
         };
     });
+
+
+
 
     $('.save-answers-button').click(function () {
         event.preventDefault();
@@ -206,7 +216,7 @@ $(document).ready(function () {
         let sopLoggedInUser = $('.logged-in-username').val();
         //        console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
         if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "")) {
-            alert("Please enter at least one answer in provided fields");
+            alert("Please complete each field");
             return;
         } else {
 
@@ -219,7 +229,7 @@ $(document).ready(function () {
             usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             console.log(usersAnswers);
 
-            for (let i = 0; i < usersAnswers[3]; i++) {
+            for (let i = 0; i < usersAnswers.length; i++) {
                 $('.js-connect-answer' + (i + 1)).text(usersAnswers[i]);
                 $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
             };
@@ -234,7 +244,6 @@ $(document).ready(function () {
             };
 
 
-            //come back and make beliefs bullet point list-reference previous function
             $('.js-connect-answer6').html("");
             $('#values-beliefs-goals .beliefs ul').html("");
 
@@ -243,10 +252,42 @@ $(document).ready(function () {
                 $('#values-beliefs-goals .beliefs ul').append("<li>" + beliefsArray[h] + "</li>");
                 $('.js-connect-answer6').append("<li>" + beliefsArray[h] + "</li>");
             };
-        };
 
-        $('.hide-everything').hide();
-        $('#review').show();
+            $('.hide-everything').hide();
+            $('#review').show();
+
+            const userAnswerObject = {
+                answer1,
+                answer2,
+                answer3,
+                answer4,
+                answer5,
+                answer6,
+            }
+
+            console.log(userAnswerObject);
+            $.ajax({
+                    type: 'POST',
+                    url: '/answers/create',
+                    dataType: 'json',
+                    data: JSON.stringify(userAnswerObject),
+                    contentType: 'application/json'
+                })
+                .done(function (result) {
+                    event.preventDefault();
+                    //                    newUserToggle = true;
+                    //                alert('Thanks for signing up! You may now sign in with your username and password.');
+
+
+
+                    //                    showSignInPage();
+                })
+                .fail(function (jqXHR, error, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(error);
+                    console.log(errorThrown);
+                });
+        };
     });
 
 
@@ -263,7 +304,6 @@ $(document).ready(function () {
 
 
 
-
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
         $('#create-with-template').show();
@@ -272,7 +312,7 @@ $(document).ready(function () {
 
 
 
-    //**********QUESTION**************WORKS but how do I make it accept each paragraph individually and what if user wants to have breaks between paragraphs?
+
     $('.save-completed-button').click(function () {
 
         event.preventDefault();
@@ -324,12 +364,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-    //    $('.set-goals').click(function () {
-    //        $('.hide-everything').hide();//
-    //    });
 
     $('.save-goals-button').click(function () {
         let goals = $('.my-goals').val();
