@@ -14,6 +14,7 @@
 //8. User clicks Save once finished writing SOP
 var loggedInUser = "";
 var usersAnswers = [];
+var usersCompletedSop = [];
 
 var questionsArray = [
     //Question 1
@@ -275,12 +276,6 @@ $(document).ready(function () {
                 })
                 .done(function (result) {
                     event.preventDefault();
-                    //                    newUserToggle = true;
-                    //                alert('Thanks for signing up! You may now sign in with your username and password.');
-
-
-
-                    //                    showSignInPage();
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
@@ -289,7 +284,6 @@ $(document).ready(function () {
                 });
         };
     });
-
 
 
 
@@ -312,17 +306,16 @@ $(document).ready(function () {
 
 
 
-
+    //***************need help on this one*************
     $('.save-completed-button').click(function () {
 
         event.preventDefault();
         let createSopFreeStyle = $('.create-text').val();
-        if (createSopFreeStyle === "") {
+        if (createSopFreeStyle == "") {
             alert("Please create Statement of Purpose");
             return;
         } else {
 
-            //            ***********QUESTIONS***********Do I continue inserting sopLoggedInUer??
             usersCompletedSop.push(createSopFreeStyle);
             console.log(usersCompletedSop);
 
@@ -332,12 +325,32 @@ $(document).ready(function () {
             $('#completed-sop').show();
             $('#create-goals').show();
 
-        }
+            const userFreeStyleObject = {
+                createSopFreeStyle,
+            }
+
+            console.log(userFreeStyleObject);
+            $.ajax({
+                    type: 'POST',
+                    url: '/save-free-style-sop/create',
+                    dataType: 'json',
+                    data: JSON.stringify(userFreeStyleObject),
+                    contentType: 'application/json'
+                })
+                .done(function (result) {
+                    event.preventDefault();
+                })
+                .fail(function (jqXHR, error, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(error);
+                    console.log(errorThrown);
+                });
+        };
     });
 
 
 
-
+    //question about this one-see below. Also, it's not saving to the database
     $('.save-completed-template-button').click(function () {
 
         event.preventDefault();
@@ -360,6 +373,31 @@ $(document).ready(function () {
         $('.hide-everything').hide();
         $('#completed-sop').show();
         $('#create-goals').show();
+
+        //        should I be saving just the content in the input field or complete sentences that include the beginning of each statement
+        const userTemplateObject = {
+            createSopSentence1,
+            createSopSentence2,
+            createSopSentence3,
+            createSopSentence4,
+        }
+
+        console.log(userTemplateObject);
+        $.ajax({
+                type: 'POST',
+                url: '/template/create',
+                dataType: 'json',
+                data: JSON.stringify(userTemplateObject),
+                contentType: 'application/json'
+            })
+            .done(function (result) {
+                event.preventDefault();
+            })
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
     });
 
 
@@ -368,7 +406,7 @@ $(document).ready(function () {
     $('.save-goals-button').click(function () {
         let goals = $('.my-goals').val();
 
-        if (goals === "") {
+        if (goals == "") {
             alert("Please create goals");
             return;
         } else {
@@ -381,6 +419,27 @@ $(document).ready(function () {
             $('.hide-everything').hide();
             $('#completed-sop').show();
             $('#values-beliefs-goals').show();
+
+            const userGoalObject = {
+                goals,
+            }
+            console.log(userGoalObject);
+
+            $.ajax({
+                    type: 'POST',
+                    url: '/goals/create',
+                    dataType: 'json',
+                    data: JSON.stringify(userGoalObject),
+                    contentType: 'application/json'
+                })
+                .done(function (result) {
+                    event.preventDefault();
+                })
+                .fail(function (jqXHR, error, errorThrown) {
+                    console.log(jqXHR);
+                    console.log(error);
+                    console.log(errorThrown);
+                });
         }
     });
 });

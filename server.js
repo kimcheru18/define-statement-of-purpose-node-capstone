@@ -3,6 +3,9 @@
 const User = require('./models/user');
 const Statement = require('./models/statement');
 const Answer = require('./models/answer');
+const SaveFreeStyle = require('./models/save-free-style-sop');
+const Template = require('./models/template');
+const Goals = require('./models/goals');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -150,7 +153,7 @@ app.post('/statement/create', (req, res) => {
         body,
         values,
         beliefs,
-        goals
+        goals,
     }, (err, item) => {
         if (err) {
             return res.status(500).json({
@@ -200,18 +203,95 @@ app.post('/answers/create', (req, res) => {
 
 
 
+//need help on this one save-free-style-sop here
+app.post('/free-style/create', (req, res) => {
+
+    let user = req.body.user;
+    let body = req.body.body;
+
+    SaveFreeStyle.create({
+        user,
+        body,
+    }, (err, item) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+            if (item) {
+                console.log(`SaveFreeStyle \`${item}\` added.`);
+                return res.json(item);
+            }
+        }
+    });
+});
+
+
+
+//need help *****************
+app.post('/template/create', (req, res) => {
+
+    let user = req.body.user;
+    let body = req.body.body;
+
+
+    Template.create({
+        user,
+        body,
+    }, (err, item) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+            if (item) {
+                console.log(`Template ${item} added.`);
+                return res.json(item);
+            }
+        }
+    });
+});
+
+
+
+
+app.post('/goals/create', (req, res) => {
+
+    let user = req.body.user;
+    let goals = req.body.goals
+
+    Goals.create({
+        user,
+        goals,
+    }, (err, item) => {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+            if (item) {
+                console.log(`Goals ${item} added.`);
+                return res.json(item);
+            }
+        }
+    });
+});
+
+
+
+
+
+
 
 
 
 //*********************PUT*************************
 app.put('/statement/:id', function (req, res) {
     let updateSop = {};
-    let updateableFields = 'statement';
+    let updateableFields = ['body', 'values', 'beliefs', 'goals'];
     updateableFields.forEach(function (field) {
         if (field in req.body) {
             updateSop[field] = req.body[field];
         }
     });
+
     Statement
         .findByIdAndUpdate(req.params.id, {
             $set: updateSop
@@ -224,19 +304,43 @@ app.put('/statement/:id', function (req, res) {
         });
 });
 
+
+
+
+
+
+
+
+
 //*********************GET*************************
-app.get('/statements/:id', function (req, res) {
+app.get('/statements/:user', function (req, res) {
     Statement
-        .findById(req.params.id).exec().then(function (statement) {
-            return res.json(statement);
+        .find()
+
+        //    what is this??
+        .sort('statement')
+        .then(function (statements) {
+            let statementOutput = [];
+            statements.map(function (statement) {
+                if (statement.user == req.params.user) {
+                    statementOutput.push(statement);
+                }
+            });
+            res.json({
+                statementOutput
+            });
         })
-        .catch(function (statements) {
+        .catch(function (err) {
             console.error(err);
             res.status(500).json({
                 message: 'Internal server error'
             });
         });
 });
+
+
+
+
 
 //*********************DELETE*************************
 app.delete('/statements/:id', function (req, res) {
