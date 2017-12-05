@@ -6,9 +6,9 @@ Link to live application: https://define-statement-of-purpose.herokuapp.com/
 
 # Goal & Use Case
 
-This app should do three things, help one develop a Statement of Purpose, define personal values and beliefs and set goals that will help maintain my focus in daily life and relationships.
+This app should do three things, help one develop a Statement of Purpose, define personal values and beliefs and set goals that will help maintain focus in daily life and relationships.
 
-The Statement of Purpose is to help you focus on who you are as a person. It should be short, no longer than 3 or 4 sentences. This is not a statement to lay out a plan or set goals for business or even goals for personal growth. It is really just looking inside and discovering who you are at the core and who you want to be. Writing this statement is an assignment to create a verbal representation of “you” and who you hope to become. It is an idea to aspire to,  it is a direction to go. It is not concrete and unmoveable, it is fluid, it is malleable.
+The Statement of Purpose is to help you focus on who you are as a person. It should preferably be brief, something you would want to review on a regular basis. This is not a statement to lay out a plan or set goals for business or even goals for personal growth. It is really just looking inside and discovering who you are at the core and who you want to be. Writing this statement is an assignment to create a verbal representation of “you” and who you hope to become. It is an idea to aspire to,  it is a direction to go. It is not concrete and unmoveable, it is fluid, it is malleable.
 
 Defining your values and beliefs will help you create this statement and then you may want to set goals that are in line with your statement. For example, you may say “I will be more aware of my families needs and encourage them often.” In your goals, you can outline what that might look like.
 
@@ -24,42 +24,40 @@ Defining your values and beliefs will help you create this statement and then yo
 # User Stories & Initial UX
 
 **Landing Page**
-Initial landing page is an explanation of what the app is for, user will swipe through information and instructions to get to the "Answer Questions" page
-
+Initial landing page has login and register option. It also has an explanation of what the app is for, user will login or register and then login and then click "Let's get started." Also, at the top of this page in the nav bar are links to Reflect, Create and Review. See more info on Reflect, Create, Review page below.
 ![image1]
 
 **Answer Questions Page**
-User will answer a question and swipe to the next question
+Step 1 User will answer all questions on page. Step 2 user lists values and beliefs. User will then click "Save and continue."
 
 ![image1]
 
-**Create "Statement of Purpose" Page**
-User will create statement of purpose or will swipe to use template
+**Instructions for creating SOP Page**
+Step 3 User can choose to create SOP free-style by clicking "Create free-style" or use a template by clicking "Create with template." The template will be filled in with their answers from questions page. User can edit if desired.
 
 ![image1]
+
+**Create Free-style Page**
+Step 4 User creates SOP in textarea, then clicks "Save"
 
 **Template Page**
-User will have the option to use first template or swipe through several more and fill in the blanks to create their statement of purpose
+Alternatively, Step 4 Users answers from the questions page will be inserted in input fields where user can alter text. User clicks "Save" to continue
 
 ![image1]
 
-**Completed Statement of Purpose Page**
-This page will have the users Statement of Purpose displayed, user can swipe to Values page from here
+**Completed Statement of Purpose and Add Goals Page**
+This page will have the users SOP displayed, along with a section to create goals. Once goals are created, user clicks "Save" to continue.
 
 ![image1]
-**Values Page**
-Displays users Values that they entered in the question section. User can swipe back to Statement of Purpose or swipe forward to Beliefs.
+**SOP, Values, Beliefs, Goals Page**
+Users SOP is displayed along with their Values, Beliefs and Goals. They have the option to click the edit button on Values and Beliefs which will direct them back to the Answer Questions Page where they can update their answers, values and beliefs. User may also click the edit button for Goals which will direct them back to Completed Statement of Purpose and Add Goals Page.
 
 ![image1]
-**Beliefs Page**
-Displays users Beliefs that they entered in the question section. User can swipe back to Values or swipe forward to Goals.
+**Reflect, Create, Review Page**
+Reflect: Directs user to their existing SOP, Values, Beliefs and Goals.
+Create: Directs user to Instructions for creating SOP Page where they can alter their SOP, either by clicking "Create free-style" where their SOP will be displayed in the textarea or clicking "Create with template" where their answers from the questionaire will be displayed in the input fields.
+Review: Directs user to Answer Questions Page where they can alter their answers, values and beliefs.
 
-![image1]
-**Goals Page**
-This page is where users enter goals and steps to complete these goals. Once created, you will be able to swip to this page from Beliefs.
-
-**Information Page**
-This page will have more information about creating a Statement of Purpose.
 
 
 # API Documentation

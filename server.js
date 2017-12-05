@@ -226,55 +226,31 @@ app.post('/statements/create', (req, res) => {
 
 
 
-//need help *****************
-app.post('/template/create', (req, res) => {
-
-    let user = req.body.user;
-    let body = req.body.body;
 
 
-    Template.create({
-        user,
-        body,
-    }, (err, item) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Internal Server Error'
+//*********************GET*************************
+app.get('/statements/:user', function (req, res) {
+    Statement
+        .find()
+        .sort('statement')
+        .then(function (statements) {
+            let statementOutput = [];
+            statements.map(function (statement) {
+                if (statement.user == req.params.user) {
+                    statementOutput.push(statement);
+                }
             });
-            if (item) {
-                console.log(`Template ${item} added.`);
-                return res.json(item);
-            }
-        }
-    });
-});
-
-
-
-
-app.post('/goals/create', (req, res) => {
-
-    let user = req.body.user;
-    let goals = req.body.goals
-
-    Goals.create({
-        user,
-        goals,
-    }, (err, item) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Internal Server Error'
+            res.json({
+                statementOutput
             });
-            if (item) {
-                console.log(`Goals ${item} added.`);
-                return res.json(item);
-            }
-        }
-    });
+        })
+        .catch(function (err) {
+            console.error(err);
+            res.status(500).json({
+                message: 'Internal server error'
+            });
+        });
 });
-
-
-
 
 
 
@@ -306,36 +282,6 @@ app.put('/statement/:id', function (req, res) {
 
 
 
-
-
-
-
-
-//*********************GET*************************
-app.get('/statements/:user', function (req, res) {
-    Statement
-        .find()
-
-        //    what is this??
-        .sort('statement')
-        .then(function (statements) {
-            let statementOutput = [];
-            statements.map(function (statement) {
-                if (statement.user == req.params.user) {
-                    statementOutput.push(statement);
-                }
-            });
-            res.json({
-                statementOutput
-            });
-        })
-        .catch(function (err) {
-            console.error(err);
-            res.status(500).json({
-                message: 'Internal server error'
-            });
-        });
-});
 
 
 
