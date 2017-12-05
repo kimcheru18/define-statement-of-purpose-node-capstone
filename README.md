@@ -29,35 +29,33 @@ Initial landing page has login and register option. It also has an explanation o
 
 **Answer Questions Page**
 Step 1 User will answer all questions on page. Step 2 user lists values and beliefs. User will then click "Save and continue."
-
 ![image1]
 
 **Instructions for creating SOP Page**
 Step 3 User can choose to create SOP free-style by clicking "Create free-style" or use a template by clicking "Create with template." The template will be filled in with their answers from questions page. User can edit if desired.
-
 ![image1]
 
 **Create Free-style Page**
 Step 4 User creates SOP in textarea, then clicks "Save"
+![image1]
 
 **Template Page**
 Alternatively, Step 4 Users answers from the questions page will be inserted in input fields where user can alter text. User clicks "Save" to continue
-
 ![image1]
 
 **Completed Statement of Purpose and Add Goals Page**
 This page will have the users SOP displayed, along with a section to create goals. Once goals are created, user clicks "Save" to continue.
-
 ![image1]
+
 **SOP, Values, Beliefs, Goals Page**
 Users SOP is displayed along with their Values, Beliefs and Goals. They have the option to click the edit button on Values and Beliefs which will direct them back to the Answer Questions Page where they can update their answers, values and beliefs. User may also click the edit button for Goals which will direct them back to Completed Statement of Purpose and Add Goals Page.
-
 ![image1]
+
 **Reflect, Create, Review Page**
 Reflect: Directs user to their existing SOP, Values, Beliefs and Goals.
 Create: Directs user to Instructions for creating SOP Page where they can alter their SOP, either by clicking "Create free-style" where their SOP will be displayed in the textarea or clicking "Create with template" where their answers from the questionaire will be displayed in the input fields.
 Review: Directs user to Answer Questions Page where they can alter their answers, values and beliefs.
-
+![image1]
 
 
 # API Documentation

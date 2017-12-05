@@ -215,6 +215,12 @@ main {
     margin: .5rem 0;
 }
 
+.js-connect-answer5,
+.js-connect-answer6 {
+    font-size: 1.25rem;
+    font-family: 'Julee', cursive;
+}
+
 .create-sop {
     text-align: center;
     padding-top: 2rem;
