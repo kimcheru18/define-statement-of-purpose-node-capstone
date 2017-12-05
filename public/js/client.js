@@ -216,7 +216,7 @@ $(document).ready(function () {
         let answer5 = $('.js-answer5').val();
         let answer6 = $('.js-answer6').val();
         let sopLoggedInUser = $('.logged-in-username').val();
-        //        console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
+
         if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "")) {
             alert("Please complete each field");
             return;
@@ -226,7 +226,7 @@ $(document).ready(function () {
             $('.js-completed-sop2').val(answer2);
             $('.js-completed-sop3').val(answer3);
             $('.js-completed-sop4').val(answer4);
-
+            console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             $('#finalValues').val(answer5);
             $('#finalBeliefs').val(answer6);
 
@@ -236,7 +236,7 @@ $(document).ready(function () {
 
             for (let i = 0; i < usersAnswers.length; i++) {
                 $('.js-connect-answer' + (i + 1)).text(usersAnswers[i]);
-                $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
+//                $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
             };
 
             $('.js-connect-answer5').html("");
@@ -411,9 +411,3 @@ $(document).ready(function () {
         }
     });
 });
-
-
-
-
-
-
