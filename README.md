@@ -15,11 +15,21 @@ Defining your values and beliefs will help you create this statement and then yo
 
 
 # Screenshots
-![image1](https://i.gyazo.com/d25de5a06546f4518a3ebfdd07314075.png)
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/landing-page.png)
 
-![image2](https://i.gyazo.com/111d6234c74eb1fc1c13944427b07c17.png)
+![image2](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/register-new-user-page.png)
 
-![image3](https://i.gyazo.com/9c2cb3ba45c7387a7cbfe5981f4c3235.png)
+![image3](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/questions-page.png)
+
+![image4](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/questions-page.png)
+
+![image5](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/instructions-to-create-sop.png)
+
+![image6](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-freestyle-page.png)
+
+![image7](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-template-page.png)
+
+![image8](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/display-sop-values-beliefs-goals-page.png)
 
 # User Stories & Initial UX
 

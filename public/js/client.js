@@ -59,6 +59,23 @@ var questionsArray = [
 
 
 // step 2. Defining functions
+function displayUpdatedStatement(username) {
+    $.ajax({
+            type: 'GET',
+            url: '/statements/' + username,
+            dataType: 'json',
+            contentType: 'application/json'
+        })
+        .done(function (result) {
+            console.log(result);
+        })
+        .fail(function (jqXHR, error, errorThrown) {
+            console.log(jqXHR);
+            console.log(error);
+            console.log(errorThrown);
+        });
+}
+
 
 // step 3. dynamically created layout to display home screen
 
@@ -236,7 +253,7 @@ $(document).ready(function () {
 
             for (let i = 0; i < usersAnswers.length; i++) {
                 $('.js-connect-answer' + (i + 1)).text(usersAnswers[i]);
-//                $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
+                //                $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
             };
 
             $('.js-connect-answer5').html("");
@@ -402,6 +419,7 @@ $(document).ready(function () {
                 })
                 .done(function (result) {
                     event.preventDefault();
+                    displayUpdatedStatement(user);
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);

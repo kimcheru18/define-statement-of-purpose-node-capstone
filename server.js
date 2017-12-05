@@ -137,7 +137,7 @@ app.post('/users/signin', function (req, res) {
 
 // -------------STATEMENT ENDPOINTS------------------------------------------------
 //*********************POST*************************
-app.post('/statement/create', (req, res) => {
+app.post('/statements/create', (req, res) => {
 
     let user = req.body.user;
     let body = req.body.body;
