@@ -3,9 +3,6 @@
 const User = require('./models/user');
 const Statement = require('./models/statement');
 const Answer = require('./models/answer');
-const SaveFreeStyle = require('./models/save-free-style-sop');
-const Template = require('./models/template');
-const Goals = require('./models/goals');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -204,21 +201,23 @@ app.post('/answers/create', (req, res) => {
 
 
 //need help on this one save-free-style-sop here
-app.post('/free-style/create', (req, res) => {
+app.post('/statements/create', (req, res) => {
 
-    let user = req.body.user;
-    let body = req.body.body;
+    console.log(req.body.user, req.body.body, req.body.values, req.body.beliefs, req.body.goals);
 
-    SaveFreeStyle.create({
-        user,
-        body,
+    Statement.create({
+        user: req.body.user,
+        body: req.body.body,
+        values: req.body.values,
+        beliefs: req.body.beliefs,
+        goals: req.body.goals
     }, (err, item) => {
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
             });
             if (item) {
-                console.log(`SaveFreeStyle \`${item}\` added.`);
+                console.log(`SaveFreeStyle ${item} added.`);
                 return res.json(item);
             }
         }

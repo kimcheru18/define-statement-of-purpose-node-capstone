@@ -116,6 +116,7 @@ $(document).ready(function () {
                     // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
+                    $('#finalLoggedinUser').val(loggedInUser);
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
@@ -226,6 +227,9 @@ $(document).ready(function () {
             $('.js-completed-sop3').val(answer3);
             $('.js-completed-sop4').val(answer4);
 
+            $('#finalValues').val(answer5);
+            $('#finalBeliefs').val(answer6);
+
 
             usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             console.log(usersAnswers);
@@ -263,7 +267,7 @@ $(document).ready(function () {
                 answer3,
                 answer4,
                 answer5,
-                answer6,
+                answer6
             }
 
             console.log(userAnswerObject);
@@ -282,6 +286,7 @@ $(document).ready(function () {
                     console.log(error);
                     console.log(errorThrown);
                 });
+
         };
     });
 
@@ -306,7 +311,6 @@ $(document).ready(function () {
 
 
 
-    //***************need help on this one*************
     $('.save-completed-button').click(function () {
 
         event.preventDefault();
@@ -324,33 +328,12 @@ $(document).ready(function () {
             $('.hide-everything').hide();
             $('#completed-sop').show();
             $('#create-goals').show();
-
-            const userFreeStyleObject = {
-                createSopFreeStyle,
-            }
-
-            console.log(userFreeStyleObject);
-            $.ajax({
-                    type: 'POST',
-                    url: '/save-free-style-sop/create',
-                    dataType: 'json',
-                    data: JSON.stringify(userFreeStyleObject),
-                    contentType: 'application/json'
-                })
-                .done(function (result) {
-                    event.preventDefault();
-                })
-                .fail(function (jqXHR, error, errorThrown) {
-                    console.log(jqXHR);
-                    console.log(error);
-                    console.log(errorThrown);
-                });
+            $('#finalSopBody').val(createSopFreeStyle);
         };
     });
 
 
 
-    //question about this one-see below. Also, it's not saving to the database
     $('.save-completed-template-button').click(function () {
 
         event.preventDefault();
@@ -368,42 +351,23 @@ $(document).ready(function () {
             $('#completed-sop .purpose p').html("");
             $('#completed-sop .purpose p').append("<p>" + createSopTemplate + "</p>");
 
+            $('#finalSopBody').val(createSopTemplate);
+
         }
 
         $('.hide-everything').hide();
         $('#completed-sop').show();
         $('#create-goals').show();
-
-        //        should I be saving just the content in the input field or complete sentences that include the beginning of each statement
-        const userTemplateObject = {
-            createSopSentence1,
-            createSopSentence2,
-            createSopSentence3,
-            createSopSentence4,
-        }
-
-        console.log(userTemplateObject);
-        $.ajax({
-                type: 'POST',
-                url: '/template/create',
-                dataType: 'json',
-                data: JSON.stringify(userTemplateObject),
-                contentType: 'application/json'
-            })
-            .done(function (result) {
-                event.preventDefault();
-            })
-            .fail(function (jqXHR, error, errorThrown) {
-                console.log(jqXHR);
-                console.log(error);
-                console.log(errorThrown);
-            });
     });
 
 
 
 
     $('.save-goals-button').click(function () {
+        let user = $('#finalLoggedinUser').val();
+        let body = $('#finalSopBody').val();
+        let values = $('#finalValues').val();
+        let beliefs = $('#finalBeliefs').val();
         let goals = $('.my-goals').val();
 
         if (goals == "") {
@@ -420,16 +384,20 @@ $(document).ready(function () {
             $('#completed-sop').show();
             $('#values-beliefs-goals').show();
 
-            const userGoalObject = {
-                goals,
+            const userStatementObject = {
+                user: user,
+                body: body,
+                values: values,
+                beliefs: beliefs,
+                goals: goals,
             }
-            console.log(userGoalObject);
+            console.log(userStatementObject);
 
             $.ajax({
                     type: 'POST',
-                    url: '/goals/create',
+                    url: '/statements/create',
                     dataType: 'json',
-                    data: JSON.stringify(userGoalObject),
+                    data: JSON.stringify(userStatementObject),
                     contentType: 'application/json'
                 })
                 .done(function (result) {
@@ -448,55 +416,4 @@ $(document).ready(function () {
 
 
 
-//step 5. dynamically created layout to display SOP create options (free-style or template)
 
-
-//    **********Client.js**********
-//    Navigation bar
-//    Reflect - questions page where user answers/reviews questions
-//    Create - create/review/edit SOP page
-//    Review - review/edit SOP, Values, Beliefs, Goals
-//
-//    Login page or go to register
-//    -Page loads
-//    -Displays login/register options
-//    -Existing user enters username and password
-//    -takes user to the description/ “Let’s get started” page
-//
-//    Register page
-//    -New user registers
-//    -takes user to the description/ “Let’s get started” page
-//
-//    Description page
-//    -User clicks “Let’s get started”
-//    -User is directed to questions page
-//
-//    Question page
-//    -User answers questions including listing values and beliefs
-//    -User clicks “Save and continue” and is directed to “Reviews answers” page
-//
-//    Review answers page
-//    -User chooses “Create free-style” or “Create with template” and is directed to the appropriate page
-//
-//
-//
-//    #1 Review answers and create SOP free-style
-//    -User can still see answers and an open text box to write their SOP
-//    -Once completed, user clicks save
-//    -SOP is saved as fully editable text
-//    -User is then directed to the create goals page
-//
-//    #2Review answers and create SOP with template
-//    -User can still see answers and a template that will help them create their SOP
-//    -Once completed, user clicks save
-//    -SOP is saved as fully editable text
-//    -User is then directed to the create goals page
-//
-//    Create goals page
-//    -User creates their list of goals
-//    -Once completed, user clicks save
-//    -User is then directed to Display SOP page
-//
-//    Display SOP, values, beliefs and goals page
-//    -SOP, values, beliefs and goals page
-//    -User can edit sop, values, beliefs and goals
