@@ -60,77 +60,178 @@ function generateUserData() {
 
 //line 49-71 from example capstone. Not sure how to write this
 
+//not sure how to modify the following function to suit my needs
+function generateStatementData() {
+    return {
+        // should be the same as username from generateUserData() above
+        user: testUsername,
+        body: faker.lorem.sentence(),
+        values: faker.lorem.sentence(),
+        beliefs: faker.lorem.sentence(),
+        goals: faker.lorem.sentence()
+    }
+}
 
-
+function tearDownDb() {
+    console.warn('Deleting database!');
+    return mongoose.connection.dropDatabase();
+}
 
 
 
 
 //starting from line 72 below this
-describe('Statements API resource', function() {
+describe('Statements API resource', function () {
 
-    before(function() {
+    before(function () {
         return runServer(TEST_DATABASE_URL)
             .then(console.log('running server'))
-            .catch(err => console.log({err}));
+            .catch(err => console.log({
+                err
+            }));
     });
 
-    beforeEach(function() {
+    beforeEach(function () {
         return seedStatementData();
     });
 
-    describe('GET endpoint', function() {
-        it('should return all statements in the DB for a user', function() {
+    describe('GET endpoint', function () {
+        it('should return all statements in the DB for a user', function () {
             let res;
             return chai.request(app)
                 .get('/statements/' + testUsername)
-                .then(function(_res) {
-                res = _res;
-                res.should.have.status(200);
-                res.body.statementOutput.should.have.length.of.at.least(1);
-                return Statement.count();
-            })
-                .then(function(count) {
-                res.body.statementOutput.should.have.length.of(count);
-            });
+                .then(function (_res) {
+                    res = _res;
+                    res.should.have.status(200);
+                    res.body.statementOutput.should.have.length.of.at.least(1);
+                    return Statement.count();
+                })
+                .then(function (count) {
+                    res.body.statementOutput.should.have.length.of(count);
+                });
         });
     });
 
-    it('should return statements with the right fields', function() {
+    it('should return statements with the right fields', function () {
         // ensure they have the expected keys
         return chai.request(app)
             .get('/statements/' + testUsername)
-            .then(function(res) {
-            res.should.have.status(200);
-            res.should.be.json;
-            res.body.statementOutput.should.be.a('array');
-            res.body.statementOutput.should.have.length.of.at.least(1);
+            .then(function (res) {
+                res.should.have.status(200);
+                res.should.be.json;
+                res.body.statementOutput.should.be.a('array');
+                res.body.statementOutput.should.have.length.of.at.least(1);
 
-            res.body.statementOutput.forEach(function(achievement) {
-                statement.should.be.a('object');
-                statement.should.include.keys(
-                    'user', 'body', 'values', 'beliefs', 'goals');
+                res.body.statementOutput.forEach(function (statement) {
+                    statement.should.be.a('object');
+                    statement.should.include.keys(
+                        'user', 'body', 'values', 'beliefs', 'goals');
+                });
             });
+    });
+
+
+    describe('POST endpoint', function () {
+        it('should add a new statement', function () {
+            const newStatement = generateStatementData();
+            console.log(newStatement);
+
+            return chai.request(app)
+                .post('/new/create')
+                .send(newStatement)
+                .then(function (res) {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('object');
+                    res.body.should.include.keys(
+                        'user', 'body', 'values', 'beliefs', 'goals');
+                    res.body.user.should.equal(newStatement.user);
+                    res.body.body.should.equal(newStatement.body);
+                    res.body.values.should.equal(newStatement.values);
+                    res.body.beliefs.should.equal(newStatement.beliefs);
+                    res.body.goals.should.equal(newStatement.goals);
+                    res.body._id.should.not.be.null;
+
+                    return Statement.findById(res.body.id);
+                });
         });
     });
 
-//above is up to line 117 in example code.
-//    next will be POST function
+
+    //    Question********under const updateData, do I need to list each one as I did? Body, values, beliefs, goals?
+    describe('PUT endpoint', function () {
+        it('should update fields sent over', function () {
+            const updateData = {
+                body: 'Picked a peck of pickled peppers',
+                values: 'To fetch a pail of water',
+                beliefs: 'To fetch a pail of water',
+                goals: 'To fetch a pail of water'
+            };
+
+            return Statement
+                .findOne()
+                .then(function (statement) {
+                    updateData.id = statement.id;
+                    return chai.request(app)
+                        .put(`/statement/${statement.id}`)
+                        .send(updateData);
+                })
+                .then(function (res) {
+                    res.should.have.status(204);
+                    return Statement.findById(updateData.id);
+                })
+
+                //            Question**********is this in connection to above question, is this correct?
+                .then(function (statement) {
+                    statement.body.should.equal(updateData.body);
+                    statement.values.should.equal(updateData.values);
+                    statement.beliefs.should.equal(updateData.beliefs);
+                    statement.goals.should.equal(updateData.goals);
+                });
+        });
+    });
 
 
 
+    describe('DELETE endpoint', function () {
+        it('should delete a statement by ID', function () {
+            let statement;
+            return Statement
+                .findOne()
+                .then(function (_statement) {
+                    statement = _statement;
+                    return chai.request(app).delete(`/_statement/${_statement.id}`);
+                })
+                .then(function (res) {
+                    res.should.have.status(204);
+                    return Statement.findById(statement.id);
+                })
+                .then(function (_statement) {
+                    should.not.exist(_statement);
+                });
+        });
+    });
 
-})
 
 
-const someJsFile = ('/statements');
+    afterEach(function () {
+        return tearDownDb();
+    });
 
-describe('statements', function () {
-    it('should return status 200', function () {
-        chai.request(app)
-            .get('/statements')
-            .then(function (res) {
-                res.should.have.status(200);
-            });
+    after(function () {
+        return closeServer();
     });
 });
+
+
+//const someJsFile = ('/statements');
+//
+//describe('statements', function () {
+//    it('should return status 200', function () {
+//        chai.request(app)
+//            .get('/statements')
+//            .then(function (res) {
+//                res.should.have.status(200);
+//            });
+//    });
+//});
