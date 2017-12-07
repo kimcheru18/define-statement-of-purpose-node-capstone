@@ -311,8 +311,6 @@ $(document).ready(function () {
 
 
     $('.create-sop-button').click(function () {
-
-
         $('.hide-everything').hide();
         $('#create').show();
     });

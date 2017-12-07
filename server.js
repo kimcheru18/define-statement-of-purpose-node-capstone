@@ -200,32 +200,6 @@ app.post('/answers/create', (req, res) => {
 
 
 
-//need help on this one save-free-style-sop here
-app.post('/statements/create', (req, res) => {
-
-    console.log(req.body.user, req.body.body, req.body.values, req.body.beliefs, req.body.goals);
-
-    Statement.create({
-        user: req.body.user,
-        body: req.body.body,
-        values: req.body.values,
-        beliefs: req.body.beliefs,
-        goals: req.body.goals
-    }, (err, item) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Internal Server Error'
-            });
-            if (item) {
-                console.log(`SaveFreeStyle ${item} added.`);
-                return res.json(item);
-            }
-        }
-    });
-});
-
-
-
 
 
 //*********************GET*************************
@@ -256,7 +230,6 @@ app.get('/statements/:user', function (req, res) {
 
 
 
-
 //*********************PUT*************************
 app.put('/statement/:id', function (req, res) {
     let updateSop = {};
@@ -282,11 +255,6 @@ app.put('/statement/:id', function (req, res) {
 
 
 
-
-
-
-
-
 //*********************DELETE*************************
 app.delete('/statements/:id', function (req, res) {
     Statement.findByIdAndRemove(req.params.id).exec().then(function (statement) {
@@ -297,6 +265,8 @@ app.delete('/statements/:id', function (req, res) {
         });
     });
 });
+
+
 
 //*********************MISC*************************
 app.use('*', (req, res) => {
