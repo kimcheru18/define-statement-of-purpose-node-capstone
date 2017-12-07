@@ -38,14 +38,14 @@ function seedStatementData() {
     console.info('Seeding statment data')
     const seedData = [];
 
-    //    should this be the "length" or number of statements, not 10?
-    for (let i = 1; i <= 10; i++) {
+    //    Kim question***********should this be the "length" or number of statements, not 10?
+    for (let i = 1; i < Statement.length; i++) {
         seedData.push(generateStatementData());
     }
     // console.log(seedData);
     // console.log(Statement);
     // should return a promise
-    return Achievement.insertMany(seedData);
+    return Statement.insertMany(seedData);
 }
 
 const testUsername = faker.random.word() + faker.random.number();
@@ -58,13 +58,13 @@ function generateUserData() {
     }
 }
 
-//line 49-71 from example capstone. Not sure how to write this
+//Kim comment*******line 49-71 from example capstone. Not sure how to write this or if I need it
 
-//not sure how to modify the following function to suit my needs
+//Kim question**********not sure how to modify the following function to suit my needs
 function generateStatementData() {
     return {
         // should be the same as username from generateUserData() above
-        user: testUsername,
+        user: username,
         body: faker.lorem.sentence(),
         values: faker.lorem.sentence(),
         beliefs: faker.lorem.sentence(),
@@ -80,7 +80,7 @@ function tearDownDb() {
 
 
 
-//starting from line 72 below this
+//Kim comment********starting from line 72 below this
 describe('Statements API resource', function () {
 
     before(function () {
@@ -158,7 +158,7 @@ describe('Statements API resource', function () {
     });
 
 
-    //    Question********under const updateData, do I need to list each one as I did? Body, values, beliefs, goals?
+    //    Kim Question********under const updateData, do I need to list each one as I did below? Body, values, beliefs, goals?
     describe('PUT endpoint', function () {
         it('should update fields sent over', function () {
             const updateData = {
@@ -181,7 +181,7 @@ describe('Statements API resource', function () {
                     return Statement.findById(updateData.id);
                 })
 
-                //            Question**********is this in connection to above question, is this correct?
+                // Kim Question**********is this in connection to above question, is this correct?
                 .then(function (statement) {
                     statement.body.should.equal(updateData.body);
                     statement.values.should.equal(updateData.values);
@@ -222,6 +222,9 @@ describe('Statements API resource', function () {
         return closeServer();
     });
 });
+
+//Kim Question***********do I need the following code?
+
 
 
 //const someJsFile = ('/statements');

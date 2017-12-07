@@ -278,4 +278,7 @@ app.use('*', (req, res) => {
 exports.app = app;
 exports.runServer = runServer;
 
+//I added closeServer because when I tested, it said closeServer was not a function but I had not exported it from here at that point
+exports.closeServer = closeServer;
+
 app.listen(process.env.PORT);
