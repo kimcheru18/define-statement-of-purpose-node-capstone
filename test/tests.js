@@ -64,7 +64,7 @@ function generateUserData() {
 function generateStatementData() {
     return {
         // should be the same as username from generateUserData() above
-        user: username,
+        user: testUsername,
         body: faker.lorem.sentence(),
         values: faker.lorem.sentence(),
         beliefs: faker.lorem.sentence(),
@@ -127,6 +127,12 @@ describe('Statements API resource', function () {
                     statement.should.include.keys(
                         'user', 'body', 'values', 'beliefs', 'goals');
                 });
+
+                //  Kim Question*******Do I need to call done?
+                //            Terminal Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
+
+
+                done();
             });
     });
 

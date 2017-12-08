@@ -144,6 +144,31 @@ app.post('/statements/create', (req, res) => {
     let values = req.body.values;
     let beliefs = req.body.beliefs;
     let goals = req.body.goals;
+    var today = new Date();
+    var showMonth = (today.getMonth() + 1);
+    if (showMonth < 10) {
+        showMonth += "0" + showMonth;
+    }
+    var showDate = today.getDate();
+    if (showDate < 10) {
+        showDate += "0" + showDate;
+    }
+    var showHours = today.getHours();
+    if (showHours < 10) {
+        showHours += "0" + showHours;
+    }
+    var showMinutes = today.getMinutes();
+    if (showMinutes < 10) {
+        showMinutes += "0" + showMinutes;
+    }
+    var showSeconds = today.getSeconds();
+    if (showSeconds < 10) {
+        showSeconds += "0" + showSeconds;
+    }
+    var date = today.getFullYear() + '-' + showMonth + '-' + showDate;
+    var time = showHours + "-" + showMinutes + "-" + showSeconds;
+    var dateTime = date + '-' + time;
+    console.log(showMonth, showDate, showHours, showMinutes, showSeconds);
 
     Statement.create({
         user,
@@ -151,6 +176,7 @@ app.post('/statements/create', (req, res) => {
         values,
         beliefs,
         goals,
+        dateTime
     }, (err, item) => {
         if (err) {
             return res.status(500).json({
@@ -167,66 +193,59 @@ app.post('/statements/create', (req, res) => {
 
 
 
-app.post('/answers/create', (req, res) => {
-
-    let user = req.body.user;
-    let answer1 = req.body.answer1;
-    let answer2 = req.body.answer2;
-    let answer3 = req.body.answer3;
-    let answer4 = req.body.answer4;
-    let answer5 = req.body.answer5;
-    let answer6 = req.body.answer6;
-
-    Answer.create({
-        user,
-        answer1,
-        answer2,
-        answer3,
-        answer4,
-        answer5,
-        answer6,
-    }, (err, item) => {
-        if (err) {
-            return res.status(500).json({
-                message: 'Internal Server Error'
-            });
-            if (item) {
-                console.log(`Answer ${item} added.`);
-                return res.json(item);
-            }
-        }
-    });
-});
+//app.post('/answers/create', (req, res) => {
+//
+//    let user = req.body.user;
+//    let answer1 = req.body.answer1;
+//    let answer2 = req.body.answer2;
+//    let answer3 = req.body.answer3;
+//    let answer4 = req.body.answer4;
+//    let answer5 = req.body.answer5;
+//    let answer6 = req.body.answer6;
+//
+//    Answer.create({
+//        user,
+//        answer1,
+//        answer2,
+//        answer3,
+//        answer4,
+//        answer5,
+//        answer6,
+//    }, (err, item) => {
+//        if (err) {
+//            return res.status(500).json({
+//                message: 'Internal Server Error'
+//            });
+//            if (item) {
+//                console.log(`Answer ${item} added.`);
+//                return res.json(item);
+//            }
+//        }
+//    });
+//});
 
 
 
 
 
 //*********************GET*************************
+
+
 app.get('/statements/:user', function (req, res) {
-    Statement
-        .find()
-        .sort('statement')
-        .then(function (statements) {
-            let statementOutput = [];
-            statements.map(function (statement) {
-                if (statement.user == req.params.user) {
-                    statementOutput.push(statement);
-                }
-            });
-            res.json({
-                statementOutput
-            });
-        })
-        .catch(function (err) {
-            console.error(err);
-            res.status(500).json({
-                message: 'Internal server error'
-            });
+    Statement.findOne({
+            user: req.params.user
+        },
+
+        function (err, item) {
+            console.log(item);
+            if (err) {
+                return res.status(500).json({
+                    message: 'Internal Server Error'
+                });
+            }
+            res.status(200).json(item);
         });
 });
-
-
 
 
 

@@ -134,6 +134,7 @@ $(document).ready(function () {
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
                     $('#finalLoggedinUser').val(loggedInUser);
+                    displayUpdatedStatement(loggedInUser);
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
@@ -416,14 +417,15 @@ $(document).ready(function () {
                     contentType: 'application/json'
                 })
                 .done(function (result) {
-                    event.preventDefault();
-                    displayUpdatedStatement(user);
+                    console.log("here");
+
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
                     console.log(error);
                     console.log(errorThrown);
                 });
+            displayUpdatedStatement(user);
         }
     });
 });

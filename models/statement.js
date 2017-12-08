@@ -23,6 +23,10 @@ const statementSchema = new mongoose.Schema({
     goals: {
         type: String,
         required: false
+    },
+    dateTime: {
+        type: String,
+        required: false
     }
 });
 
