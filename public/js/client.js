@@ -278,33 +278,6 @@ $(document).ready(function () {
 
             $('.hide-everything').hide();
             $('#review').show();
-
-            const userAnswerObject = {
-                answer1,
-                answer2,
-                answer3,
-                answer4,
-                answer5,
-                answer6
-            }
-
-            console.log(userAnswerObject);
-            $.ajax({
-                    type: 'POST',
-                    url: '/answers/create',
-                    dataType: 'json',
-                    data: JSON.stringify(userAnswerObject),
-                    contentType: 'application/json'
-                })
-                .done(function (result) {
-                    event.preventDefault();
-                })
-                .fail(function (jqXHR, error, errorThrown) {
-                    console.log(jqXHR);
-                    console.log(error);
-                    console.log(errorThrown);
-                });
-
         };
     });
 
@@ -385,7 +358,6 @@ $(document).ready(function () {
         let values = $('#finalValues').val();
         let beliefs = $('#finalBeliefs').val();
         let goals = $('.my-goals').val();
-
         if (goals == "") {
             alert("Please create goals");
             return;
@@ -405,7 +377,7 @@ $(document).ready(function () {
                 body: body,
                 values: values,
                 beliefs: beliefs,
-                goals: goals,
+                goals: goals
             }
             console.log(userStatementObject);
 

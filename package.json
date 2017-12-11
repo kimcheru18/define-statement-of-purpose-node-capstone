@@ -35,11 +35,12 @@
         "cors": "^2.8.4",
         "express": "^4.16.2",
         "lorem-ipsum": "^1.0.4",
+        "moment": "^2.19.3",
         "mongodb": "^2.2.9",
         "mongoose": "^4.12.1",
         "morgan": "^1.9.0",
         "node-lipsum": "^1.0.1",
-        "nodemon": "^1.12.1",
+        "nodemon": "^1.12.5",
         "passport": "^0.4.0",
         "passport-http": "^0.3.0",
         "travis": "^0.1.1"

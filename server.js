@@ -2,7 +2,6 @@
 
 const User = require('./models/user');
 const Statement = require('./models/statement');
-const Answer = require('./models/answer');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
@@ -56,6 +55,18 @@ function closeServer() {
         });
     }));
 }
+
+
+
+function sortByKey(array, key) {
+    return array.sort(function (a, b) {
+        var x = a[key];
+        var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
+
 
 // ---------------USER ENDPOINTS-------------------------------------
 // POST -----------------------------------
@@ -151,19 +162,19 @@ app.post('/statements/create', (req, res) => {
     }
     var showDate = today.getDate();
     if (showDate < 10) {
-        showDate += "0" + showDate;
+        showDate = "0" + showDate;
     }
     var showHours = today.getHours();
     if (showHours < 10) {
-        showHours += "0" + showHours;
+        showHours = "0" + showHours;
     }
     var showMinutes = today.getMinutes();
     if (showMinutes < 10) {
-        showMinutes += "0" + showMinutes;
+        showMinutes = "0" + showMinutes;
     }
     var showSeconds = today.getSeconds();
     if (showSeconds < 10) {
-        showSeconds += "0" + showSeconds;
+        showSeconds = "0" + showSeconds;
     }
     var date = today.getFullYear() + '-' + showMonth + '-' + showDate;
     var time = showHours + "-" + showMinutes + "-" + showSeconds;
@@ -193,38 +204,6 @@ app.post('/statements/create', (req, res) => {
 
 
 
-//app.post('/answers/create', (req, res) => {
-//
-//    let user = req.body.user;
-//    let answer1 = req.body.answer1;
-//    let answer2 = req.body.answer2;
-//    let answer3 = req.body.answer3;
-//    let answer4 = req.body.answer4;
-//    let answer5 = req.body.answer5;
-//    let answer6 = req.body.answer6;
-//
-//    Answer.create({
-//        user,
-//        answer1,
-//        answer2,
-//        answer3,
-//        answer4,
-//        answer5,
-//        answer6,
-//    }, (err, item) => {
-//        if (err) {
-//            return res.status(500).json({
-//                message: 'Internal Server Error'
-//            });
-//            if (item) {
-//                console.log(`Answer ${item} added.`);
-//                return res.json(item);
-//            }
-//        }
-//    });
-//});
-
-
 
 
 
@@ -232,7 +211,7 @@ app.post('/statements/create', (req, res) => {
 
 
 app.get('/statements/:user', function (req, res) {
-    Statement.findOne({
+    Statement.find({
             user: req.params.user
         },
 
@@ -243,12 +222,13 @@ app.get('/statements/:user', function (req, res) {
                     message: 'Internal Server Error'
                 });
             }
-            res.status(200).json(item);
+            let output = (sortByKey(item, 'dateTime'));
+            res.status(200).json(output[(output.length - 1)]);
         });
 });
 
 
-
+//**************under construction***********
 //*********************PUT*************************
 app.put('/statement/:id', function (req, res) {
     let updateSop = {};
@@ -274,16 +254,7 @@ app.put('/statement/:id', function (req, res) {
 
 
 
-//*********************DELETE*************************
-app.delete('/statements/:id', function (req, res) {
-    Statement.findByIdAndRemove(req.params.id).exec().then(function (statement) {
-        return res.status(204).end();
-    }).catch(function (err) {
-        return res.status(500).json({
-            message: 'Internal Server Error'
-        });
-    });
-});
+
 
 
 
