@@ -99,7 +99,7 @@ $(document).ready(function () {
 
     $('.nav-review').click(function () {
         $('.hide-everything').hide();
-        $('#questions').show();
+        $('#create').show();
     });
 
 
@@ -133,6 +133,7 @@ $(document).ready(function () {
                     // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
+                    $('.navigate-options').show();
                     $('#finalLoggedinUser').val(loggedInUser);
                     displayUpdatedStatement(loggedInUser);
                 })
@@ -218,6 +219,7 @@ $(document).ready(function () {
         } else {
             $('.logged-in-username').val(loggedInUser);
             $('.hide-everything').hide();
+            $('.navigate-options').show();
             $('#questions').show();
         };
     });
@@ -277,6 +279,7 @@ $(document).ready(function () {
             };
 
             $('.hide-everything').hide();
+            $('.navigate-options').show();
             $('#review').show();
         };
     });
@@ -286,6 +289,7 @@ $(document).ready(function () {
 
     $('.create-sop-button').click(function () {
         $('.hide-everything').hide();
+        $('.navigate-options').show();
         $('#create').show();
     });
 
@@ -294,6 +298,7 @@ $(document).ready(function () {
 
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
+        $('.navigate-options').show();
         $('#create-with-template').show();
 
     });
@@ -315,6 +320,7 @@ $(document).ready(function () {
             $('#completed-sop .purpose p').html(createSopFreeStyle);
 
             $('.hide-everything').hide();
+            $('.navigate-options').show();
             $('#completed-sop').show();
             $('#create-goals').show();
             $('#finalSopBody').val(createSopFreeStyle);
@@ -345,6 +351,7 @@ $(document).ready(function () {
         }
 
         $('.hide-everything').hide();
+        $('.navigate-options').show();
         $('#completed-sop').show();
         $('#create-goals').show();
     });
@@ -369,6 +376,7 @@ $(document).ready(function () {
                 $('#values-beliefs-goals .goals ul').append("<li>" + goalsArray[k] + "</li>");
             };
             $('.hide-everything').hide();
+            $('.navigate-options').show();
             $('#completed-sop').show();
             $('#values-beliefs-goals').show();
 
