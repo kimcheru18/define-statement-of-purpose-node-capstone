@@ -12,9 +12,16 @@
 //6. Once user has answered all questions, they have the option to create SOP free-style or use template
 //7. If using template, user can alter text when finished filling in blank fields
 //8. User clicks Save once finished writing SOP
+
+
+
+
 var loggedInUser = "";
 var usersAnswers = [];
 var usersCompletedSop = [];
+
+//added: 12/11/17 to hold user data to be populated to appropriate fields on login
+var retrieveUserSop = {};
 
 var questionsArray = [
     //Question 1
@@ -68,12 +75,22 @@ function displayUpdatedStatement(username) {
         })
         .done(function (result) {
             console.log(result);
+            //***************added: grab variable with user data************
+            retrieveUserSop = result;
         })
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
             console.log(error);
             console.log(errorThrown);
         });
+
+}
+//*****added: adding function to grab variable that holds user data. What is the previous function doing? should data be added to that?? So i've targeted where each part should be displayed in the app, how do I grab date from the variable to populate info? *************
+function getUserSop() {
+    $('.purpose').text(body);
+    $('.values').text(values);
+    $('.beliefs').text(beliefs);
+    $('.goals-ul').text(goals);
 }
 
 
@@ -86,20 +103,78 @@ $(document).ready(function () {
     $('#login-sop').show();
     $('#sop-description-info').show();
 
+    //user cannot click Reflect unless they have already created SOP, Values, Beliefs
+    //needs to be an "if" statement. If user has not completed question section, user cannot Reflect"
     $('.nav-reflect').click(function () {
-        $('.hide-everything').hide();
-        $('#completed-sop').show();
-        $('#values-beliefs-goals').show();
+
+        let answer1 = $('.js-answer1').val();
+        let answer2 = $('.js-answer2').val();
+        let answer3 = $('.js-answer3').val();
+        let answer4 = $('.js-answer4').val();
+        let answer5 = $('.js-answer5').val();
+        let answer6 = $('.js-answer6').val();
+        let goals = $('.my-goals').val();
+        let sopLoggedInUser = $('.logged-in-username').val();
+
+        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "") || (goals == "")) {
+            alert("Please complete questionaire and create goals");
+            return;
+        } else {
+
+            $('.hide-everything').hide();
+            $('.navigate-options').show();
+            $('#completed-sop').show();
+            $('#values-beliefs-goals').show();
+
+        };
     });
 
+
+    //user cannot click Create until answers have been filled in
     $('.nav-create').click(function () {
-        $('.hide-everything').hide();
-        $('#review').show();
+
+        let answer1 = $('.js-answer1').val();
+        let answer2 = $('.js-answer2').val();
+        let answer3 = $('.js-answer3').val();
+        let answer4 = $('.js-answer4').val();
+        let answer5 = $('.js-answer5').val();
+        let answer6 = $('.js-answer6').val();
+        let sopLoggedInUser = $('.logged-in-username').val();
+
+        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "")) {
+            alert("Please complete questionaire");
+            return;
+        } else {
+
+            $('.hide-everything').hide();
+            $('.navigate-options').show();
+            $('#review').show();
+
+        };
     });
 
+
+    //user cannot click Review until SOP, Values, Beliefs and Goals are complete
     $('.nav-review').click(function () {
-        $('.hide-everything').hide();
-        $('#create').show();
+
+        let answer1 = $('.js-answer1').val();
+        let answer2 = $('.js-answer2').val();
+        let answer3 = $('.js-answer3').val();
+        let answer4 = $('.js-answer4').val();
+        let answer5 = $('.js-answer5').val();
+        let answer6 = $('.js-answer6').val();
+        let goals = $('.my-goals').val();
+        let sopLoggedInUser = $('.logged-in-username').val();
+
+        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "") || (goals == "")) {
+            alert("Please complete questionaire and create goals");
+            return;
+        } else {
+
+            $('.hide-everything').hide();
+            $('.navigate-options').show();
+            $('#create').show();
+        };
     });
 
 
@@ -136,6 +211,7 @@ $(document).ready(function () {
                     $('.navigate-options').show();
                     $('#finalLoggedinUser').val(loggedInUser);
                     displayUpdatedStatement(loggedInUser);
+                    getUserSop();
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
