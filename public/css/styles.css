@@ -163,7 +163,7 @@ nav a:hover {
     color: rgb(241, 241, 241);
 }
 
-.logout-account,
+
 .login-account,
 .go-register-account,
 .register-account {
@@ -176,6 +176,10 @@ nav a:hover {
 .go-register-account:hover,
 .register-account:hover {
     color: white;
+}
+
+.logout-account {
+    color: rgb(204, 197, 197);
 }
 
 .logout-account h4 {
@@ -222,6 +226,10 @@ main {
 .review-section {
     text-indent: 3mm;
     margin: .5rem 0;
+}
+
+.complete-sentence {
+    margin-top: .8rem;
 }
 
 .js-connect-answer5,

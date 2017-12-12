@@ -114,9 +114,6 @@ $(document).ready(function () {
     $('.hide-everything').hide();
     $('#login-sop').show();
     $('#sop-description-info').show();
-
-    //user cannot click Reflect unless they have already created SOP, Values, Beliefs
-    //needs to be an "if" statement. If user has not completed question section, user cannot Reflect"
     $('.nav-reflect').click(function () {
 
         $('.hide-everything').hide();
@@ -128,7 +125,7 @@ $(document).ready(function () {
     });
 
 
-    //user cannot click Create until answers have been filled in
+
     $('.nav-create').click(function () {
 
         $('.hide-everything').hide();
@@ -139,7 +136,7 @@ $(document).ready(function () {
     });
 
 
-    //user cannot click Review until SOP, Values, Beliefs and Goals are complete
+
     $('.nav-review').click(function () {
 
         $('.hide-everything').hide();
@@ -189,10 +186,6 @@ $(document).ready(function () {
                     alert('Invalid username and password combination. Pleae check your username and password and try again.');
                 });
         };
-
-
-
-
     });
 
 
@@ -450,8 +443,8 @@ $(document).ready(function () {
     });
 
 
-//    need to complete this function
-    $('.logout-account').click(function) {
-//        on click page refresh
-    }
+    //    need to complete this function
+    //    $('.logout-account ').click(function) {
+    ////        on click page refresh
+    //    }
 });
