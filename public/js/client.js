@@ -21,7 +21,7 @@ var usersAnswers = [];
 var usersCompletedSop = [];
 
 //added: 12/11/17 to hold user data to be populated to appropriate fields on login
-var retrieveUserSop = {};
+//var retrieveUserSop = {};
 
 var questionsArray = [
     //Question 1
@@ -67,6 +67,7 @@ var questionsArray = [
 
 // step 2. Defining functions
 function displayUpdatedStatement(username) {
+    let retrieveUserSop = {};
     $.ajax({
             type: 'GET',
             url: '/statements/' + username,
@@ -75,23 +76,24 @@ function displayUpdatedStatement(username) {
         })
         .done(function (result) {
             console.log(result);
-            if ((!result) && (result != undefined) && (result != "")) {
+            if ((!result) || (result != undefined) || (result != "")) {
                 //***************added: grab variable with user data************
                 retrieveUserSop = result;
+                console.log("here");
             }
-
+            console.log(retrieveUserSop);
         })
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
             console.log(error);
             console.log(errorThrown);
         });
-
+    return retrieveUserSop;
 }
-if (retrieveUserSop != "") {
-    //if not empty, user has data in db
-
-}
+//if (retrieveUserSop != "") {
+//    //if not empty, user has data in db
+//
+//}
 
 //*****added: adding function to grab variable that holds user data. What is the previous function doing? should data be added to that?? So i've targeted where each part should be displayed in the app, how do I grab date from the variable to populate info? *************
 function getUserSop() {
@@ -174,16 +176,72 @@ $(document).ready(function () {
                     loggedInUser = result;
                     // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
-                    $('#sop-description-info').show();
+                    //show logged in user
                     $('#finalLoggedinUser').val(loggedInUser);
 
-                    displayUpdatedStatement(loggedInUser);
+
+
+
+                    $.ajax({
+                            type: 'GET',
+                            url: '/statements/' + loggedInUser,
+                            dataType: 'json',
+                            contentType: 'application/json'
+                        })
+                        .done(function (result) {
+                            console.log(result);
+                            let retrieveUserSop = {};
+                            if ((!result) || (result != undefined) || (result != "")) {
+                                //***************added: grab variable with user data************
+                                retrieveUserSop = result;
+                                console.log("here");
+                            }
+                            console.log(retrieveUserSop);
+                            //check if the user has a previous statement
+                            //                            retrieveUserSop = displayUpdatedStatement(loggedInUser);
+                            //                            console.log(displayUpdatedStatement(loggedInUser));
+
+
+
+
+                            //if there is a previous statement,
+                            if (retrieveUserSop != "") {
+                                //display final page with statement
+                                $('.navigate-options').show();
+                                $('.logout-account').show();
+                                //show goals, values, beliefs
+                                $('#completed-sop').show();
+                                $('#values-beliefs-goals').show();
+
+                            }
+                            //if there are no previous statements
+                            else {
+                                //display intro container
+                                $('#sop-description-info').show();
+                            }
+
+
+
+
+
+                        })
+                        .fail(function (jqXHR, error, errorThrown) {
+                            console.log(jqXHR);
+                            console.log(error);
+                            console.log(errorThrown);
+                        });
+
+
+
+
+
+
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
                     console.log(error);
                     console.log(errorThrown);
-                    alert('Invalid username and password combination. Pleae check your username and password and try again.');
+                    alert('Invalid username and password combination. Please check your username and password and try again.');
                 });
         };
     });
