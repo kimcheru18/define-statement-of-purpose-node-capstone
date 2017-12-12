@@ -35,23 +35,23 @@ Defining your values and beliefs will help you create this statement and then yo
 
 **Landing Page**
 Initial landing page has login and register option. It also has an explanation of what the app is for, user will login or register and then login and then click "Let's get started." Also, at the top of this page in the nav bar are links to Reflect, Create and Review. See more info on Reflect, Create, Review page below.
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/landing-page-image.png)
 
 **Answer Questions Page**
 Step 1 User will answer all questions on page. Step 2 user lists values and beliefs. User will then click "Save and continue."
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/answer-questions-image.png)
 
 **Instructions for creating SOP Page**
 Step 3 User can choose to create SOP free-style by clicking "Create free-style" or use a template by clicking "Create with template." The template will be filled in with their answers from questions page. User can edit if desired.
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/instructions-create-sop.png)
 
 **Create Free-style Page**
 Step 4 User creates SOP in textarea, then clicks "Save"
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
 
 **Template Page**
 Alternatively, Step 4 Users answers from the questions page will be inserted in input fields where user can alter text. User clicks "Save" to continue
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/template-image.png)
 
 **Completed Statement of Purpose and Add Goals Page**
 This page will have the users SOP displayed, along with a section to create goals. Once goals are created, user clicks "Save" to continue.
