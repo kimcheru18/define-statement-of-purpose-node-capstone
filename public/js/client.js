@@ -75,8 +75,11 @@ function displayUpdatedStatement(username) {
         })
         .done(function (result) {
             console.log(result);
-            //***************added: grab variable with user data************
-            retrieveUserSop = result;
+            if ((!result) && (result != undefined) && (result != "")) {
+                //***************added: grab variable with user data************
+                retrieveUserSop = result;
+            }
+
         })
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
@@ -85,12 +88,21 @@ function displayUpdatedStatement(username) {
         });
 
 }
+if (retrieveUserSop != "") {
+    //if not empty, user has data in db
+
+}
+
 //*****added: adding function to grab variable that holds user data. What is the previous function doing? should data be added to that?? So i've targeted where each part should be displayed in the app, how do I grab date from the variable to populate info? *************
 function getUserSop() {
-    $('.purpose').text(body);
-    $('.values').text(values);
-    $('.beliefs').text(beliefs);
-    $('.goals-ul').text(goals);
+    //    let body = $('#finalSopBody');//    let values = $('#finalValues');
+    //    let beliefs = $('#finalBeliefs');
+    //    let goals = $('.my-goals');
+    //
+    //    $('.purpose').text(body);
+    //    $('.values').text(values);
+    //    $('.beliefs').text(beliefs);
+    //    $('.goals').text(goals);
 }
 
 
@@ -210,8 +222,8 @@ $(document).ready(function () {
                     $('#sop-description-info').show();
                     $('.navigate-options').show();
                     $('#finalLoggedinUser').val(loggedInUser);
+
                     displayUpdatedStatement(loggedInUser);
-                    getUserSop();
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);

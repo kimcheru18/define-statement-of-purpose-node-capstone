@@ -222,8 +222,18 @@ app.get('/statements/:user', function (req, res) {
                     message: 'Internal Server Error'
                 });
             }
-            let output = (sortByKey(item, 'dateTime'));
-            res.status(200).json(output[(output.length - 1)]);
+//if results are not empty
+            if (item.length != 0) {
+
+                //pick up last item in results
+                let output = (sortByKey(item, 'dateTime'));
+                res.status(200).json(output[(output.length - 1)]);
+            }
+        //if results are empty,
+        else {
+            //return empty json
+                res.status(200).json("");
+            }
         });
 });
 

@@ -30,7 +30,7 @@
     </main>
 
     <!--   user can sign-in or create a new account in order to save their SOP-->
-    <!--    This is the sign-in/register page-->
+    <!--    This is the part of the landing page where user can sign-in or register-->
     <main class="hide-everything" id="login-sop">
         <form action="login" class="account-options">
             <label class="login" for="login">
@@ -74,17 +74,17 @@
     </main>
 
 
-    <!--   ------------------------This section explains what this site is about and gives brief instructions------------------------  -->
+    <!--  ----------------This section explains what this site is about and gives brief instructions------------------  -->
     <main role="main" class="hide-everything" id="sop-description-info">
         <section class="image sop-description-image">
         </section>
         <section class="why-sop">
             <h2>Why create a Statement of Purpose?</h2>
             <h2> It helps to...</h2>
-            <p>Find your focus</p>
-            <p>Discover and define your values and beliefs</p>
-            <p>See who you are in relation to others</p>
-            <p>Determine how you can use your strengths to serve others</p>
+            <p><strong>F</strong>ind your focus</p>
+            <p><strong>D</strong>iscover and define your values and beliefs</p>
+            <p><strong>S</strong>ee who you are in relation to others</p>
+            <p><strong>D</strong>etermine how you can use your strengths to serve others</p>
         </section>
 
 
@@ -112,7 +112,7 @@
     </main>
 
 
-    <!--User answers some questions about themselves in this section-->
+    <!--User answers some questions in this section-->
     <main class="hide-everything" id="questions">
         <section class="image questions-image">
         </section>
@@ -125,44 +125,49 @@
                 <br>
                 <h3>Instructions: Read the question and then complete the sentence.</h3>
             </section>
-            <div class="questions">
-                <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
-                <h3>It is my purpose to...</h3>
-                <textarea name="create-sop" class="answer-text js-answer1" cols="30" rows="10"></textarea>
-                <input type="hidden" class="logged-in-username" value="">
-            </div>
 
-            <div class="questions">
-                <h3>What strengths and talents do I posses?</h3>
-                <h3>I will grow and develop my...</h3>
-                <textarea name="create-sop" class="answer-text js-answer2" cols="30" rows="10"></textarea>
-            </div>
+            <section>
+                <div class="questions">
+                    <h3>What do I want to have accomplished in my lifetime for myself and for others?</h3>
+                    <h3>It is my purpose to...</h3>
+                    <textarea name="create-sop" class="answer-text js-answer1" cols="30" rows="10"></textarea>
+                    <input type="hidden" class="logged-in-username" value="">
+                </div>
 
-            <div class="questions">
-                <h3>Who are the people that I value most?</h3>
-                <h3>The people that are most important to me are...</h3>
-                <textarea name="create-sop" class="answer-text js-answer3" cols="30" rows="10"></textarea>
-            </div>
+                <div class="questions">
+                    <h3>What strengths and talents do I posses?</h3>
+                    <h3>I will grow and develop my...</h3>
+                    <textarea name="create-sop" class="answer-text js-answer2" cols="30" rows="10"></textarea>
+                </div>
 
-            <div class="questions">
-                <h3>What are some ways I can enrich my life and the lives of those that I love?</h3>
-                <h3>I will strive to...</h3>
-                <textarea name="create-sop" class="answer-text  js-answer4" cols="30" rows="10"></textarea>
-            </div>
+                <div class="questions">
+                    <h3>Who are the people that I value most?</h3>
+                    <h3>The people that are most important to me are...</h3>
+                    <textarea name="create-sop" class="answer-text js-answer3" cols="30" rows="10"></textarea>
+                </div>
 
-            <h2 class="value-belief-questions-margin"><strong>Step 2.</strong></h2>
-            <h3>Separate each value and belief with a comma to create a list.</h3>
+                <div class="questions">
+                    <h3>What are some ways I can enrich my life and the lives of those that I love?</h3>
+                    <h3>I will strive to...</h3>
+                    <textarea name="create-sop" class="answer-text  js-answer4" cols="30" rows="10"></textarea>
+                </div>
+            </section>
 
-            <div class="questions">
-                <h3>What are my core values?</h3>
-                <h4>Values: a person's principles or standards of behavior; one's judgment of what is important in life.</h4>
-                <textarea name="create-sop" class="answer-text js-answer5" cols="30" rows="10"></textarea>
-            </div>
-            <div class="questions">
-                <h3>What are my beliefs?</h3>
-                <h4>Belief: trust, faith, or confidence in someone or something.</h4>
-                <textarea name="create-sop" class="answer-text js-answer6" cols="30" rows="10"></textarea>
-            </div>
+            <section>
+                <h2 class="value-belief-questions-margin"><strong>Step 2.</strong></h2>
+                <h3>Separate each value and belief with a comma to create a list.</h3>
+
+                <div class="questions">
+                    <h3>What are my core values?</h3>
+                    <h4>Values: a person's principles or standards of behavior; one's judgment of what is important in life.</h4>
+                    <textarea name="create-sop" class="answer-text js-answer5" cols="30" rows="10"></textarea>
+                </div>
+                <div class="questions">
+                    <h3>What are my beliefs?</h3>
+                    <h4>Belief: trust, faith, or confidence in someone or something.</h4>
+                    <textarea name="create-sop" class="answer-text js-answer6" cols="30" rows="10"></textarea>
+                </div>
+            </section>
             <button class="save-answers-button">Save and continue</button>
         </form>
     </main>
@@ -184,6 +189,8 @@
         </section>
 
     </main>
+
+
 
 
     <!--  ------------------------User creates SOP using their own words------------------------  -->
@@ -227,6 +234,9 @@
             <button class="save-completed-button">Save</button>
         </section>
     </main>
+
+
+
 
     <!--  ------------------------User creates SOP using customizable template------------------------  -->
     <main class="hide-everything" id="create-with-template">
@@ -287,6 +297,8 @@
     </main>
 
 
+
+
     <!--  ------------------------Completed-sop is displayed for user to see------------------------  -->
     <main class="hide-everything" id="completed-sop">
         <section class="image completed-sop-image"></section>
@@ -296,6 +308,8 @@
             </p>
         </section>
     </main>
+
+
 
 
     <!-- ------------------------User creates goals that align with their SOP------------------------  -->
@@ -312,6 +326,9 @@
         </section>
         <section class="image create-goals-image"></section>
     </main>
+
+
+
 
     <!--Values, beliefs and goals are displayed for user to see (values and beliefs are obtained in the question section)-->
     <main class="hide-everything" id="values-beliefs-goals">
@@ -337,11 +354,9 @@
                 </button>
             </form>
             <h2>Beliefs</h2>
-            <div class="vbg">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
+            <ul>
+                <li></li>
+            </ul>
         </section>
 
         <section class="goals">
@@ -352,11 +367,9 @@
                 </button>
             </form>
             <h2>Goals</h2>
-            <div class="goals-ul">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
+            <ul>
+                <li></li>
+            </ul>
         </section>
     </main>
 
