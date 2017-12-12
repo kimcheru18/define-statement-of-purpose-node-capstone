@@ -163,6 +163,7 @@ nav a:hover {
     color: rgb(241, 241, 241);
 }
 
+.logout-account,
 .login-account,
 .go-register-account,
 .register-account {
@@ -170,10 +171,18 @@ nav a:hover {
     text-decoration: none;
 }
 
+.logout-account:hover,
 .login-account:hover,
 .go-register-account:hover,
 .register-account:hover {
     color: white;
+}
+
+.logout-account h4 {
+    float: right;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    padding-top: 0;
 }
 
 .account-options,
@@ -482,6 +491,11 @@ place all the mobile tables styles below this line
         margin: .5rem auto;
     }
 
+    .account-options,
+    .register-user {
+        padding-left: 0;
+    }
+
     div {
         padding: .75rem;
     }
@@ -504,6 +518,7 @@ place all the mobile tables styles below this line
     .edit-beliefs-form,
     .edit-values-form {
         top: 0px;
+        right: -80px;
     }
 }
 

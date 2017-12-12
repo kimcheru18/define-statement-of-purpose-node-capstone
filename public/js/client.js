@@ -119,76 +119,34 @@ $(document).ready(function () {
     //needs to be an "if" statement. If user has not completed question section, user cannot Reflect"
     $('.nav-reflect').click(function () {
 
-        let answer1 = $('.js-answer1').val();
-        let answer2 = $('.js-answer2').val();
-        let answer3 = $('.js-answer3').val();
-        let answer4 = $('.js-answer4').val();
-        let answer5 = $('.js-answer5').val();
-        let answer6 = $('.js-answer6').val();
-        let goals = $('.my-goals').val();
-        let sopLoggedInUser = $('.logged-in-username').val();
+        $('.hide-everything').hide();
+        $('.navigate-options').show();
+        $('.logout-account').show();
+        $('#completed-sop').show();
+        $('#values-beliefs-goals').show();
 
-        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "") || (goals == "")) {
-            alert("Please complete questionaire and create goals");
-            return;
-        } else {
-
-            $('.hide-everything').hide();
-            $('.navigate-options').show();
-            $('#completed-sop').show();
-            $('#values-beliefs-goals').show();
-
-        };
     });
 
 
     //user cannot click Create until answers have been filled in
     $('.nav-create').click(function () {
 
-        let answer1 = $('.js-answer1').val();
-        let answer2 = $('.js-answer2').val();
-        let answer3 = $('.js-answer3').val();
-        let answer4 = $('.js-answer4').val();
-        let answer5 = $('.js-answer5').val();
-        let answer6 = $('.js-answer6').val();
-        let sopLoggedInUser = $('.logged-in-username').val();
+        $('.hide-everything').hide();
+        $('.navigate-options').show();
+        $('.logout-account').show();
+        $('#review').show();
 
-        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "")) {
-            alert("Please complete questionaire");
-            return;
-        } else {
-
-            $('.hide-everything').hide();
-            $('.navigate-options').show();
-            $('#review').show();
-
-        };
     });
 
 
     //user cannot click Review until SOP, Values, Beliefs and Goals are complete
     $('.nav-review').click(function () {
 
-        let answer1 = $('.js-answer1').val();
-        let answer2 = $('.js-answer2').val();
-        let answer3 = $('.js-answer3').val();
-        let answer4 = $('.js-answer4').val();
-        let answer5 = $('.js-answer5').val();
-        let answer6 = $('.js-answer6').val();
-        let goals = $('.my-goals').val();
-        let sopLoggedInUser = $('.logged-in-username').val();
-
-        if ((answer1 == "") || (answer2 == "") || (answer3 == "") || (answer4 == "") || (answer5 == "") || (answer6 == "") || (goals == "")) {
-            alert("Please complete questionaire and create goals");
-            return;
-        } else {
-
-            $('.hide-everything').hide();
-            $('.navigate-options').show();
-            $('#create').show();
-        };
+        $('.hide-everything').hide();
+        $('.navigate-options').show();
+        $('.logout-account').show();
+        $('#create').show();
     });
-
 
 
 
@@ -220,7 +178,6 @@ $(document).ready(function () {
                     // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
-                    $('.navigate-options').show();
                     $('#finalLoggedinUser').val(loggedInUser);
 
                     displayUpdatedStatement(loggedInUser);
@@ -299,7 +256,6 @@ $(document).ready(function () {
 
 
 
-
     $('.start-button').click(function () {
         console.log(loggedInUser);
         if (!(loggedInUser)) {
@@ -307,11 +263,9 @@ $(document).ready(function () {
         } else {
             $('.logged-in-username').val(loggedInUser);
             $('.hide-everything').hide();
-            $('.navigate-options').show();
             $('#questions').show();
         };
     });
-
 
 
 
@@ -367,7 +321,6 @@ $(document).ready(function () {
             };
 
             $('.hide-everything').hide();
-            $('.navigate-options').show();
             $('#review').show();
         };
     });
@@ -377,7 +330,6 @@ $(document).ready(function () {
 
     $('.create-sop-button').click(function () {
         $('.hide-everything').hide();
-        $('.navigate-options').show();
         $('#create').show();
     });
 
@@ -386,7 +338,6 @@ $(document).ready(function () {
 
     $('.use-template-button').click(function () {
         $('.hide-everything').hide();
-        $('.navigate-options').show();
         $('#create-with-template').show();
 
     });
@@ -465,6 +416,7 @@ $(document).ready(function () {
             };
             $('.hide-everything').hide();
             $('.navigate-options').show();
+            $('.logout-account').show();
             $('#completed-sop').show();
             $('#values-beliefs-goals').show();
 
@@ -496,4 +448,10 @@ $(document).ready(function () {
             displayUpdatedStatement(user);
         }
     });
+
+
+//    need to complete this function
+    $('.logout-account').click(function) {
+//        on click page refresh
+    }
 });
