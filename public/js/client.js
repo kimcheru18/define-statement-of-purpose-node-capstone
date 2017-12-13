@@ -95,17 +95,7 @@ function displayUpdatedStatement(username) {
 //
 //}
 
-//*****added: adding function to grab variable that holds user data. What is the previous function doing? should data be added to that?? So i've targeted where each part should be displayed in the app, how do I grab date from the variable to populate info? *************
-function getUserSop() {
-    //    let body = $('#finalSopBody');//    let values = $('#finalValues');
-    //    let beliefs = $('#finalBeliefs');
-    //    let goals = $('.my-goals');
-    //
-    //    $('.purpose').text(body);
-    //    $('.values').text(values);
-    //    $('.beliefs').text(beliefs);
-    //    $('.goals').text(goals);
-}
+
 
 
 // step 3. dynamically created layout to display home screen
@@ -176,6 +166,7 @@ $(document).ready(function () {
                     loggedInUser = result;
                     // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
+                    $('.logout-account').show();
                     //show logged in user
                     $('#finalLoggedinUser').val(loggedInUser);
 
@@ -195,6 +186,19 @@ $(document).ready(function () {
                                 //***************added: grab variable with user data************
                                 retrieveUserSop = result;
                                 console.log("here");
+
+                                $('.create-text').html(retrieveUserSop.body);
+                                $('.purpose p').html(retrieveUserSop.body);
+
+
+                                //                                let valuesArray = retrieveUserSop.values.split(",");//                                for (let i = 0; i < valuesArray.length; i++);
+                                //                                $('.values li').append("<li>" + valuesArray[i] + "</li>");
+                                //                                $(valuesArray).append("<li>" + valuesArray[i] + "</li>");
+
+                                $('.values li').html(retrieveUserSop.values);
+                                $('.beliefs li').html(retrieveUserSop.beliefs);
+                                $('.goals li').html(retrieveUserSop.goals);
+                                $('.my-goals').html(retrieveUserSop.goals);
                             }
                             console.log(retrieveUserSop);
                             //check if the user has a previous statement
@@ -314,6 +318,7 @@ $(document).ready(function () {
         } else {
             $('.logged-in-username').val(loggedInUser);
             $('.hide-everything').hide();
+            $('.logout-account').show();
             $('#questions').show();
         };
     });
@@ -372,6 +377,7 @@ $(document).ready(function () {
             };
 
             $('.hide-everything').hide();
+            $('.logout-account').show();
             $('#review').show();
         };
     });
@@ -380,17 +386,34 @@ $(document).ready(function () {
 
 
     $('.create-sop-button').click(function () {
-        $('.hide-everything').hide();
-        $('#create').show();
+        var createSop = $('.create-text').val();
+        if (createSop == "") {
+            $('.hide-everything').hide();
+            $('#create').show();
+            return;
+        } else {
+            $('.hide-everything').hide();
+            $('.navigate-options').show();
+            $('.logout-account').show();
+            $('#create').show();
+        };
     });
 
 
 
 
     $('.use-template-button').click(function () {
+        //        var sopPara1 = $('.js-completed-sop1').val();
+        //        if (sopPara1 == "") {
+        //            $('.hide-everything').hide();
+        //            $('.logout-account').show();
+        //            $('#create-with-template').show();
+        //            return;
+        //        } else {
         $('.hide-everything').hide();
+        $('.logout-account').show();
+        $('.navigate-options').show();
         $('#create-with-template').show();
-
     });
 
 
@@ -411,6 +434,7 @@ $(document).ready(function () {
 
             $('.hide-everything').hide();
             $('.navigate-options').show();
+            $('.logout-account').show();
             $('#completed-sop').show();
             $('#create-goals').show();
             $('#finalSopBody').val(createSopFreeStyle);
@@ -441,6 +465,7 @@ $(document).ready(function () {
         }
 
         $('.hide-everything').hide();
+        $('.logout-account').show();
         $('.navigate-options').show();
         $('#completed-sop').show();
         $('#create-goals').show();
@@ -501,8 +526,8 @@ $(document).ready(function () {
     });
 
 
-    //    need to complete this function
-    //    $('.logout-account ').click(function) {
-    ////        on click page refresh
-    //    }
+    //        need to complete this function
+    $('.logout-account ').click(function () {
+        window.location.reload();
+    });
 });
