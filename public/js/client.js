@@ -129,7 +129,7 @@ $(document).ready(function () {
 
 
 
-    $('.nav-review').click(function () {
+    $('.nav-review, .nav-revise').click(function () {
 
         $('.hide-everything').hide();
         $('.navigate-options').show();
@@ -223,16 +223,24 @@ $(document).ready(function () {
                                 //                                $('.my-goals').html(retrieveUserSop.goals);
 
                                 $('.navigate-options').show();
+                                $('.hide-nav-create').hide();
+                                $('.hide-nav-review').hide();
+                                $('.hide-nav-revise').show();
                                 $('.logout-account').show();
                                 //show goals, values, beliefs
                                 $('#completed-sop').show();
                                 $('#values-beliefs-goals').show();
+                                $('.hide-review-answers').hide();
+                                $('.hide-questions').hide();
+                                $('.template-sop').hide();
 
                             }
                             //if there are no previous statements
                             else {
                                 //display intro container
                                 $('#sop-description-info').show();
+                                $('.hide-nav-review').show();
+                                $('.hide-nav-revise').hide();
                             }
 
 
@@ -395,21 +403,20 @@ $(document).ready(function () {
 
 
 
-    //
-    //    $('.create-sop-button').click(function () {
-    //        var createSop = $('.create-text').val();
-    //        if (createSop == "") {
-    //            $('.hide-everything').hide();
-    //            $('#create').show();
-    //            return;
-    //        } else {
-    //            $('.hide-everything').hide();
-    //            $('.navigate-options').show();
-    //            $('.logout-account').show();
-    //            $('#create').show();
-    //        };
-    //    });
 
+    $('.create-sop-button ').click(function () {
+        var createSop = $('.create-text').val();
+        if (createSop == "") {
+            $('.hide-everything').hide();
+            $('#create').show();
+            return;
+        } else {
+            $('.hide-everything').hide();
+            $('.navigate-options').show();
+            $('.logout-account').show();
+            $('#create').show();
+        };
+    });
 
 
 
