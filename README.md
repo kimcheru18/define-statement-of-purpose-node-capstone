@@ -31,6 +31,8 @@ Defining your values and beliefs will help you create this statement and then yo
 
 ![image8](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/display-sop-values-beliefs-goals-page.png)
 
+finish adding screenshots
+
 # User Stories & Initial UX
 
 **Landing Page**
@@ -112,5 +114,4 @@ Retrieves statistics from a database which contains information about the applic
  * Switch from 3rd party API usage to a custom created feature in regards to the lorem ipsum generation in order to make it more customizable.
 
 ### Version 1.2
- * Let users be able to register with an e-mail address in order to create a newsletter with fun facts and/or developer news.
- * Let users be able to change their password/email.
+ * Let user update Values, Beliefs and Goals

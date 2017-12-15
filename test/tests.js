@@ -74,7 +74,7 @@ function generateStatementData() {
 
 function tearDownDb() {
     console.warn('Deleting database!');
-    return mongoose.connection.dropDatabase();
+    //    return mongoose.connection.dropDatabase();
 }
 
 

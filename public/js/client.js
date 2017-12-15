@@ -187,18 +187,6 @@ $(document).ready(function () {
                                 retrieveUserSop = result;
                                 console.log("here");
 
-                                $('.create-text').html(retrieveUserSop.body);
-                                $('.purpose p').html(retrieveUserSop.body);
-
-
-                                //                                let valuesArray = retrieveUserSop.values.split(",");//                                for (let i = 0; i < valuesArray.length; i++);
-                                //                                $('.values li').append("<li>" + valuesArray[i] + "</li>");
-                                //                                $(valuesArray).append("<li>" + valuesArray[i] + "</li>");
-
-                                $('.values li').html(retrieveUserSop.values);
-                                $('.beliefs li').html(retrieveUserSop.beliefs);
-                                $('.goals li').html(retrieveUserSop.goals);
-                                $('.my-goals').html(retrieveUserSop.goals);
                             }
                             console.log(retrieveUserSop);
                             //check if the user has a previous statement
@@ -211,6 +199,29 @@ $(document).ready(function () {
                             //if there is a previous statement,
                             if (retrieveUserSop != "") {
                                 //display final page with statement
+
+                                $('.create-text').html(retrieveUserSop.body);
+                                $('.purpose p').html(retrieveUserSop.body);
+
+                                let valuesArray = retrieveUserSop.values.split(",");
+                                $('.values ul').html("");
+                                for (let i = 0; i < valuesArray.length; i++) {
+                                    $('.values ul').append("<li>" + valuesArray[i] + "</li>");
+                                }
+
+                                let beliefsArray = retrieveUserSop.beliefs.split(",");
+                                $('.beliefs ul').html("");
+                                for (let j = 0; j < beliefsArray.length; j++) {
+                                    $('.beliefs ul').append("<li>" + beliefsArray[j] + "</li>");
+                                }
+
+                                let goalsArray = retrieveUserSop.goals.split(",");
+                                $('.goals ul').html("");
+                                for (let k = 0; k < goalsArray.length; k++) {
+                                    $('.goals ul').append("<li>" + goalsArray[k] + "</li>");
+                                }
+                                //                                $('.my-goals').html(retrieveUserSop.goals);
+
                                 $('.navigate-options').show();
                                 $('.logout-account').show();
                                 //show goals, values, beliefs
@@ -384,20 +395,20 @@ $(document).ready(function () {
 
 
 
-
-    $('.create-sop-button').click(function () {
-        var createSop = $('.create-text').val();
-        if (createSop == "") {
-            $('.hide-everything').hide();
-            $('#create').show();
-            return;
-        } else {
-            $('.hide-everything').hide();
-            $('.navigate-options').show();
-            $('.logout-account').show();
-            $('#create').show();
-        };
-    });
+    //
+    //    $('.create-sop-button').click(function () {
+    //        var createSop = $('.create-text').val();
+    //        if (createSop == "") {
+    //            $('.hide-everything').hide();
+    //            $('#create').show();
+    //            return;
+    //        } else {
+    //            $('.hide-everything').hide();
+    //            $('.navigate-options').show();
+    //            $('.logout-account').show();
+    //            $('#create').show();
+    //        };
+    //    });
 
 
 
@@ -526,7 +537,7 @@ $(document).ready(function () {
     });
 
 
-    //        need to complete this function
+
     $('.logout-account ').click(function () {
         window.location.reload();
     });
