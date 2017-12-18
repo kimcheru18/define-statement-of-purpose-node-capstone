@@ -25,9 +25,11 @@ Defining your values and beliefs will help you create this statement and then yo
 
 ![image5](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-freestyle-page.png)
 
-![image7](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-template-page.png)
+![image6](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-template-page.png)
 
-![image8](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/display-sop-values-beliefs-goals-page.png)
+![image7](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/set-goals-page.png)
+
+![image8](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/sop-values-beliefs-goals-final-page.png)
 
 finish adding screenshots
 
@@ -55,11 +57,11 @@ Alternatively, Step 4 Users answers from the questions page will be inserted in 
 
 **Completed Statement of Purpose and Add Goals Page**
 This page will have the users SOP displayed, along with a section to create goals. Once goals are created, user clicks "Save" to continue.
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/set-goals-page.png)
 
 **SOP, Values, Beliefs, Goals Page**
 Users SOP is displayed along with their Values, Beliefs and Goals. They have the option to click the edit button on Values and Beliefs which will direct them back to the Answer Questions Page where they can update their answers, values and beliefs. User may also click the edit button for Goals which will direct them back to Completed Statement of Purpose and Add Goals Page.
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/sop-values-beliefs-goals-final-page.png)
 
 **Reflect, Create, Review, Revise Page**
 Reflect: Directs user to their existing SOP, Values, Beliefs and Goals.
