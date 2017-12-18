@@ -202,6 +202,7 @@ $(document).ready(function () {
 
                                 $('.create-text').html(retrieveUserSop.body);
                                 $('.purpose p').html(retrieveUserSop.body);
+                                $('.my-goals').html(retrieveUserSop.goals);
 
                                 let valuesArray = retrieveUserSop.values.split(",");
                                 $('.values ul').html("");
@@ -339,6 +340,9 @@ $(document).ready(function () {
             $('.hide-everything').hide();
             $('.logout-account').show();
             $('#questions').show();
+            $('.get-started-instructions').show();
+            $('.answer-questions').show();
+            $('.enter-value-belief').show();
         };
     });
 
@@ -440,11 +444,12 @@ $(document).ready(function () {
 
         event.preventDefault();
         let createSopFreeStyle = $('.create-text').val();
+        let createGoals = $('.my-goals').val();
+
         if (createSopFreeStyle == "") {
             alert("Please create Statement of Purpose");
             return;
-        } else {
-
+        } else if (createGoals != "") {
             usersCompletedSop.push(createSopFreeStyle);
             console.log(usersCompletedSop);
 
@@ -454,6 +459,20 @@ $(document).ready(function () {
             $('.navigate-options').show();
             $('.logout-account').show();
             $('#completed-sop').show();
+            $('#values-beliefs-goals').show();
+            //            $('#create-goals').show();
+            $('#finalSopBody').val(createSopFreeStyle);
+        } else {
+            usersCompletedSop.push(createSopFreeStyle);
+            console.log(usersCompletedSop);
+
+            $('#completed-sop .purpose p').html(createSopFreeStyle);
+
+            $('.hide-everything').hide();
+            $('.navigate-options').show();
+            $('.logout-account').show();
+            $('#completed-sop').show();
+            //            $('#values-beliefs-goals').show();
             $('#create-goals').show();
             $('#finalSopBody').val(createSopFreeStyle);
         };

@@ -48,7 +48,7 @@ Step 3 User can choose to create SOP free-style by clicking "Create free-style" 
 ![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/instructions-create-sop.png)
 
 **Create Free-style Page**
-Step 4 User creates SOP in textarea, then clicks "Save"
+Step 4 User can review answers from question section and create SOP in textarea, then clicks "Save"
 ![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
 
 **Template Page**
@@ -116,3 +116,5 @@ Retrieves statistics from a database which contains information about the applic
 
 ### Version 1.2
  * Let user update Values, Beliefs and Goals
+ * Allow user to save multiple SOPs over time so they can look back at the changes
+ * Allow user to add steps to their goals and check them off as they complete them
