@@ -201,6 +201,7 @@ $(document).ready(function () {
                                 //display final page with statement
 
                                 $('.create-text').html(retrieveUserSop.body);
+                                $('.updated-sop-id').val(retrieveUserSop._id);
                                 $('.purpose p').html(retrieveUserSop.body);
                                 $('.my-goals').html(retrieveUserSop.goals);
 
@@ -445,6 +446,7 @@ $(document).ready(function () {
         event.preventDefault();
         let createSopFreeStyle = $('.create-text').val();
         let createGoals = $('.my-goals').val();
+        let sopId = $('.updated-sop-id').val();
 
         if (createSopFreeStyle == "") {
             alert("Please create Statement of Purpose");
@@ -460,7 +462,6 @@ $(document).ready(function () {
             $('.logout-account').show();
             $('#completed-sop').show();
             $('#values-beliefs-goals').show();
-            //            $('#create-goals').show();
             $('#finalSopBody').val(createSopFreeStyle);
         } else {
             usersCompletedSop.push(createSopFreeStyle);
@@ -472,10 +473,31 @@ $(document).ready(function () {
             $('.navigate-options').show();
             $('.logout-account').show();
             $('#completed-sop').show();
-            //            $('#values-beliefs-goals').show();
             $('#create-goals').show();
             $('#finalSopBody').val(createSopFreeStyle);
-        };
+        }
+
+        const userIdObject = {
+            body: createSopFreeStyle
+        }
+        console.log(userIdObject);
+
+        $.ajax({
+                type: 'PUT',
+                url: '/statements/' + sopId,
+                dataType: 'json',
+                data: JSON.stringify(userIdObject),
+                contentType: 'application/json'
+            })
+            .done(function (result) {
+                console.log("here");
+
+            })
+            .fail(function (jqXHR, error, errorThrown) {
+                console.log(jqXHR);
+                console.log(error);
+                console.log(errorThrown);
+            });
     });
 
 

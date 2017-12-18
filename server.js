@@ -222,16 +222,16 @@ app.get('/statements/:user', function (req, res) {
                     message: 'Internal Server Error'
                 });
             }
-//if results are not empty
+            //if results are not empty
             if (item.length != 0) {
 
                 //pick up last item in results
                 let output = (sortByKey(item, 'dateTime'));
                 res.status(200).json(output[(output.length - 1)]);
             }
-        //if results are empty,
-        else {
-            //return empty json
+            //if results are empty,
+            else {
+                //return empty json
                 res.status(200).json("");
             }
         });
@@ -240,9 +240,9 @@ app.get('/statements/:user', function (req, res) {
 
 //**************under construction***********
 //*********************PUT*************************
-app.put('/statement/:id', function (req, res) {
+app.put('/statements/:id', function (req, res) {
     let updateSop = {};
-    let updateableFields = ['body', 'values', 'beliefs', 'goals'];
+    let updateableFields = ['body'];
     updateableFields.forEach(function (field) {
         if (field in req.body) {
             updateSop[field] = req.body[field];

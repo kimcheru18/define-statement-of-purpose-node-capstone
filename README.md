@@ -65,10 +65,16 @@ Users SOP is displayed along with their Values, Beliefs and Goals. They have the
 
 **Reflect, Create, Review, Revise Page**
 Reflect: Directs user to their existing SOP, Values, Beliefs and Goals.
-Create: Directs user to Instructions for creating SOP Page where they can alter their SOP, either by clicking "Create free-style" where their SOP will be displayed in the textarea or clicking "Create with template" where their answers from the questionaire will be displayed in the input fields. Hidden once user saves SOP
-Review: Directs user to Answer Questions Page where they can alter their answers, values and beliefs. Hidden once user saves SOP
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/sop-values-beliefs-goals-final-page.png)
+
+Create: After creating SOP initially, "Create" Directs user to Instructions for creating SOP Page where they can alter their SOP, either by clicking "Create free-style" where their SOP will be displayed in the textarea or clicking "Create with template" where their answers from the questionaire will be displayed in the input fields. Create nav-option will be hidden after initial logout.
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/instructions-create-sop.png)
+
+Review: Directs user to Create free-style page if they want to review their answers and change their SOP. Answers are hidden after initial logout.
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
+
 Revise: Directs uer to Create page where they can alter their SOP.
-![image1]
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/revise-sop-page.png)
 
 
 # API Documentation
