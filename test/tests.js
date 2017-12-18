@@ -38,7 +38,6 @@ function seedStatementData() {
     console.info('Seeding statment data')
     const seedData = [];
 
-    //    Kim question***********should this be the "length" or number of statements, not 10?
     for (let i = 1; i < Statement.length; i++) {
         seedData.push(generateStatementData());
     }
@@ -58,9 +57,6 @@ function generateUserData() {
     }
 }
 
-//Kim comment*******line 49-71 from example capstone. Not sure how to write this or if I need it
-
-//Kim question**********not sure how to modify the following function to suit my needs
 function generateStatementData() {
     return {
         // should be the same as username from generateUserData() above
@@ -74,7 +70,7 @@ function generateStatementData() {
 
 function tearDownDb() {
     console.warn('Deleting database!');
-    //    return mongoose.connection.dropDatabase();
+    return mongoose.connection.dropDatabase();
 }
 
 
@@ -127,11 +123,6 @@ describe('Statements API resource', function () {
                     statement.should.include.keys(
                         'user', 'body', 'values', 'beliefs', 'goals');
                 });
-
-                //  Kim Question*******Do I need to call done?
-                //            Terminal Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-
-
                 done();
             });
     });
@@ -163,8 +154,6 @@ describe('Statements API resource', function () {
         });
     });
 
-
-    //    Kim Question********under const updateData, do I need to list each one as I did below? Body, values, beliefs, goals?
     describe('PUT endpoint', function () {
         it('should update fields sent over', function () {
             const updateData = {
@@ -187,7 +176,6 @@ describe('Statements API resource', function () {
                     return Statement.findById(updateData.id);
                 })
 
-                // Kim Question**********is this in connection to above question, is this correct?
                 .then(function (statement) {
                     statement.body.should.equal(updateData.body);
                     statement.values.should.equal(updateData.values);
@@ -228,19 +216,3 @@ describe('Statements API resource', function () {
         return closeServer();
     });
 });
-
-//Kim Question***********do I need the following code?
-
-
-
-//const someJsFile = ('/statements');
-//
-//describe('statements', function () {
-//    it('should return status 200', function () {
-//        chai.request(app)
-//            .get('/statements')
-//            .then(function (res) {
-//                res.should.have.status(200);
-//            });
-//    });
-//});
