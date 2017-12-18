@@ -21,11 +21,9 @@ Defining your values and beliefs will help you create this statement and then yo
 
 ![image3](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/questions-page.png)
 
-![image4](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/questions-page.png)
+![image4](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/instructions-to-create-sop.png)
 
-![image5](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/instructions-to-create-sop.png)
-
-![image6](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-freestyle-page.png)
+![image5](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-freestyle-page.png)
 
 ![image7](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/create-sop-template-page.png)
 
@@ -63,10 +61,11 @@ This page will have the users SOP displayed, along with a section to create goal
 Users SOP is displayed along with their Values, Beliefs and Goals. They have the option to click the edit button on Values and Beliefs which will direct them back to the Answer Questions Page where they can update their answers, values and beliefs. User may also click the edit button for Goals which will direct them back to Completed Statement of Purpose and Add Goals Page.
 ![image1]
 
-**Reflect, Create, Review Page**
+**Reflect, Create, Review, Revise Page**
 Reflect: Directs user to their existing SOP, Values, Beliefs and Goals.
-Create: Directs user to Instructions for creating SOP Page where they can alter their SOP, either by clicking "Create free-style" where their SOP will be displayed in the textarea or clicking "Create with template" where their answers from the questionaire will be displayed in the input fields.
-Review: Directs user to Answer Questions Page where they can alter their answers, values and beliefs.
+Create: Directs user to Instructions for creating SOP Page where they can alter their SOP, either by clicking "Create free-style" where their SOP will be displayed in the textarea or clicking "Create with template" where their answers from the questionaire will be displayed in the input fields. Hidden once user saves SOP
+Review: Directs user to Answer Questions Page where they can alter their answers, values and beliefs. Hidden once user saves SOP
+Revise: Directs uer to Create page where they can alter their SOP.
 ![image1]
 
 
