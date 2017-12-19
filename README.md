@@ -1,6 +1,7 @@
 # define-statement-of-purpose-node-capstone
 
-[![Build Status](https://travis-ci.org/tobnys/webdev-toolkit-final-capstone.svg?branch=master)](https://travis-ci.org/tobnys/webdev-toolkit-final-capstone)
+****update****
+[![Build Status](enter website here)
 
 Link to live application: https://define-statement-of-purpose.herokuapp.com/
 
@@ -8,9 +9,9 @@ Link to live application: https://define-statement-of-purpose.herokuapp.com/
 
 This app should do three things, help one develop a Statement of Purpose, define personal values and beliefs and set goals that will help maintain focus in daily life and relationships.
 
-The Statement of Purpose is to help you focus on who you are as a person. It should preferably be brief, something you would want to review on a regular basis. This is not a statement to lay out a plan or set goals for business or even goals for personal growth. It is really just looking inside and discovering who you are at the core and who you want to be. Writing this statement is an assignment to create a verbal representation of “you” and who you hope to become. It is an idea to aspire to,  it is a direction to go. It is not concrete and unmoveable, it is fluid, it is malleable.
+The Statement of Purpose is to help you focus on who you are as a person. It should typically be brief, something you would want to review on a regular basis. This is not a statement to lay out a plan or set goals for business or even goals for personal growth. Writing this statement is an assignment to discover and create a verbal representation of who you are and what is important to you. It is an idea to aspire to,  it is a direction to go.
 
-Defining your values and beliefs will help you create this statement and then you may want to set goals that are in line with your statement. For example, you may say “I will be more aware of my families needs and encourage them often.” In your goals, you can outline what that might look like.
+Defining your values and beliefs will help you create this statement and then you may set goals that are in line with your statement. For example, you may say “I will be more aware of my families needs and encourage them often.” In your goals, you can outline what that might look like.
 
 
 
@@ -31,7 +32,6 @@ Defining your values and beliefs will help you create this statement and then yo
 
 ![image8](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/sop-values-beliefs-goals-final-page.png)
 
-finish adding screenshots
 
 # User Stories & Initial UX
 

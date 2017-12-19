@@ -122,7 +122,6 @@ app.post('/users/signin', function (req, res) {
                 });
             }
             if (!items) {
-                // bad username
                 return res.status(401).json({
                     message: "Not found!"
                 });
@@ -222,23 +221,17 @@ app.get('/statements/:user', function (req, res) {
                     message: 'Internal Server Error'
                 });
             }
-            //if results are not empty
             if (item.length != 0) {
 
-                //pick up last item in results
                 let output = (sortByKey(item, 'dateTime'));
                 res.status(200).json(output[(output.length - 1)]);
-            }
-            //if results are empty,
-            else {
-                //return empty json
+            } else {
                 res.status(200).json("");
             }
         });
 });
 
 
-//**************under construction***********
 //*********************PUT*************************
 app.put('/statements/:id', function (req, res) {
     let updateSop = {};
@@ -261,13 +254,6 @@ app.put('/statements/:id', function (req, res) {
         });
 });
 
-
-
-
-
-
-
-
 //*********************MISC*************************
 app.use('*', (req, res) => {
     res.status(404).json({
@@ -277,8 +263,6 @@ app.use('*', (req, res) => {
 
 exports.app = app;
 exports.runServer = runServer;
-
-//I added closeServer because when I tested, it said closeServer was not a function but I had not exported it from here at that point
 exports.closeServer = closeServer;
 
 app.listen(process.env.PORT);

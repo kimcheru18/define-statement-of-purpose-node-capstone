@@ -62,21 +62,47 @@ General styles (General Module, wrapping around the modules below)
 */
 
 body {
-    text-align: center;
     font-size: 13px;
     color: rgb(241, 241, 241);
     background-color: #d5dada;
 }
 
-p,
-ul {
-    text-align: left;
+body,
+.nav-options,
+nav ul li,
+.create-sop,
+.purpose h2,
+#values-beliefs-goals h2,
+footer {
+    text-align: center;
+}
+
+header,
+.image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+header,
+main,
+textarea,
+footer {
+    width: 100%;
 }
 
 h1,
 h2,
 .account-options,
-.register-user {
+.register-user,
+footer {
     font-family: 'Cormorant Garamond', serif;
 }
 
@@ -86,28 +112,48 @@ h2 {
 }
 
 h3,
-h5 {
+h5,
+p,
+.js-connect-answer5,
+.js-connect-answer6 {
     font-size: 1.25rem;
 }
 
+p,
+ul,
 h3 {
     text-align: left;
+}
+
+h3,
+section,
+div,
+button {
     font-family: 'Open Sans', sans-serif;
 }
 
-h4 {
+h4,
+.account-options,
+.register-user,
+button,
+footer p {
     font-size: 1rem;
     padding-top: 1rem;
 }
 
-h5 {
+h5,
+nav ul li,
+#login-sop,
+#register-new-user,
+.account-options,
+.register-user,
+footer p {
     display: inline-block;
-    margin-top: .2rem;
-    margin-left: .5rem;
 }
 
-p {
-    font-size: 1.25rem;
+h5 {
+    margin-top: .2rem;
+    margin-left: .5rem;
 }
 
 ul {
@@ -125,30 +171,28 @@ h1 {
 }
 
 header {
-    width: 100%;
     background-image: url("/images/header.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
 }
 
 nav {
     padding-bottom: 1rem;
 }
 
-.nav-options {
-    text-align: center;
-}
-
 nav ul li {
-    display: inline-block;
     width: 15%;
     font-size: 1.2rem;
-    text-align: center;
+}
+
+nav a,
+.login-account,
+.logout-account,
+.go-register-account,
+.register-account,
+.set-goals {
+    text-decoration: none;
 }
 
 nav a {
-    text-decoration: none;
     color: rgb(204, 197, 197);
 }
 
@@ -157,18 +201,12 @@ nav a:hover {
     font-weight: bold;
 }
 
-#login-sop,
-#register-new-user {
-    display: inline-block;
-    color: rgb(241, 241, 241);
-}
-
 
 .login-account,
+.logout-account,
 .go-register-account,
 .register-account {
     color: #9dcde8;
-    text-decoration: none;
 }
 
 .logout-account:hover,
@@ -191,8 +229,6 @@ nav a:hover {
 
 .account-options,
 .register-user {
-    display: inline-block;
-    font-size: 1rem;
     padding-left: 1rem;
 }
 
@@ -202,7 +238,6 @@ Content styles (Main Module)
 */
 
 main {
-    width: 100%;
     margin: .15rem 0;
 }
 
@@ -234,12 +269,10 @@ main {
 
 .js-connect-answer5,
 .js-connect-answer6 {
-    font-size: 1.25rem;
     font-family: 'Julee', cursive;
 }
 
 .create-sop {
-    text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 5rem;
@@ -248,11 +281,6 @@ main {
 
 .list-goals {
     padding: 2rem 5rem;
-}
-
-section,
-div {
-    font-family: 'Open Sans', sans-serif;
 }
 
 input,
@@ -305,10 +333,6 @@ textarea {
     margin-bottom: 1rem;
 }
 
-.purpose h2 {
-    text-align: center;
-}
-
 .purpose {
     border: 1rem solid white;
 }
@@ -320,8 +344,6 @@ strong {
 button {
     padding: .25rem .5rem;
     margin-top: 1.5rem;
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
     text-shadow: .25px .25px grey;
     color: rgb(14, 136, 136);
 }
@@ -335,22 +357,18 @@ button {
 }
 
 textarea {
-    width: 100%;
     padding: .5rem 1rem;
     font-size: 1.14rem;
     margin-bottom: 1rem;
 }
 
-.answer-text {
+.answer-text,
+.input-sop {
     height: 100px;
 }
 
 .input-sop {
     width: 500px;
-}
-
-#values-beliefs-goals h2 {
-    text-align: center;
 }
 
 #values-beliefs-goals {
@@ -368,34 +386,8 @@ textarea {
     margin: 0 8rem;
 }
 
-.set-goals {
-    color: rgb(204, 197, 197);
-    text-decoration: none;
-}
-
-.set-goals:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-.edit-goals-form,
-.edit-beliefs-form,
-.edit-values-form {
-    position: absolute;
-    border: 1px solid gray;
-    float: right;
-    top: -27px;
-    right: 22px;
-}
-
 
 /*******************all image styles apart from header*********************/
-
-.image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
 .sop-description-image {
     background-image: url("/images/description-info.jpg");
@@ -425,19 +417,10 @@ Footer styles (Main Module)
 */
 
 footer {
-    font-family: 'Cormorant Garamond', serif;
-    width: 100%;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
     background-color: rgb(42, 87, 113);
     font-size: 2rem;
-    text-align: center;
-}
-
-footer p {
-    display: inline-block;
-    font-size: 1rem;
-    color: rgb(241, 241, 241);
 }
 
 footer a {
@@ -458,17 +441,11 @@ place all the mobile tables styles below this line
 
 @media only screen and (max-width: 1450px) {
     .create-sop,
-    .values-beliefs-goals {
+    #values-beliefs-goals {
         padding: 1rem 2rem;
     }
     .beliefs {
         margin: 0 4rem;
-    }
-
-    .edit-goals-form,
-    .edit-beliefs-form,
-    .edit-values-form {
-        right: 5px;
     }
 }
 
@@ -504,11 +481,19 @@ place all the mobile tables styles below this line
         padding-left: 0;
     }
 
+
+    .logout-account h4 {
+        float: none;
+        margin-right: 0;
+        margin-bottom: .5rem;
+        padding-bottom: .5rem;
+    }
+
     div {
         padding: .75rem;
     }
 
-    .values-beliefs-goals {
+    #values-beliefs-goals {
         padding: 0 8rem;
     }
 
@@ -520,13 +505,6 @@ place all the mobile tables styles below this line
 
     .beliefs {
         margin: 0;
-    }
-
-    .edit-goals-form,
-    .edit-beliefs-form,
-    .edit-values-form {
-        top: 0px;
-        right: -80px;
     }
 }
 
@@ -540,8 +518,20 @@ place all the mobile tables styles below this line
         font-size: 1.5rem;
     }
 
-    .values-beliefs-goals {
-        padding: 0 2rem;
+    #values-beliefs-goals {
+        padding: 0 1rem;
+    }
+
+    .input-sop {
+        width: 300px;
+    }
+
+    .list-goals {
+        padding: 2rem 3rem;
+    }
+
+    .purpose {
+        border: .3rem solid white;
     }
 
 }

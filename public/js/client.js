@@ -20,51 +20,6 @@ var loggedInUser = "";
 var usersAnswers = [];
 var usersCompletedSop = [];
 
-//added: 12/11/17 to hold user data to be populated to appropriate fields on login
-//var retrieveUserSop = {};
-
-var questionsArray = [
-    //Question 1
-    {
-        questionText: 'What do I want to have accomplished for myself and for others by the end of my life?',
-        Answer: ""
-    },
-
-    //Question 2
-    {
-        questionText: 'What strengths and talents do I posses?',
-        Answer: ""
-    },
-
-    //Question 3
-    {
-        questionText: 'Who are the people that I value most?',
-        Answer: ""
-    },
-
-    //Question 5
-    {
-        questionText: 'What are some ways I can enrich the lives of those that I love?',
-        Answer: ""
-    },
-
-    //Question 9
-    {
-        questionText: 'What are my core values?',
-        Answer: ""
-    },
-
-    //Question 10
-    {
-        questionText: 'What are my beliefs?',
-        Answer: ""
-    },
-];
-
-
-
-
-
 // step 2. Defining functions
 function displayUpdatedStatement(username) {
     let retrieveUserSop = {};
@@ -75,13 +30,9 @@ function displayUpdatedStatement(username) {
             contentType: 'application/json'
         })
         .done(function (result) {
-            console.log(result);
             if ((!result) || (result != undefined) || (result != "")) {
-                //***************added: grab variable with user data************
                 retrieveUserSop = result;
-                console.log("here");
             }
-            console.log(retrieveUserSop);
         })
         .fail(function (jqXHR, error, errorThrown) {
             console.log(jqXHR);
@@ -90,17 +41,8 @@ function displayUpdatedStatement(username) {
         });
     return retrieveUserSop;
 }
-//if (retrieveUserSop != "") {
-//    //if not empty, user has data in db
-//
-//}
-
-
-
 
 // step 3. dynamically created layout to display home screen
-
-
 $(document).ready(function () {
 
     $('.hide-everything').hide();
@@ -162,12 +104,9 @@ $(document).ready(function () {
                     contentType: 'application/json'
                 })
                 .done(function (result) {
-                    console.log(result);
                     loggedInUser = result;
-                    // show the signout link in header as soon as user is signed in
                     $('.hide-everything').hide();
                     $('.logout-account').show();
-                    //show logged in user
                     $('#finalLoggedinUser').val(loggedInUser);
 
 
@@ -180,23 +119,11 @@ $(document).ready(function () {
                             contentType: 'application/json'
                         })
                         .done(function (result) {
-                            console.log(result);
                             let retrieveUserSop = {};
                             if ((!result) || (result != undefined) || (result != "")) {
-                                //***************added: grab variable with user data************
                                 retrieveUserSop = result;
-                                console.log("here");
-
                             }
-                            console.log(retrieveUserSop);
-                            //check if the user has a previous statement
-                            //                            retrieveUserSop = displayUpdatedStatement(loggedInUser);
-                            //                            console.log(displayUpdatedStatement(loggedInUser));
 
-
-
-
-                            //if there is a previous statement,
                             if (retrieveUserSop != "") {
                                 //display final page with statement
 
@@ -222,7 +149,6 @@ $(document).ready(function () {
                                 for (let k = 0; k < goalsArray.length; k++) {
                                     $('.goals ul').append("<li>" + goalsArray[k] + "</li>");
                                 }
-                                //                                $('.my-goals').html(retrieveUserSop.goals);
 
                                 $('.navigate-options').show();
                                 $('.hide-nav-create').hide();
@@ -236,31 +162,17 @@ $(document).ready(function () {
                                 $('.hide-questions').hide();
                                 $('.template-sop').hide();
 
-                            }
-                            //if there are no previous statements
-                            else {
-                                //display intro container
+                            } else {
                                 $('#sop-description-info').show();
                                 $('.hide-nav-review').show();
                                 $('.hide-nav-revise').hide();
                             }
-
-
-
-
-
                         })
                         .fail(function (jqXHR, error, errorThrown) {
                             console.log(jqXHR);
                             console.log(error);
                             console.log(errorThrown);
                         });
-
-
-
-
-
-
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
@@ -301,8 +213,7 @@ $(document).ready(function () {
                 username: uname,
                 password: pw
             };
-            // will assign a value to variable 'user' in signin step below
-            // AJAX call to send form data up to server/DB and create new user
+
             $.ajax({
                     type: 'POST',
                     url: '/users/create',
@@ -312,14 +223,11 @@ $(document).ready(function () {
                 })
                 .done(function (result) {
                     event.preventDefault();
-                    //                    newUserToggle = true;
                     alert('Thanks for signing up! You may now sign in with your username and password.');
 
                     $('.hide-everything').hide();
                     $('#sop-description-info').show();
                     $('#login-sop').show();
-
-                    //                    showSignInPage();
                 })
                 .fail(function (jqXHR, error, errorThrown) {
                     console.log(jqXHR);
@@ -333,7 +241,6 @@ $(document).ready(function () {
 
 
     $('.start-button').click(function () {
-        console.log(loggedInUser);
         if (!(loggedInUser)) {
             alert('Please login or register');
         } else {
@@ -368,17 +275,14 @@ $(document).ready(function () {
             $('.js-completed-sop2').val(answer2);
             $('.js-completed-sop3').val(answer3);
             $('.js-completed-sop4').val(answer4);
-            console.log(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
             $('#finalValues').val(answer5);
             $('#finalBeliefs').val(answer6);
 
 
             usersAnswers.push(answer1, answer2, answer3, answer4, answer5, answer6, sopLoggedInUser);
-            console.log(usersAnswers);
 
             for (let i = 0; i < usersAnswers.length; i++) {
                 $('.js-connect-answer' + (i + 1)).text(usersAnswers[i]);
-                //                $('.js-completed-sop' + (i + 1)).val(usersAnswers[i]);
             };
 
             $('.js-connect-answer5').html("");
@@ -426,13 +330,6 @@ $(document).ready(function () {
 
 
     $('.use-template-button').click(function () {
-        //        var sopPara1 = $('.js-completed-sop1').val();
-        //        if (sopPara1 == "") {
-        //            $('.hide-everything').hide();
-        //            $('.logout-account').show();
-        //            $('#create-with-template').show();
-        //            return;
-        //        } else {
         $('.hide-everything').hide();
         $('.logout-account').show();
         $('.navigate-options').show();
@@ -453,7 +350,6 @@ $(document).ready(function () {
             return;
         } else if (createGoals != "") {
             usersCompletedSop.push(createSopFreeStyle);
-            console.log(usersCompletedSop);
 
             $('#completed-sop .purpose p').html(createSopFreeStyle);
 
@@ -465,7 +361,6 @@ $(document).ready(function () {
             $('#finalSopBody').val(createSopFreeStyle);
         } else {
             usersCompletedSop.push(createSopFreeStyle);
-            console.log(usersCompletedSop);
 
             $('#completed-sop .purpose p').html(createSopFreeStyle);
 
@@ -480,7 +375,6 @@ $(document).ready(function () {
         const userIdObject = {
             body: createSopFreeStyle
         }
-        console.log(userIdObject);
 
         $.ajax({
                 type: 'PUT',
@@ -489,10 +383,7 @@ $(document).ready(function () {
                 data: JSON.stringify(userIdObject),
                 contentType: 'application/json'
             })
-            .done(function (result) {
-                console.log("here");
-
-            })
+            .done(function (result) {})
             .fail(function (jqXHR, error, errorThrown) {
                 console.log(jqXHR);
                 console.log(error);
@@ -520,7 +411,6 @@ $(document).ready(function () {
             $('#completed-sop .purpose p').append("<p>" + createSopTemplate + "</p>");
 
             $('#finalSopBody').val(createSopTemplate);
-
         }
 
         $('.hide-everything').hide();
@@ -543,7 +433,6 @@ $(document).ready(function () {
             alert("Please create goals");
             return;
         } else {
-            console.log(goals);
             $('#values-beliefs-goals .goals ul').html("");
             let goalsArray = goals.split(",");
             for (let k = 0; k < goalsArray.length; k++) {
@@ -562,7 +451,6 @@ $(document).ready(function () {
                 beliefs: beliefs,
                 goals: goals
             }
-            console.log(userStatementObject);
 
             $.ajax({
                     type: 'POST',
@@ -572,7 +460,6 @@ $(document).ready(function () {
                     contentType: 'application/json'
                 })
                 .done(function (result) {
-                    console.log("here");
 
                 })
                 .fail(function (jqXHR, error, errorThrown) {
