@@ -73,21 +73,6 @@ function tearDownDb() {
     //    return mongoose.connection.dropDatabase();
 }
 
-
-
-
-//Kim comment********Message from terminal
-//1) Statements API resource "before each" hook for "should return statements with the right fields":
-//Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-//
-//
-//2) Statements API resource "after each" hook for "should return statements with the right fields":
-//Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-//
-//
-//3) Statements API resource "after all" hook:
-//Error: Not running
-
 describe('Statements API resource', function () {
 
     before(function () {
