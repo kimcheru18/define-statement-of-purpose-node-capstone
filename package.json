@@ -16,9 +16,6 @@
     "bugs": {
         "url": "https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/issues"
     },
-    "engines": {
-        "node": "^8.2.1"
-    },
     "homepage": "https://github.com/kimcheru18/define-statement-of-purpose-node-capstone#readme",
     "devDependencies": {
         "chai": "^4.1.2",
