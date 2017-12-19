@@ -5,7 +5,6 @@ const Statement = require('./models/statement');
 const bodyParser = require('body-parser');
 const config = require('./config');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const BasicStrategy = require('passport-http').BasicStrategy;
@@ -14,7 +13,6 @@ const express = require('express');
 const app = express();
 app.use(bodyParser.json());
 app.use(morgan('common'));
-app.use(cors());
 app.use(express.static('public'));
 
 mongoose.Promise = global.Promise;
