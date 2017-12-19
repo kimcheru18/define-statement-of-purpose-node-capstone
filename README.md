@@ -32,6 +32,8 @@ Defining your values and beliefs will help you create this statement and then yo
 
 ![image8](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/sop-values-beliefs-goals-final-page.png)
 
+![image9](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/revise-sop-page.png)
+
 
 # User Stories & Initial UX
 
@@ -74,7 +76,7 @@ Review: Directs user to Create free-style page if they want to review their answ
 ![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
 
 Revise: Directs uer to Create page where they can alter their SOP.
-![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/revise-sop-page.png)
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
 
 
 # API Documentation
