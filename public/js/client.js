@@ -100,8 +100,8 @@ $(document).ready(function () {
                     type: "POST",
                     url: "/users/signin",
                     dataType: 'json',
-                    data: JSON.stringify(unamePwObject),
-                    contentType: 'application/json'
+                    data: JSON.stringify(unamePwObject)
+                    //                    contentType: 'application/json'
                 })
                 .done(function (result) {
                     loggedInUser = result;
@@ -215,8 +215,8 @@ $(document).ready(function () {
                     type: 'POST',
                     url: '/users/create',
                     dataType: 'json',
-                    data: JSON.stringify(newUserObject),
-                    contentType: 'application/json'
+                    data: JSON.stringify(newUserObject)
+                    //                    contentType: 'application/json'
                 })
                 .done(function (result) {
                     alert('Thanks for signing up! You may now sign in with your username and password.');

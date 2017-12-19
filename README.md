@@ -104,6 +104,7 @@ Revise: Directs uer to Create page where they can alter their SOP.
 # Development Roadmap
 
 ### Version 1.1
+ * Include additional questions in questionnaire
  * Let user update Values, Beliefs and Goals
  * Allow user to save multiple SOPs over time so they can look back at the changes
  * Allow user to add steps to their goals and check them off as they complete them
