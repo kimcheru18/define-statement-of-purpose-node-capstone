@@ -84,7 +84,8 @@ app.post('/users/create', (req, res) => {
         bcrypt.hash(password, salt, (err, hash) => {
             if (err) {
                 return res.status(500).json({
-                    message: 'Internal server error'
+                    message: 'error 87' + err
+
                 });
             }
 
@@ -94,7 +95,7 @@ app.post('/users/create', (req, res) => {
             }, (err, item) => {
                 if (err) {
                     return res.status(500).json({
-                        message: 'Internal Server Error'
+                        message: 'error 98' + err
                     });
                 }
                 if (item) {
