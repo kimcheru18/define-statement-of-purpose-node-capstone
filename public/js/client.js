@@ -194,21 +194,18 @@ $(document).ready(function () {
 
 
 
-    $('.register-account').click(function () {
-
+    $('.register-account').click(function (event) {
+        event.preventDefault();
 
         const uname = $('.register-username').val();
         const pw = $('.register-password').val();
         const confirmPw = $('.register-confirm-password').val();
 
         if (uname == "") {
-            event.preventDefault();
             alert('Please specify username');
         } else if ((pw !== confirmPw) || (pw == "")) {
-            event.preventDefault();
             alert('Passwords must match and not be empty!');
         } else {
-            event.preventDefault();
             const newUserObject = {
                 username: uname,
                 password: pw
@@ -222,7 +219,6 @@ $(document).ready(function () {
                     contentType: 'application/json'
                 })
                 .done(function (result) {
-                    event.preventDefault();
                     alert('Thanks for signing up! You may now sign in with your username and password.');
 
                     $('.hide-everything').hide();
@@ -256,7 +252,7 @@ $(document).ready(function () {
 
 
 
-    $('.save-answers-button').click(function () {
+    $('.save-answers-button').click(function (event) {
         event.preventDefault();
         let answer1 = $('.js-answer1').val();
         let answer2 = $('.js-answer2').val();
@@ -338,7 +334,7 @@ $(document).ready(function () {
 
 
 
-    $('.save-completed-button').click(function () {
+    $('.save-completed-button').click(function (event) {
 
         event.preventDefault();
         let createSopFreeStyle = $('.create-text').val();
@@ -393,7 +389,7 @@ $(document).ready(function () {
 
 
 
-    $('.save-completed-template-button').click(function () {
+    $('.save-completed-template-button').click(function (event) {
 
         event.preventDefault();
         let createSopSentence1 = $('.js-completed-sop1').val();

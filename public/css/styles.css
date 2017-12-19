@@ -346,6 +346,7 @@ button {
     margin-top: 1.5rem;
     text-shadow: .25px .25px grey;
     color: rgb(14, 136, 136);
+    border-radius: 5px;
 }
 
 .create-sop-button,

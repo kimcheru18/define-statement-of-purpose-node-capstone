@@ -1,7 +1,4 @@
-# define-statement-of-purpose-node-capstone
-
-****update****
-[![Build Status](enter website here)
+# Define Statement of Purpose Node Capstone
 
 Link to live application: https://define-statement-of-purpose.herokuapp.com/
 
@@ -76,18 +73,8 @@ Review: Directs user to Create free-style page if they want to review their answ
 ![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
 
 Revise: Directs uer to Create page where they can alter their SOP.
-![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/create-free-style-image.png)
+![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/wireframe-images/login-create-free-style-image.png)
 
-
-# API Documentation
-### GET endpoint - ../api/functional/fonts/:sort
-Retrieves fonts from the google web fonts API based on sort parameter.
-
-### GET endpoint - ../api/functional/text
-Generates and returns a text with a set amount of paragraphs based on a query option sent to the server. This endpoint uses the package called "loremIpsum" to generate the paragraphs.
-
-### GET endpoint - ../api/functional/statistics
-Retrieves statistics from a database which contains information about the application in general, for example, total amount of API calls. This is used in the application to show fun facts about the application.
 
 # Technical stack
 
@@ -96,7 +83,6 @@ Retrieves statistics from a database which contains information about the applic
  * CSS3
  * JavaScript
  * jQuery
- * Web Font Loader
 
 **Back-end**
  * NodeJS
@@ -118,11 +104,6 @@ Retrieves statistics from a database which contains information about the applic
 # Development Roadmap
 
 ### Version 1.1
- * Add "lorem pixel" as a feature.
- * "Lorem Pixel" is an existing idea which I would like to implement to this application, the feature allows a user to specify width, height and other properties in order to render a placeholder image for their website free of any copyright.
- * Switch from 3rd party API usage to a custom created feature in regards to the lorem ipsum generation in order to make it more customizable.
-
-### Version 1.2
  * Let user update Values, Beliefs and Goals
  * Allow user to save multiple SOPs over time so they can look back at the changes
  * Allow user to add steps to their goals and check them off as they complete them
