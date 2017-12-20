@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: WgeoK8WwXtrKd70oPNDD0Fea1OxXNhznlTXAk+X9Kq+ti5OMc2dWTVIFot65r4euOCgulDJU/YAKLCzCPsoN0kmsbl+WU63+kiIh/q8RFLATPpzIj+bf4VcrFVsykPboiYCydpEiNWENOOgqX8I13SC+nWqj2GkgWgH9ICFLy6LFCw8h23qSgM7g2WKXZ1WgPLW6P3EpHssi5vYROFGi/CZCNmPbQmvr7sNXXRuvm77BCZSVbez3Wom3GKfJwlcgvMjZV9D9joCrvOf+jJBni5ZI4FuhwiTOGp7+jj+NDRE+pfcc5NXRETMwf7oLEUVqYzENvnI1qlnZqUkS2ImFtewJcyWcNwzo1wNyxb6XbXXnKaxBw9evt0XrnY6t2rmEJeLds9VZUpYIHEo6b0g+fSRraEFxDMlzc4cDiBTqxfZGHD8TH+RJfBlGbAx/m6f3UJFZZsI5l8IV2YXu6cDf1cVqGQ1Y0buXS6rldU5RgXUzuQ95YUSuq38Gqu+3fJBCMG2r95ETStiFBDbWm0lUdnep+7ea3DlQY19vre02IORy2kQMPs9HVsNXPB7D0gTsoZWiQ3+QAU2RnYBiK1epzUiC+DcDbS5eXbkaWB7reLr7RWp1JVlOeCUu7GvWBagd8jjVtAqYDmHpsX2mPXhCyFFNaQroo4bg+Vf7LO2TEO4=
+  app: git add .
+  on:
+    repo: kimcheru18/define-statement-of-purpose-node-capstone
