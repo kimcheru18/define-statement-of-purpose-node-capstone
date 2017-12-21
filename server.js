@@ -177,7 +177,7 @@ app.post('/statements/create', (req, res) => {
     var date = today.getFullYear() + '-' + showMonth + '-' + showDate;
     var time = showHours + "-" + showMinutes + "-" + showSeconds;
     var dateTime = date + '-' + time;
-    console.log(showMonth, showDate, showHours, showMinutes, showSeconds);
+    //    console.log(showMonth, showDate, showHours, showMinutes, showSeconds);
 
     Statement.create({
         user,
@@ -214,7 +214,7 @@ app.get('/statements/:user', function (req, res) {
         },
 
         function (err, item) {
-            console.log(item);
+            //            console.log(item);
             if (err) {
                 return res.status(500).json({
                     message: 'Internal Server Error'
@@ -264,4 +264,4 @@ exports.app = app;
 exports.runServer = runServer;
 exports.closeServer = closeServer;
 
-app.listen(process.env.PORT);
+//app.listen(process.env.PORT);
