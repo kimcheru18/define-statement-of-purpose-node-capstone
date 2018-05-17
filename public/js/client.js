@@ -44,7 +44,7 @@ function displayUpdatedStatement(username) {
 
 // step 3. dynamically created layout to display home screen
 $(document).ready(function () {
-
+//
     $('.hide-everything').hide();
     $('#login-sop').show();
     $('#sop-description-info').show();

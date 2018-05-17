@@ -23,7 +23,11 @@ main {
 .guided,
 .get-started-image,
 .questions-review {
-    width: 30%;
+/*    width: 30%;*/
+}
+
+.get-started-image {
+    width:30%;
 }
 
 .questions-image,
