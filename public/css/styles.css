@@ -76,7 +76,7 @@ nav ul li,
     text-align: center;
 }
 
-header,
+
 .image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -157,7 +157,7 @@ h1 {
 }
 
 header {
-    background-image: url("/images/header.jpeg");
+    background-color: #2a5771;
 }
 
 nav {
