@@ -72,8 +72,7 @@ body,
 nav ul li,
 .create-sop,
 .purpose h2,
-#values-beliefs-goals h2,
-footer {
+#values-beliefs-goals h2 {
     text-align: center;
 }
 
@@ -417,11 +416,29 @@ Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
+footer,
+#contact-info-ul {
+    text-align: center;
+}
+
 footer {
+/*
     padding-top: 1rem;
     padding-bottom: 1.5rem;
+*/
     background-color: rgb(42, 87, 113);
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+#app-author,
+#contact-info-ul,
+.contact-info {
+    display: inline-block;
+    padding: .5rem;
+}
+
+#contact-info-ul {
+    vertical-align: middle;
 }
 
 footer a {
