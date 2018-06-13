@@ -60,6 +60,8 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
 General styles (General Module, wrapping around the modules below)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
 */
+
+/* *****STYLES BELOW KEEP FOOTER AT BOTTOM OF PAGE***** */
 html {
     height: 100%;
 }
@@ -75,33 +77,21 @@ body {
     min-height: 100%;
     margin: 0;
 }
+/* *****STYLES ABOVE KEEP FOOTER AT BOTTOM OF PAGE***** */
+
 
 body,
 .nav-options {
     text-align: center;
 }
 
-.image {
-/*
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    */
-}
-
-
-header,
-main,
-textarea {
-/*    width: 100%;*/
-}
-
-h1,
-h2,
-.account-options,
-.register-user {
+header h1,
+#logout-wrapper .logout-account,
+.login-register-options,
+.navigate-options a {
     font-family: 'Cormorant Garamond', serif;
 }
+
 
 h2 {
     font-size: 1.25rem;
@@ -139,15 +129,6 @@ button {
     padding-top: 1rem;
 }
 
-h5,
-nav ul li,
-#login-sop,
-#register-new-user,
-.account-options,
-.register-user {
-/*    display: inline-block;*/
-}
-
 h5 {
     margin-top: .2rem;
     margin-left: .5rem;
@@ -166,21 +147,52 @@ Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
 #header-title-wrapper {
+/*    width: 100%;*/
     background-color: #2a5771;
-    margin-bottom: .5rem;
+    margin-bottom: .15rem;
+}
+
+.max-content-width {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h1 {
     font-size: 1.5rem;
     color: white;
-    padding: .5rem 0;
+    padding-top: .8rem;
+}
+
+.logout-account,
+.login-register-options a,
+.nav-options a,
+.account-options a {
+    color: #ec6007;
+    font-size: 1rem;
+}
+
+header .login-register-options,
+#logout-wrapper {
+        text-align: right;
+        padding-bottom: .15rem;
+    }
+
+.logout-account,
+.login-register-options a {
+/*    margin-right: .5rem;*/
+}
+
+.login-register-options a {
+    display: inline-block;
 }
 
 nav {
+/*
     padding-bottom: 1rem;
-    padding-top: .25rem;
     max-width: 1000px;
     margin: 0 auto;
+*/
 }
 
 nav ul li {
@@ -193,10 +205,6 @@ nav ul li {
     margin: .5rem 0;
 }
 
-.logout-account {
-    padding-top: 1rem;
-}
-
 nav a,
 .login-account,
 .logout-account,
@@ -206,23 +214,35 @@ nav a,
     text-decoration: none;
 }
 
-nav a,
-.logout-account,
+
 .account-options a,
 .login-account,
 .register-user,
 .register-account {
+/*
     color: #ec6007;
     font-size: 1rem;
+*/
 }
 
 nav a:hover,
 .logout-account:hover,
+#header-links-login-register a:hover,
 .account-options a:hover,
 .register-account:hover,
-.login-account:hover {
+.login-register-options a:hover {
     text-decoration: underline;
 }
+
+#logout-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    text-align: right;
+    padding-bottom: .15rem;
+}
+
+
+
 
 .account-options a,
 .register-account,
@@ -250,6 +270,10 @@ nav a:hover,
     padding: 1rem 0;
 }
 
+.account-options,
+#register-new-user input {
+    font-size: .75rem;
+}
 /* -------------------------------------
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
@@ -287,7 +311,8 @@ textarea,
 }
 
 .guided,
-.questions-wrapper {
+.questions-wrapper,
+.review-answers {
     padding-bottom: 8rem;
 }
 
@@ -387,6 +412,11 @@ textarea {
 
 strong {
     font-size: 1.4rem;
+}
+
+.button-container {
+    width: 100%;
+    text-align: center;
 }
 
 button {

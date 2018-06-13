@@ -18,15 +18,27 @@
 <!--    <link rel="stylesheet" href="/css/float-grid.css">-->
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
-
+<body>
     <main>
         <header>
 
-            <div id="header-title-wrapper">
+            <section id="header-title-wrapper">
                 <h1>Statement of Purpose</h1>
-            </div>
 
-            <nav class="hide-everything navigate-options">
+                <div class="max-content-width">
+                    <div id="logout-wrapper">
+                        <a href="#" class="hide-everything logout-account">Logout</a>
+                    </div>
+
+                    <div class="login-register-options">
+                        <a href="#" class="login-account">Login</a>
+
+                        <a href="#" class="go-register-account">Register</a>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="hide-everything navigate-options max-content-width">
                 <ul class="nav-options">
                     <li class="nav-reflect"><a href="#">Reflect</a></li>
                     <li class="hide-nav-create nav-create"><a href="#">Create</a></li>
@@ -35,7 +47,6 @@
                 </ul>
             </nav>
 
-            <a href="#" class="hide-everything logout-account">Logout</a>
         </header>
     </main>
 
@@ -53,9 +64,11 @@
                 <input class="signin-password" type="password" name="text" placeholder="password:" required>
             </label>
 
-            <a href="#" class="login-account">Login</a>
+            <div class="login-register-options">
+                <a href="#" class="login-account">Login</a>
 
-            <a href="#" class="go-register-account">Register</a>
+                <a href="#" class="go-register-account">Register</a>
+            </div>
 
         </form>
     </main>
@@ -80,9 +93,11 @@
                 <input class="register-confirm-password" type="password" name="text" placeholder="re-enter password:" required>
             </label>
 
-            <a href="#" class="register-account">Register</a>
+            <div class="login-register-options">
+                <a href="#" class="login-account">Login</a>
 
-            <a href="#" class="login-account">Login</a>
+                <a href="#" class="register-account">Register</a>
+            </div>
 
         </form>
     </main>
@@ -126,7 +141,10 @@
             <p><strong>3 </strong>Create a Statement of Purpose</p>
             <p><strong>4 </strong>Set some goals that are in line with your statement</p>
 
-            <button class="start-button">Let's get started</button>
+            <div class="button-container">
+                <button class="start-button">Let's get started</button>
+            </div>
+
         </section>
     </main>
 
@@ -197,7 +215,9 @@
                 </div>
             </section>
 
-            <button class="save-answers-button">Save and continue</button>
+            <div class="button-container">
+                <button class="save-answers-button">Save and continue</button>
+            </div>
 
         </form>
     </main>
@@ -212,15 +232,17 @@
             <p>As you think about your answers, pick 3-4 main themes or ideas over all. Then begin to craft your Statment of Purpose. You can combine several ideas into one sentence if you would like.</p>
             <br>
 
-            <p>
-                You can create your own SOP free-style or use the template that is provided. If using the template, once complete, feel free to alter it to fit your needs.
+            <p>You can create your own SOP free-style or use the template that is provided. If using the template, once complete, feel free to alter it to fit your needs.
             </p>
             <br>
 
             <p>Once you are finished, write or print it out your Statement of Purpose and place it where you can see it everyday. Your values and beliefs will be listed below. If desired, you can make a list of goals that are in line with your SOP. It will also be displayed below.</p>
 
-            <button class="create-sop-button">Create free-style</button>
-            <button class="hide-template-button use-template-button">Create with template</button>
+
+            <div class="button-container">
+                <button class="create-sop-button">Create free-style</button>
+                <button class="hide-template-button use-template-button">Create with template</button>
+            </div>
 
         </section>
 
@@ -277,7 +299,11 @@
             <h2>Create your Statement of Purpose</h2>
             <textarea name="create-sop" class="create-text" cols="30" rows="10"></textarea>
             <input type="hidden" class="updated-sop-id" value="">
-            <button class="save-completed-button">Save</button>
+
+            <div class="button-container">
+                <button class="save-completed-button">Save</button>
+            </div>
+
         </section>
     </main>
 
@@ -291,33 +317,30 @@
         <section class="template-sop">
             <h2>Template</h2>
 
-            <p>It is my purpose to
-                <!--                <input class="input-sop js-completed-sop1" value="" type="text">.-->
+            <p>It is my purpose to...
                 <textarea name="input-sop" class="input-sop js-completed-sop1" cols="30" rows="10"></textarea>
             </p>
             <br>
 
-            <p>I will grow and develop my
-                <!--                <input class="input-sop js-completed-sop2" value="" type="text">.-->
+            <p>I will grow and develop my...
                 <textarea name="input-sop" class="input-sop js-completed-sop2" cols="30" rows="10"></textarea>
             </p>
             <br>
 
-            <p>The people that are most important to me are
-                <!--                <input class="input-sop js-completed-sop3" value="" type="text">.-->
+            <p>The people that are most important to me are...
                 <textarea name="input-sop" class="input-sop js-completed-sop3" cols="30" rows="10"></textarea>
 
             </p>
             <br>
 
-            <p>I will strive to
-                <!--                <input class="input-sop js-completed-sop4" value="" type="text">.-->
+            <p>I will strive to...
                 <textarea name="input-sop" class="input-sop js-completed-sop4" cols="30" rows="10"></textarea>
             </p>
 
-
-            <p>
+            <div class="button-container">
                 <button class="save-completed-template-button">Save</button>
+            </div>
+
         </section>
     </main>
 
@@ -352,7 +375,10 @@
             <input type="hidden" id="finalBeliefs" value="">
 
             <textarea name="create-goals" class="my-goals" cols="30" rows="10"></textarea>
-            <button class="save-goals-button">Save</button>
+
+            <div class="button-container">
+                <button class="save-goals-button">Save</button>
+            </div>
 
         </section>
 
