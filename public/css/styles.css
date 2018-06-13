@@ -152,9 +152,11 @@ Header styles (Main Module)
     margin-bottom: .15rem;
 }
 
-.max-content-width {
-    width: 95%;
-    max-width: 1000px;
+.max-content-width,
+.max-content-width section,
+textarea {
+    width: 93%;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -180,7 +182,7 @@ header .login-register-options,
 
 .logout-account,
 .login-register-options a {
-/*    margin-right: .5rem;*/
+    margin: 0 .5rem;
 }
 
 .login-register-options a {
@@ -280,21 +282,10 @@ Content styles (Main Module)
 */
 
 main {
-    margin: .15rem 0;
+/*    margin: .15rem 0;*/
 }
 
-.why-sop,
-.assignment,
-.guided,
-.questions-wrapper,
-.review-answers,
-.questions-review,
-.template-sop,
-.purpose {
-/*    padding: 2rem;*/
-}
-
-.sop-information,
+/*.sop-information,*/
 .assignment,
 .guided,
 .get-started-instructions,
@@ -304,15 +295,17 @@ textarea,
 .review-answers,
 .questions-review,
 .template-sop {
+/*
     width: 90%;
     max-width: 443px;
     margin: 0 auto;
-/*    border: 1px solid black;*/
+*/
 }
 
 .guided,
 .questions-wrapper,
-.review-answers {
+.review-answers,
+#values-beliefs-goals {
     padding-bottom: 8rem;
 }
 
@@ -345,14 +338,21 @@ textarea,
 }
 
 .create-sop {
+/*
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 5rem;
     padding-right: 3rem;
+*/
+}
+
+.template-sop p,
+.template-sop textarea {
+    display: block;
 }
 
 .list-goals {
-    padding: 2rem 5rem;
+/*    padding: 2rem 5rem;*/
 }
 
 input,
@@ -454,18 +454,20 @@ textarea {
 }
 
 #values-beliefs-goals {
-    padding: 1rem 10rem;
+/*    padding: 1rem 10rem;*/
 }
 
 .values,
 .beliefs,
 .goals {
+/*
     position: relative;
     font-size: 1.2rem;
+*/
 }
 
 .beliefs {
-    margin: 0 8rem;
+/*    margin: 0 8rem;*/
 }
 
 
@@ -553,10 +555,10 @@ place all the mobile tables styles below this line
 @media only screen and (max-width: 1450px) {
     .create-sop,
     #values-beliefs-goals {
-        padding: 1rem 2rem;
+/*        padding: 1rem 2rem;*/
     }
     .beliefs {
-        margin: 0 4rem;
+/*        margin: 0 4rem;*/
     }
 }
 

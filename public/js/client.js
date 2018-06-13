@@ -44,17 +44,17 @@ function displayUpdatedStatement(username) {
 
 // step 3. dynamically created layout to display home screen
 $(document).ready(function () {
-//
-//    $('.hide-everything').hide();
+
+    $('.hide-everything').hide();
 //    $('#login-sop').show();
-//    $('#sop-description-info').show();
-//    $('.nav-reflect').click(function () {
-//
-//        $('.hide-everything').hide();
-//        $('.navigate-options').show();
-//        $('.logout-account').show();
-//        $('#completed-sop').show();
-//        $('#values-beliefs-goals').show();
+    $('#sop-description-info').show();
+    $('.nav-reflect').click(function () {
+
+        $('.hide-everything').hide();
+        $('.navigate-options').show();
+        $('.logout-account').show();
+        $('#completed-sop').show();
+        $('#values-beliefs-goals').show();
 
     });
 
