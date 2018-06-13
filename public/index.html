@@ -2,6 +2,8 @@
 <html>
 
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Statement of Purpose</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -13,16 +15,17 @@
     <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Julee" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/float-grid.css">
+<!--    <link rel="stylesheet" href="/css/float-grid.css">-->
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-</head>
-
-<body>
 
 
     <main>
         <header>
-            <h1>Statement of Purpose</h1>
+
+            <div id="header-title-wrapper">
+                <h1>Statement of Purpose</h1>
+            </div>
+
             <nav class="hide-everything navigate-options">
                 <ul class="nav-options">
                     <li class="nav-reflect"><a href="#">Reflect</a></li>
@@ -32,9 +35,7 @@
                 </ul>
             </nav>
 
-            <a href="#" class="hide-everything logout-account">
-                <h4>Logout</h4>
-            </a>
+            <a href="#" class="hide-everything logout-account">Logout</a>
         </header>
     </main>
 
@@ -43,22 +44,18 @@
         <form action="login" class="account-options">
 
             <label class="login" for="login">
-                <h5>username:</h5>
-                <input class="signin-username" type="text" name="text" required>
+<!--                <h5>username:</h5>-->
+                <input class="signin-username" type="text" name="text" placeholder="username:" required>
             </label>
 
             <label class="login" for="login">
-                <h5>password:</h5>
-                <input class="signin-password" type="password" name="text" required>
+<!--                <h5>password:</h5>-->
+                <input class="signin-password" type="password" name="text" placeholder="password:" required>
             </label>
 
-            <a href="#" class="login-account">
-                <h5>Login</h5>
-            </a>
+            <a href="#" class="login-account">Login</a>
 
-            <a href="#" class="go-register-account">
-                <h5>Register</h5>
-            </a>
+            <a href="#" class="go-register-account">Register</a>
 
         </form>
     </main>
@@ -69,23 +66,23 @@
         <form action="register" class="register-user">
 
             <label class="register" for="register">
-                <h5>create username:</h5>
-                <input class="register-username" type="text" name="text" required>
+<!--                <h5>create username:</h5>-->
+                <input class="register-username" type="text" name="text" placeholder="new username:" required>
             </label>
 
             <label class="register" for="register">
-                <h5>create password:</h5>
-                <input class="register-password" type="password" name="text" required>
+<!--                <h5>create password:</h5>-->
+                <input class="register-password" type="password" name="text" placeholder="new password:" required>
             </label>
 
             <label class="register" for="register">
-                <h5>re-enter password:</h5>
-                <input class="register-confirm-password" type="password" name="text" required>
+<!--                <h5>re-enter password:</h5>-->
+                <input class="register-confirm-password" type="password" name="text" placeholder="re-enter password:" required>
             </label>
 
-            <a href="#" class="register-account">
-                <h5>Register</h5>
-            </a>
+            <a href="#" class="register-account">Register</a>
+
+            <a href="#" class="login-account">Login</a>
 
         </form>
     </main>
@@ -99,10 +96,14 @@
         <section class="why-sop">
             <h2>Why create a Statement of Purpose?</h2>
             <h2> It helps to...</h2>
-            <p><strong>F</strong>ind your focus</p>
-            <p><strong>D</strong>iscover and define your values and beliefs</p>
-            <p><strong>S</strong>ee who you are in relation to others</p>
-            <p><strong>D</strong>etermine how you can use your strengths to serve others</p>
+
+            <div class="sop-information">
+                <p><strong>F</strong>ind your focus</p>
+                <p><strong>D</strong>iscover and define your values and beliefs</p>
+                <p><strong>S</strong>ee who you are in relation to others</p>
+                <p><strong>D</strong>etermine how you can use your strengths to serve others</p>
+            </div>
+
         </section>
 
 
@@ -141,7 +142,7 @@
                     <strong>Step 1</strong>
                 </h2>
 
-                <h3>Here are some questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a template. <i>Your answers will autofill into the provided template and then you may alter it if desired.</i></h3>
+                <h3>Here are some questions to get you thinking about who you are and what direction you want to go, then you can create a Statement of Purpose in your own words or use a template. <br><i class="note">Your answers will autofill into the provided template and then you may alter it if desired.</i></h3>
                 <br>
 
                 <h3>Instructions: Read the question and then complete the sentence.</h3>

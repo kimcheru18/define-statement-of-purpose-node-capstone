@@ -45,16 +45,16 @@ function displayUpdatedStatement(username) {
 // step 3. dynamically created layout to display home screen
 $(document).ready(function () {
 //
-    $('.hide-everything').hide();
-    $('#login-sop').show();
-    $('#sop-description-info').show();
-    $('.nav-reflect').click(function () {
-
-        $('.hide-everything').hide();
-        $('.navigate-options').show();
-        $('.logout-account').show();
-        $('#completed-sop').show();
-        $('#values-beliefs-goals').show();
+//    $('.hide-everything').hide();
+//    $('#login-sop').show();
+//    $('#sop-description-info').show();
+//    $('.nav-reflect').click(function () {
+//
+//        $('.hide-everything').hide();
+//        $('.navigate-options').show();
+//        $('.logout-account').show();
+//        $('#completed-sop').show();
+//        $('#values-beliefs-goals').show();
 
     });
 
@@ -189,7 +189,7 @@ $(document).ready(function () {
 
         $('.hide-everything').hide();
         $('#register-new-user').show();
-        $('#sop-description-info').show()
+//        $('#sop-description-info').hide();
     });
 
 
@@ -222,7 +222,7 @@ $(document).ready(function () {
                     alert('Thanks for signing up! You may now sign in with your username and password.');
 
                     $('.hide-everything').hide();
-                    $('#sop-description-info').show();
+//                    $('#sop-description-info').show();
                     $('#login-sop').show();
                 })
                 .fail(function (jqXHR, error, errorThrown) {

@@ -84,8 +84,10 @@ main {
     .create-sop,
     .template-sop,
     .questions-review {
+/*
         display: block;
         width: 100%;
+*/
     }
 
     .values,
