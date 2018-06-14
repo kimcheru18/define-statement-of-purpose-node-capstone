@@ -260,6 +260,7 @@ $(document).ready(function () {
             $('.get-started-instructions').show();
             $('.answer-questions').show();
             $('.enter-value-belief').show();
+            $('.js-answer1').focus();
         };
     });
 
@@ -326,6 +327,8 @@ $(document).ready(function () {
         var createSop = $('.create-text').val();
         if (createSop == "") {
             $('.hide-everything').hide();
+            $('.logout-account').show();
+            $('.navigate-options').show();
             $('#create').show();
             return;
         } else {

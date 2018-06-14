@@ -76,6 +76,8 @@ body {
     position: relative;
     min-height: 100%;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
 }
 /* *****STYLES ABOVE KEEP FOOTER AT BOTTOM OF PAGE***** */
 
@@ -86,59 +88,40 @@ body,
 }
 
 header h1,
-#logout-wrapper .logout-account,
-.login-register-options,
-.navigate-options a {
+h2 {
     font-family: 'Cormorant Garamond', serif;
 }
 
-
 h2 {
     font-size: 1.25rem;
-    padding-top: 1.25rem;
     padding-bottom: .5rem;
-    width: 80%;
-    margin: 0 auto;
 }
 
-h3,
-h5,
+
 p,
+a,
 .js-connect-answer5,
-.js-connect-answer6 {
-    font-size: 1rem;
+.js-connect-answer6,
+textarea {
+    font-size: .8rem;
+}
+
+i {
+    font-size: .7rem;
 }
 
 p,
 ul,
-h3,
 .questions {
     text-align: left;
 }
 
-h3,
-section,
-div,
-button {
-    font-family: 'Open Sans', sans-serif;
-}
-
-h4,
-button {
-    font-size: 1rem;
-    padding-top: 1rem;
-}
-
-h5 {
-    margin-top: .2rem;
-    margin-left: .5rem;
-}
 
 ul {
     list-style-position: inside;
 }
 
-.note {
+.instruction-note {
     font-size: .75rem;
 }
 
@@ -147,16 +130,14 @@ Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
 #header-title-wrapper {
-/*    width: 100%;*/
     background-color: #2a5771;
-    margin-bottom: .15rem;
 }
 
 .max-content-width,
 .max-content-width section,
 textarea {
     width: 93%;
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -171,7 +152,6 @@ h1 {
 .nav-options a,
 .account-options a {
     color: #ec6007;
-    font-size: 1rem;
 }
 
 header .login-register-options,
@@ -189,14 +169,6 @@ header .login-register-options,
     display: inline-block;
 }
 
-nav {
-/*
-    padding-bottom: 1rem;
-    max-width: 1000px;
-    margin: 0 auto;
-*/
-}
-
 nav ul li {
     display: inline-block;
     margin: 0 .5rem;
@@ -211,20 +183,8 @@ nav a,
     text-decoration: none;
 }
 
-nav a:hover,
-.logout-account:hover,
-#header-links-login-register a:hover,
-.account-options a:hover,
-.register-account:hover,
-.login-register-options a:hover {
+a:hover {
     text-decoration: underline;
-}
-
-#logout-wrapper {
-    width: 100%;
-    max-width: 1000px;
-    text-align: right;
-    padding-bottom: .15rem;
 }
 
 .account-options input,
@@ -256,31 +216,12 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
-main {
-/*    margin: .15rem 0;*/
+.assignment {
+    padding: 1.75rem 0;
 }
 
-/*.sop-information,*/
-.assignment,
-.guided,
-.get-started-instructions,
-.answer-questions,
-.enter-value-belief,
-textarea,
-.review-answers,
-.questions-review,
-.template-sop {
-/*
-    width: 90%;
-    max-width: 443px;
-    margin: 0 auto;
-*/
-}
-
-.guided,
-.questions-wrapper,
-.review-answers,
-#values-beliefs-goals {
+#values-beliefs-goals,
+.button-container {
     padding-bottom: 8rem;
 }
 
@@ -290,17 +231,20 @@ textarea,
     margin-bottom: 1rem;
 }
 
-
-.questions {
-/*
-    width: 100%;
-    margin: 0 auto;
-*/
+.why-sop,
+.questions-review,
+.review-answers,
+.create-sop {
+    padding-top: 1rem;
 }
 
 .review-section {
     text-indent: 3mm;
     margin: .5rem 0;
+}
+
+.create-sop {
+    padding-bottom: 1rem;
 }
 
 .complete-sentence {
@@ -312,34 +256,14 @@ textarea,
     font-family: 'Julee', cursive;
 }
 
-.create-sop {
-/*
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 5rem;
-    padding-right: 3rem;
-*/
-}
-
 .template-sop p,
 .template-sop textarea {
     display: block;
 }
 
-.list-goals {
-/*    padding: 2rem 5rem;*/
-}
-
-input,
-textarea,
-.review-section,
-.purpose {
-/*    font-family: 'Julee', cursive;*/
-}
-
 input,
 textarea {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     border: 1px solid black;
     border-radius: 5px;
     padding: .5rem .5rem;
@@ -369,7 +293,7 @@ textarea {
 /*    background-color: rgb(86, 139, 86);*/
 }
 
-#questions h3 {
+#questions p {
     margin-bottom: .5rem;
 }
 
@@ -410,13 +334,12 @@ button {
 .save-completed-button,
 .save-completed-template-button,
 .save-goals-button {
-    width: 225px;
+    width: 150px;
 }
 
 textarea {
-    padding: .5rem 1rem;
-    font-size: 1.14rem;
     margin-bottom: 1rem;
+    color: #ec6007;
 }
 
 .answer-text,
@@ -424,29 +347,8 @@ textarea {
     height: 100px;
 }
 
-.input-sop {
-/*    width: 500px;*/
-}
 
-#values-beliefs-goals {
-/*    padding: 1rem 10rem;*/
-}
-
-.values,
-.beliefs,
-.goals {
-/*
-    position: relative;
-    font-size: 1.2rem;
-*/
-}
-
-.beliefs {
-/*    margin: 0 8rem;*/
-}
-
-
-/*******************all image styles apart from header*********************/
+/**************all image styles apart from header****************/
 
 
 .image {
@@ -482,33 +384,15 @@ Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
-footer,
-#contact-info-ul {
-    text-align: center;
-}
-
 footer {
+    background-color: #2a5771;
+    font-size: .8rem;
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
-    text-align: center;
-}
-
-footer p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-}
-
-#app-author,
-#contact-info-ul,
-.contact-info {
-    display: inline-block;
-    padding: .5rem;
-}
-
-#contact-info-ul {
-    vertical-align: middle;
 }
 
 footer a {
@@ -520,6 +404,30 @@ footer a:hover {
     color: rgb(208, 177, 152);
 }
 
+#app-author,
+.contact-info-container {
+    display: block;
+}
+
+.contact-info {
+    display: inline-block;
+    padding: .5rem;
+}
+
+#contact-info-ul,
+#app-author p {
+    text-align: center;
+}
+
+#contact-info-ul {
+    vertical-align: middle;
+}
+
+#app-author p {
+    margin-bottom: .5rem;
+}
+
+
 /* -------------------------------------
 place all the desktop styles above this line
 Responsive styles
@@ -527,101 +435,4 @@ Responsive styles
 place all the mobile tables styles below this line
 */
 
-@media only screen and (max-width: 1450px) {
-    .create-sop,
-    #values-beliefs-goals {
-/*        padding: 1rem 2rem;*/
-    }
-    .beliefs {
-/*        margin: 0 4rem;*/
-    }
-}
 
-
-@media only screen and (max-width: 800px) {
-
-    h2 {
-/*        font-size: 2rem;*/
-    }
-
-    div .beliefs ul,
-    body,
-    main,
-    h3,
-    h4,
-    input {
-/*        font-size: 1rem;*/
-    }
-
-    h5 {
-/*        text-align: center;*/
-    }
-
-    h5,
-    nav ul li {
-/*        display: block;*/
-/*        width: 100%;*/
-/*        margin: .5rem auto;*/
-    }
-
-    .account-options,
-    .register-user {
-/*        padding-left: 0;*/
-    }
-
-
-    .logout-account h4 {
-/*
-        float: none;
-        margin-right: 0;
-        margin-bottom: .5rem;
-        padding-bottom: .5rem;
-*/
-    }
-
-    div {
-/*        padding: .75rem;*/
-    }
-
-    #values-beliefs-goals {
-/*        padding: 0 8rem;*/
-    }
-
-    .values,
-    .beliefs,
-    .goals {
-/*        padding: 1rem 1rem;*/
-    }
-
-    .beliefs {
-/*        margin: 0;*/
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    h1 {
-/*        font-size: 2rem;*/
-/*        padding: 1rem;*/
-    }
-
-    h2 {
-/*        font-size: 1.5rem;*/
-    }
-
-    #values-beliefs-goals {
-/*        padding: 0 1rem;*/
-    }
-
-    .input-sop {
-/*        width: 300px;*/
-    }
-
-    .list-goals {
-/*        padding: 2rem 3rem;*/
-    }
-
-    .purpose {
-/*        border: .3rem solid white;*/
-    }
-
-}
