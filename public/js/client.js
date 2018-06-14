@@ -66,9 +66,7 @@ $(document).ready(function () {
         $('.navigate-options').show();
         $('.logout-account').show();
         $('#review').show();
-
     });
-
 
 
     $('.nav-review, .nav-revise').click(function () {
@@ -79,6 +77,22 @@ $(document).ready(function () {
         $('#create').show();
     });
 
+
+    $('.header-login-account').click(function () {
+
+        $('.hide-everything').hide();
+        $('.header-login-account, .header-go-register-account').hide();
+        $('.logout-account').hide();
+        $('#login-sop').show();
+    });
+
+
+    $('.header-go-register-account').click(function () {
+
+        $('.hide-everything').hide();
+        $('.header-login-account, .header-go-register-account').hide();
+        $('#register-new-user').show();
+    });
 
 
     $('.login-account').click(function () {
@@ -189,7 +203,6 @@ $(document).ready(function () {
 
         $('.hide-everything').hide();
         $('#register-new-user').show();
-//        $('#sop-description-info').hide();
     });
 
 

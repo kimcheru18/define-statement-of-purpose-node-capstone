@@ -185,7 +185,7 @@ header .login-register-options,
     margin: 0 .5rem;
 }
 
-.login-register-options a {
+.header-log-reg a {
     display: inline-block;
 }
 
@@ -203,28 +203,12 @@ nav ul li {
     width: 15%;
 }
 
-.login-account {
-    margin: .5rem 0;
-}
-
 nav a,
-.login-account,
+.login-register-options a,
 .logout-account,
-.go-register-account,
 .register-account,
 .set-goals {
     text-decoration: none;
-}
-
-
-.account-options a,
-.login-account,
-.register-user,
-.register-account {
-/*
-    color: #ec6007;
-    font-size: 1rem;
-*/
 }
 
 nav a:hover,
@@ -241,15 +225,6 @@ nav a:hover,
     max-width: 1000px;
     text-align: right;
     padding-bottom: .15rem;
-}
-
-
-
-
-.account-options a,
-.register-account,
-.login-account {
-    font-weight: bold;
 }
 
 .account-options input,
@@ -269,7 +244,7 @@ nav a:hover,
 
 .account-options,
 .register-user {
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 
 .account-options,
