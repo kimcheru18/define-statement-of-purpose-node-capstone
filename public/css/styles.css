@@ -100,8 +100,7 @@ h2 {
 
 p,
 a,
-.js-connect-answer5,
-.js-connect-answer6,
+.answertext,
 textarea {
     font-size: .8rem;
 }
@@ -117,10 +116,6 @@ ul,
 }
 
 
-ul {
-    list-style-position: inside;
-}
-
 .instruction-note {
     font-size: .75rem;
 }
@@ -133,6 +128,12 @@ Header styles (Main Module)
     background-color: #2a5771;
 }
 
+h1 {
+    font-size: 1.5rem;
+    color: white;
+    padding-top: 1rem;
+}
+
 .max-content-width,
 .max-content-width section,
 textarea {
@@ -141,11 +142,6 @@ textarea {
     margin: 0 auto;
 }
 
-h1 {
-    font-size: 1.5rem;
-    color: white;
-    padding-top: .8rem;
-}
 
 .logout-account,
 .login-register-options a,
@@ -165,12 +161,12 @@ header .login-register-options,
     margin: 0 .5rem;
 }
 
-.header-log-reg a {
+.header-log-reg a,
+nav ul li {
     display: inline-block;
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0 .5rem;
     width: 15%;
 }
@@ -188,18 +184,19 @@ a:hover {
 }
 
 .account-options input,
-.register-user input {
+.register-user input,
+.login-account,
+.go-register-account {
     display: block;
+}
+
+.account-options input,
+.register-user input {
     border: 1px solid #d8d3d3;
     margin: .5rem auto;
     text-align: center;
     padding: .25rem 0;
     border-radius: 3px;
-}
-
-.login-account,
-.go-register-account {
-    display: block;
 }
 
 .account-options,
@@ -215,27 +212,46 @@ a:hover {
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
+.why-sop,
+.questions-wrapper,
+.questions-review,
+.review-answers,
+.create-sop,
+.template-sop,
+.sop-container,
+.list-goals {
+    padding-top: 1rem;
+}
 
 .assignment {
     padding: 1.75rem 0;
 }
 
 #values-beliefs-goals,
-.button-container {
+.button-container,
+.create-goals-image {
     padding-bottom: 8rem;
 }
 
-.get-started-instructions {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid white;
+.list-goals .button-container {
+    padding-bottom: 2rem;
+}
+
+.get-started-instructions,
+.answer,
+textarea {
     margin-bottom: 1rem;
 }
 
-.why-sop,
-.questions-review,
-.review-answers,
+
+.get-started-instructions,
 .create-sop {
-    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.review-section,
+textarea {
+    color: #ec6007;
 }
 
 .review-section {
@@ -243,17 +259,9 @@ Content styles (Main Module)
     margin: .5rem 0;
 }
 
-.create-sop {
-    padding-bottom: 1rem;
-}
-
+.questions,
 .complete-sentence {
     margin-top: .8rem;
-}
-
-.js-connect-answer5,
-.js-connect-answer6 {
-    font-family: 'Julee', cursive;
 }
 
 .template-sop p,
@@ -275,38 +283,8 @@ textarea {
     width: 150px;
 }
 
-#sop-description-info,
-#questions,
-#review,
-#create,
-#create-with-template,
-.save-sop,
-.purpose {
-/*    background-color: rgb(14, 136, 136);*/
-}
-
-.get-started-page,
-#login-sop,
-#register-new-user,
-#create-goals,
-#values-beliefs-goals {
-/*    background-color: rgb(86, 139, 86);*/
-}
-
-#questions p {
-    margin-bottom: .5rem;
-}
-
 .value-belief-questions-margin {
     margin-top: 1rem;
-}
-
-.answer {
-    margin-bottom: 1rem;
-}
-
-.purpose {
-    border: 1rem solid white;
 }
 
 strong {
@@ -337,9 +315,10 @@ button {
     width: 150px;
 }
 
-textarea {
-    margin-bottom: 1rem;
-    color: #ec6007;
+.create-sop-button,
+.use-template-button {
+    margin-left: .5rem;
+    margin-right: .5rem;
 }
 
 .answer-text,
@@ -347,6 +326,11 @@ textarea {
     height: 100px;
 }
 
+.values ul,
+.beliefs ul,
+.goals ul {
+    list-style-position: inside;
+}
 
 /**************all image styles apart from header****************/
 
@@ -355,10 +339,13 @@ textarea {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 10rem;
+    width: 100%;
 }
 
 .sop-description-image {
     background-image: url("/images/description-info.jpg");
+    height: 1rem;
 }
 
 .questions-image {
@@ -371,6 +358,7 @@ textarea {
 
 .create-goals-image {
     background-image: url("/images/create-goals-image.jpg");
+    height: 3rem;
 }
 
 .completed-sop-image {
@@ -434,5 +422,29 @@ Responsive styles
 (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
 place all the mobile tables styles below this line
 */
+/*iPhone portrait*/
 
+@media only screen and (min-width: 320px) {
+}
+
+
+/*iPhone landscape*/
+
+@media only screen and (min-width: 480px) {
+    h1 {
+        font-size: calc(1.5rem + 1vw);
+    }
+}
+
+
+/*ipad potrait*/
+
+@media only screen and (min-width: 768px) {
+}
+
+
+/*ipad lanscape / small laptop*/
+
+@media only screen and (min-width: 1024px) {
+}
 
